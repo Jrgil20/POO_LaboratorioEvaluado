@@ -98,7 +98,6 @@ public class LaboratorioEvaluado1 {
                     break;
             }
         }
-
         scanner.close();
     }
     
