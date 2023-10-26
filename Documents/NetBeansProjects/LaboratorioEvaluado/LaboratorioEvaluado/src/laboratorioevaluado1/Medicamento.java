@@ -179,13 +179,14 @@ public class Medicamento
         Scanner scn = new Scanner(System.in);
         while((valorVigencia < 0) || (valorVigencia > 2))
         {
-            System.out.print("/nERROR, la vigencia tiene que ser un valor en el "
+            System.out.print("\nERROR, la vigencia tiene que ser un valor en el "
                     + "rango [0,2]");
-            System.out.print("/nIngrese la vigencia en el "
+            System.out.print("\nIngrese la vigencia en el "
                     + "mercado del medicamento "
                     +this.getNombreMedicamento().toUpperCase()+" [0,2]: ");
             valorVigencia = scn.nextInt();
         }
+        scn.close();
         return valorVigencia;
     }
     
@@ -217,6 +218,26 @@ public class Medicamento
         return nVendidas <= this.getUnidadesExistentes();
     }
     
+    private int formatearCadenaAEntero(){ //REVISAR TIENE ERROR
+        String cad;
+        int n;        
+        Scanner scn = new Scanner(System.in);
+        OptionalInt c = OptionalInt.empty();
+        while(c.isEmpty())
+        {
+            cad = scn.nextLine();
+            if(cad.length() > 8){
+                System.out.print("Error, el número no puede tener más de ocho "
+                        + "dígitos, ingrese otro numero: ");
+                continue; //pensar en como hacer esto sin el continue
+            }
+            c = this.validarCadenaAEntero(cad);
+        }
+        n = c.orElseThrow();
+        scn.close();
+        return n;
+    }
+    
     public void leerDatos()
     {        
 
@@ -229,35 +250,11 @@ public class Medicamento
 
         System.out.print("\nIngrese el codigo del medicamento "
                 +this.getNombreMedicamento().toUpperCase()+": ");
-        c = OptionalInt.empty();
-        while(c.isEmpty())
-        {
-            cad = scn.nextLine();
-            if(cad.length() > 8){
-                System.out.print("Error, el número no puede tener más de ocho "
-                        + "dígitos, ingrese otro numero: ");
-                continue;
-            }
-            c = this.validarCadenaAEntero(cad);
-        }
-        n = c.orElseThrow();
-        this.setCodigoMedicamento(validarNumeroPositivo(n));
+        this.setCodigoMedicamento(validarNumeroPositivo(formatearCadenaAEntero()));
 
         System.out.print("\nIngrese el costo del medicamento "
                 +this.getNombreMedicamento().toUpperCase()+": ");
-        c = OptionalInt.empty();
-        while(c.isEmpty())
-        {
-            cad = scn.nextLine();
-            if(cad.length() > 3){
-                System.out.print("Error, el número no puede tener más de tres "
-                        + "dígitos, ingrese otro numero: ");
-                continue;
-            }
-            c = this.validarCadenaAEntero(cad);
-        }
-        n = c.orElseThrow();
-        this.setCostoMedicamento(validarNumeroPositivo(n));
+        this.setCostoMedicamento(validarNumeroPositivo(formatearCadenaAEntero()));
 
         System.out.print("\nIngrese el porcentaje adicional para la venta del "
                 + "medicamento "+this.getNombreMedicamento().toUpperCase()+" "
@@ -289,24 +286,12 @@ public class Medicamento
 
         System.out.print("\nIngrese la vigencia en el mercado del medicamento "
                 +this.getNombreMedicamento().toUpperCase()+" [0,2]: ");
-        int vigencia = this.validarVigencia(validarNumeroPositivo(scn.nextInt()));
+        int vigencia = this.validarVigencia(scn.nextInt());
         this.setVigenciaMercado(vigencia);
-
+        scn.nextLine();
         System.out.print("\nIngrese el número de lote del medicamento "
                 +this.getNombreMedicamento().toUpperCase()+": ");
-        c = OptionalInt.empty();
-        while(c.isEmpty())
-        {
-            cad = scn.nextLine();
-            if(cad.length() > 8){
-                System.out.print("Error, el número no puede tener más de ocho "
-                        + "dígitos, ingrese otro numero: ");
-                continue;
-            }
-            c = this.validarCadenaAEntero(cad);
-        }
-        n = c.orElseThrow();
-        this.setNumeroLoteMedicamento(validarNumeroPositivo(n));
+        this.setNumeroLoteMedicamento(validarNumeroPositivo(formatearCadenaAEntero()));
 
         System.out.print("\nIngrese la fecha de caducidad del medicamento "
                 +this.getNombreMedicamento().toUpperCase()
