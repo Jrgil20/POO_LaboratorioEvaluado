@@ -172,12 +172,13 @@ public class Medicamento
     
     private int validarVigencia(int valorVigencia)
     {
-        Scanner scn = new Scanner(System.in);
-        while((valorVigencia < 0) || (valorVigencia > 2))
-        {
-            System.out.print("/nERROR, la vigencia tiene que ser un valor en el rango [0,2]");
-            System.out.print("/nIngrese la vigencia en el mercado del medicamento "+this.getNombreMedicamento().toUpperCase()+" [0,2]: ");
-            valorVigencia = scn.nextInt();
+        try (Scanner scn = new Scanner(System.in)) {
+            while((valorVigencia < 0) || (valorVigencia > 2))
+            {
+                System.out.print("/nERROR, la vigencia tiene que ser un valor en el rango [0,2]");
+                System.out.print("/nIngrese la vigencia en el mercado del medicamento "+this.getNombreMedicamento().toUpperCase()+" [0,2]: ");
+                valorVigencia = scn.nextInt();
+            }
         }
         return valorVigencia;
     }
