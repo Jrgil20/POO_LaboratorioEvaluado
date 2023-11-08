@@ -1,4 +1,5 @@
 package laboratorioevaluado1;
+// clases importadas
 import java.text.ParseException;
 import java.util.Scanner;
 import java.util.Random;
@@ -6,37 +7,49 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class TempAmbiente extends Medicamento implements Validaciones{
-    
+public class TempAmbiente extends Medicamento implements Validaciones
+{   // Clase que hereda de la clase Medicamento y que implementa la interfaz
+
     private ArrayList<String> lugaresNoAlmacenar;
+    // Atributo de tipo ArrayList que almacena los lugares donde no se debe almacenar el medicamento
+
+    //constructores de la clase
 
     public TempAmbiente()
-    {
+    {   // Constructor por defecto
         Random rnd = new Random();
         double ver = rnd.nextDouble();
         while((ver < 0) && (ver > 999))
-        {
+        {   // Ciclo que se ejecuta mientras el numero aleatorio generado no este entre 0 y 999
             ver = rnd.nextDouble();
         }
+        // Asignacion de valores a los atributos de la clase
         nombreMedicamento = "MedTempAmbiente "+ver;
         codigoMedicamento = rnd.nextInt();
         while((codigoMedicamento < 10000000) || (codigoMedicamento > 99999999))
-        {
+        {   // Ciclo que se ejecuta mientras el numero aleatorio generado no este entre 10000000 y 99999999 
             codigoMedicamento = rnd.nextInt();
         }
+        // costo 
         costoMedicamento = 5;
+        // Se le aplica un descuento del 25% al precio de venta publica
         precioVentaPublica = costoMedicamento+(20*costoMedicamento/100)
                 +((25*costoMedicamento)/100);
+        // la fecha de caducidad se establece en 1/2024
         fechaCaducidad = "1/2024";
+        // Se establece un numero aleatorio de 100 como unidades existentes
         unidadesExistentes = 100;
+        // Se establece un numero 0 como unidades vendidas
         unidadesVendidas = 0;
+        // Se establece un numero de 1como vigencia en el mercado
         vigenciaMercado = 1;
+        //
         numeroLoteMedicamento = rnd.nextInt();
-        while((numeroLoteMedicamento < 10000000) 
-                || (numeroLoteMedicamento > 99999999))
-        {
+        while((numeroLoteMedicamento < 10000000) || (numeroLoteMedicamento > 99999999))
+        {   // Ciclo que se ejecuta mientras el numero aleatorio generado no este entre 10000000 y 99999999
             numeroLoteMedicamento = rnd.nextInt();
-        }      
+        }
+        // Se crea un ArrayList de tipo String donde se guarda los lugares donde no almacenar el medicamento      
         lugaresNoAlmacenar = new ArrayList<>();
         lugaresNoAlmacenar.add("HORNO");
         lugaresNoAlmacenar.add("FREGADERO");
@@ -44,7 +57,7 @@ public class TempAmbiente extends Medicamento implements Validaciones{
     }
     
     public TempAmbiente(boolean param)
-    {
+    {// Constructor que se ejecuta cuando se crea un objeto de tipo TempAmbiente
         nombreMedicamento = "";
         codigoMedicamento = 0;
         costoMedicamento = 0;
@@ -57,161 +70,115 @@ public class TempAmbiente extends Medicamento implements Validaciones{
         lugaresNoAlmacenar = null;
     }
 
-    public ArrayList<String> getLugaresNoAlmacenar() {
+    // getters y setters de la clase
+
+    public ArrayList<String> getLugaresNoAlmacenar() 
+    {// getter del ArrayList de tipo String
         return lugaresNoAlmacenar;
     }
 
-    public void setLugaresNoAlmacenar(ArrayList<String> lugaresNoAlmacenar) {
+    public void setLugaresNoAlmacenar(ArrayList<String> lugaresNoAlmacenar) 
+    {// setter del ArrayList de tipo String
         this.lugaresNoAlmacenar = lugaresNoAlmacenar;
     }
 
-    public String getNombreMedicamento() {
+    public String getNombreMedicamento() 
+    {  // getter del nombre del medicamento
         return nombreMedicamento;
     }
 
-    public void setNombreMedicamento(String nombreMedicamento) {
+    public void setNombreMedicamento(String nombreMedicamento) 
+    {   // setter del nombre del medicamento
         this.nombreMedicamento = nombreMedicamento;
     }
 
-    public int getCodigoMedicamento() {
+    public int getCodigoMedicamento() 
+    {   //getter del codigo del medicamento
         return codigoMedicamento;
     }
 
-    public void setCodigoMedicamento(int codigoMedicamento) {
+    public void setCodigoMedicamento(int codigoMedicamento) 
+    {   // setter del codigo del medicamento
         this.codigoMedicamento = codigoMedicamento;
     }
 
-    public double getCostoMedicamento() {
+    public double getCostoMedicamento() 
+    {   // getter del costo del medicamento
         return costoMedicamento;
     }
 
-    public void setCostoMedicamento(double costoMedicamento) {
+    public void setCostoMedicamento(double costoMedicamento)
+    {   // setter del costo del medicamento
         this.costoMedicamento = costoMedicamento;
     }
 
-    public double getPrecioVentaPublica() {
+    public double getPrecioVentaPublica() 
+    {   // getter del precio de venta publica del medicamento
         return precioVentaPublica;
     }
 
-    public void setPrecioVentaPublica(double precioVentaPublica) {
+    public void setPrecioVentaPublica(double precioVentaPublica) 
+    {   // setter del precio de venta publica del medicamento
         this.precioVentaPublica = precioVentaPublica;
     }
 
-    public int getUnidadesVendidas() {
+    public int getUnidadesVendidas() 
+    {   // getter de las unidades vendidas del medicamento
         return unidadesVendidas;
     }
 
-    public void setUnidadesVendidas(int unidadesVendidas) {
+    public void setUnidadesVendidas(int unidadesVendidas) 
+    {   // setter de las unidades vendidas del medicamento
         this.unidadesVendidas = unidadesVendidas;
     }
 
-    public int getUnidadesExistentes() {
+    public int getUnidadesExistentes() 
+    {   // getter de las unidades existentes del medicamento
         return unidadesExistentes;
     }
 
-    public void setUnidadesExistentes(int unidadesExistentes) {
+    public void setUnidadesExistentes(int unidadesExistentes) 
+    {   // setter de las unidades existentes del medicamento
         this.unidadesExistentes = unidadesExistentes;
     }
 
-    public String getFechaCaducidad() {
+    public String getFechaCaducidad()
+    {   // getter de la fecha de caducidad del medicamento
         return fechaCaducidad;
     }
 
-    public void setFechaCaducidad(String fechaCaducidad) {
+    public void setFechaCaducidad(String fechaCaducidad) 
+    {   // setter de la fecha de caducidad del medicamento
         this.fechaCaducidad = fechaCaducidad;
     }
 
-    public int getVigenciaMercado() {
+    public int getVigenciaMercado() 
+    {   // getter de la vigencia en el mercado del medicamento
         return vigenciaMercado;
     }
 
-    public void setVigenciaMercado(int vigenciaMercado) {
+    public void setVigenciaMercado(int vigenciaMercado) 
+    {   // setter de la vigencia en el mercado del medicamento    
         this.vigenciaMercado = vigenciaMercado;
     }
 
-    public int getNumeroLoteMedicamento() {
+    public int getNumeroLoteMedicamento() 
+    {   // getter del numero de lote del medicamento
         return numeroLoteMedicamento;
     }
 
-    public void setNumeroLoteMedicamento(int numeroLoteMedicamento) {
+    public void setNumeroLoteMedicamento(int numeroLoteMedicamento) 
+    {   // setter del numero de lote del medicamento
         this.numeroLoteMedicamento = numeroLoteMedicamento;
     }        
 
-    @Override
-    public boolean validarCadenaEsEntero(String cad)
-    {
-        int n;
-        try 
-        {
-           n = Integer.parseInt(cad);
-           return true;
-        } 
-        catch (NumberFormatException ex) 
-        {
-            System.out.print("\nERROR, el valor ingresado no es un numero");
-            return false;
-        }
-    }
-    
-    @Override
-    public boolean validarCadenaEsDouble(String cad)
-    {
-        double n;
-        try 
-        {
-           n = Double.parseDouble(cad);
-           return true;
-        } 
-        catch (NumberFormatException ex) 
-        {
-            System.out.print("\nERROR, el valor ingresado no es un numero");
-            return false;
-        }
-    }
-    
-    @Override
-    public boolean validarLongitudMaximaCadena(String cad, int nLen)
-    {        
-        if(cad.length() > nLen){     
-            System.out.print("Error, el dato ingresado no puede exceder de "
-                    + "los "+nLen+" caracteres, intente de nuevo: ");
-            return false;    
-        }
-        else
-            return true;
-    }
-    
-    @Override
-    public boolean validarRangoNumerico(int start, int end, int n){
-        if((n < start)||(n > end))
-            return false;
-        else
-            return true;
-    }
-    
-    @Override
-    public boolean validarCadenaNumericaYRango(String cad, int start, int end)
-    {
-        if(!validarCadenaEsEntero(cad))
-        {
-            System.out.print("\nError, el valor ingresado no es un numero "
-                    + "entero");
-            return false;
-        }
-        else if(validarCadenaEsEntero(cad) && 
-                !(validarRangoNumerico(start,end,Integer.parseInt(cad))))
-        {
-            System.out.print("\nError, el numero entero ingresado no esta "
-                    + "comprendido entre los valores "+start+" y "+end);
-            return false;
-        }
-        else
-            return true;
-    }    
+    //Sobreescritura de metodos de la clase padre
+
     
     @Override
     public int validarValorNumerico(String nombreAtributo, int start, int end) 
-    {
+    {// Metodo que valida si un numero esta dentro de un rango
+        
         Scanner scn = new Scanner(System.in);
         String sNum;
         int n;
@@ -233,7 +200,8 @@ public class TempAmbiente extends Medicamento implements Validaciones{
         return n;
     }
     
-    public boolean validarRangoNumerico(double start, double end, double n){
+    public boolean validarRangoNumerico(double start, double end, double n)
+    {   // Metodo que valida si un numero esta dentro de un rango
         if((n < start)||(n > end))
             return false;
         else
@@ -241,23 +209,24 @@ public class TempAmbiente extends Medicamento implements Validaciones{
     }
     
     public boolean validarCadenaNumericaYRango(String cad, double start, double end)
-    {
+    {   // Metodo que valida si una cadena es un numero double y si esta dentro de un rango
         if(!validarCadenaEsDouble(cad))
-        {
+        {   // si la cadena no es un numero double imprime error
             System.out.print("\nError, el valor ingresado no es un numero "
                     + "entero");
             return false;
         }
-        else if(validarCadenaEsDouble(cad) && 
+        else 
+            if(validarCadenaEsDouble(cad) && 
                 !(validarRangoNumerico(start,end,Double.parseDouble(cad))))
-        {
-            System.out.print("\nError, el numero ingresado "
+            {   // si la cadena es un numero double y no esta dentro del rango imprime error
+                System.out.print("\nError, el numero ingresado "
                     + "no esta "
                     + "comprendido entre los valores "+start+" y "+end);
-            return false;
-        }
-        else
-            return true;
+                return false;
+            }
+            else
+                return true;
     }    
         
     @Override
@@ -286,7 +255,7 @@ public class TempAmbiente extends Medicamento implements Validaciones{
     
     @Override
     public boolean validarFecha(String fecha) 
-    {
+    {   // Metodo que valida si una cadena es una fecha con el formato MM/yyyy
         try 
         {
             SimpleDateFormat formatoFecha = new SimpleDateFormat("MM/yyyy");
@@ -302,7 +271,7 @@ public class TempAmbiente extends Medicamento implements Validaciones{
 
     @Override
     public void determinarVencido() 
-    {
+    {   // Metodo que determina si un medicamento esta vencido
         try 
        {
             SimpleDateFormat formatoFecha = new SimpleDateFormat("MM/yyyy");
@@ -346,20 +315,22 @@ public class TempAmbiente extends Medicamento implements Validaciones{
     }
     
     @Override
-    protected double calcularPrecioFinal(int porcentajeAdicional){        
+    protected double calcularPrecioFinal(int porcentajeAdicional)
+    {// Metodo que calcula el precio final de un medicamento        
         double precioFinal = costoMedicamento+
                 ((porcentajeAdicional*costoMedicamento)/100);
         return precioFinal;
     }      
     
     public boolean verificarExistenciaLugarNoAlmacenar(String cad)
-    {
+    {   // Metodo que verifica si un lugar ya existe en el ArrayList de lugares donde no almacenar
         ArrayList<String> aux = lugaresNoAlmacenar;
         return aux.contains(cad);
     }
 
     @Override
-    protected void leerDatos() {
+    protected void leerDatos() 
+    {// Metodo que lee los datos de un medicamento
         Scanner scn = new Scanner(System.in);
         String cad;
         int numInt;
@@ -597,18 +568,4 @@ public class TempAmbiente extends Medicamento implements Validaciones{
         return nComprar;
     }
     
-    @Override
-    protected double calcularTotalCompra(int nComprar) {
-        return nComprar*precioVentaPublica;
-    }
-    
-    @Override
-    protected int devolverCompra(int nComprar)
-    {
-        nComprar = validarValorNumerico("numero de unidades "
-                + "a devolver",1,nComprar);
-        this.setUnidadesExistentes(unidadesExistentes+nComprar);
-        this.setUnidadesVendidas(unidadesVendidas-nComprar);
-        return nComprar;
-    }  
 }
