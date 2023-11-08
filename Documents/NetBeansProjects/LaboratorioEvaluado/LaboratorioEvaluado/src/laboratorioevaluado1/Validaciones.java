@@ -1,5 +1,7 @@
 package laboratorioevaluado1;
 
+
+
 public interface Validaciones 
 {// Interface que define los metodos de validacion de datos       
        

@@ -3,7 +3,6 @@ package laboratorioevaluado1;
 import java.text.ParseException;
 import java.util.Scanner;
 import java.util.Random;
-import java.util.Date;
 import java.text.SimpleDateFormat;
 
 public class Refrigerado extends Medicamento implements Validaciones
@@ -179,51 +178,6 @@ public class Refrigerado extends Medicamento implements Validaciones
         }
     }    
         
-    @Override
-    public void determinarVencido() 
-    {   //Determina si un medicamento refrigerado esta vencido
-        try 
-        {   //Se parsea la fecha de caducidad a un objeto de tipo Date
-            SimpleDateFormat formatoFecha = new SimpleDateFormat("MM/yyyy");
-            Date fechaActual = new Date();
-            Date fechaCaducidadMedicamento=formatoFecha.parse(this.fechaCaducidad);
-            //Si la fecha actual es posterior a la fecha de caducidad, el medicamento esta vencido
-            if (fechaActual.after(fechaCaducidadMedicamento)) 
-            {   //Se muestra un mensaje indicando que el medicamento esta vencido
-                System.out.println("El medicamento refrigerado " 
-                        + this.nombreMedicamento + " con código " 
-                        + this.codigoMedicamento + " está vencido. Venció en: " 
-                        + this.fechaCaducidad);
-            }
-            else
-            {   //Si la fecha actual es anterior a la fecha de caducidad, el medicamento no esta vencido
-                
-                // Calcula la diferencia en milisegundos y la convierte a meses
-                long diff = fechaCaducidadMedicamento.getTime() - fechaActual.getTime();
-                long diffMonths = diff / (30 * 24 * 60 * 60 * 1000);
-                // un diferencia de 3 meses o menos
-                if(diffMonths <= 3)
-                {   //Se muestra un mensaje indicando que el medicamento esta proximo a vencer
-                    System.out.println("El medicamento refrigerado " 
-                            + this.nombreMedicamento 
-                            + " con código " + this.codigoMedicamento +
-                    " se vencerá en menos de 3 meses. Se le aplica un descuento del 30%.");
-                    this.setPrecioVentaPublica(this.getPrecioVentaPublica()-
-                            ((this.getPrecioVentaPublica()*30)/100));
-                }
-                else
-                {   //Se muestra un mensaje indicando que el medicamento no esta vencido
-                    System.out.println("El medicamento refrigerado " 
-                            + this.nombreMedicamento + " con código " 
-                            + this.codigoMedicamento + " no está vencido.");
-                }
-
-            }
-        } catch (Exception e) 
-          { //Si ocurre un error al parsear la fecha, se muestra un mensaje de error
-            System.out.println("Error al parsear la fecha: " + e.getMessage());
-          }
-    }
     
     @Override
     protected double calcularPrecioFinal(int porcentajeAdicional)

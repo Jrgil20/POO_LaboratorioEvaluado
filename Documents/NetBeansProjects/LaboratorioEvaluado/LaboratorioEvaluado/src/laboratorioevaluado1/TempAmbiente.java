@@ -3,7 +3,6 @@ package laboratorioevaluado1;
 import java.text.ParseException;
 import java.util.Scanner;
 import java.util.Random;
-import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -178,50 +177,6 @@ public class TempAmbiente extends Medicamento implements Validaciones
         }
     }
 
-    @Override
-    public void determinarVencido() 
-    {   // Metodo que determina si un medicamento esta vencido
-        try 
-       {
-            SimpleDateFormat formatoFecha = new SimpleDateFormat("MM/yyyy");
-            Date fechaActual = new Date();
-            Date fechaCaducidadMedicamento=formatoFecha.parse(this.fechaCaducidad);
-
-            if (fechaActual.after(fechaCaducidadMedicamento)) 
-            {
-                System.out.println("El medicamento " 
-                        + this.nombreMedicamento + " con código " 
-                        + this.codigoMedicamento + " está vencido. Venció en: " 
-                        + this.fechaCaducidad);
-            }
-            else
-            {
-                // Calcula la diferencia en milisegundos y la convierte a meses
-                long diff = fechaCaducidadMedicamento.getTime() - fechaActual.getTime();
-                long diffMonths = diff / (30 * 24 * 60 * 60 * 1000);
-                // un diferencia de 3 meses o menos
-                if(diffMonths <= 3)
-                {
-                    System.out.println("El medicamento " 
-                            + this.nombreMedicamento 
-                            + " con código " + this.codigoMedicamento +
-                    " se vencerá en menos de 3 meses. Se le aplica un descuento del 30%.");
-                    this.setPrecioVentaPublica(this.getPrecioVentaPublica()-
-                            ((this.getPrecioVentaPublica()*30)/100));
-                }
-                else
-                {
-                    System.out.println("El medicamento " 
-                            + this.nombreMedicamento + " con código " 
-                            + this.codigoMedicamento + " no está vencido.");
-                }
-
-            }
-        } catch (Exception e) 
-          {
-            System.out.println("Error al parsear la fecha: " + e.getMessage());
-          }
-    }
     
     @Override
     protected double calcularPrecioFinal(int porcentajeAdicional)
