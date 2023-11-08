@@ -1,9 +1,12 @@
 package laboratorioevaluado1;
+// Clases importadas
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Menu {
+public class Menu 
+{// Clase Menu
     
+
     private static ArrayList<Refrigerado> listaRefrigerado = new ArrayList<>();
     private static ArrayList<TempAmbiente> listaTempAmbiente = new ArrayList<>();
     

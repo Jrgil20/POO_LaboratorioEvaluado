@@ -1,6 +1,7 @@
 package laboratorioevaluado1;
 
-public interface Validaciones {       
+public interface Validaciones 
+{// Interface que define los metodos de validacion de datos       
        
     public boolean validarCadenaEsEntero(String cad);
     public boolean validarCadenaEsDouble(String cad);
