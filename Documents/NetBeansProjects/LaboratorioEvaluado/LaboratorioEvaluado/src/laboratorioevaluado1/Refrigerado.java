@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Random;
 import java.text.SimpleDateFormat;
 
-public class Refrigerado extends Medicamento implements Validaciones
+public class Refrigerado extends Medicamento 
 {   //Clase que hereda de la clase Medicamento e implementa la interfaz Validaciones
     private double tempMinima;
     private double tempMaxima;

@@ -6,7 +6,7 @@ import java.util.Random;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class TempAmbiente extends Medicamento implements Validaciones
+public class TempAmbiente extends Medicamento 
 {   // Clase que hereda de la clase Medicamento y que implementa la interfaz
 
     private ArrayList<String> lugaresNoAlmacenar;
