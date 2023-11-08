@@ -180,83 +180,7 @@ public class Refrigerado extends Medicamento implements Validaciones
     }        
     
     // sobreescritura de metodos de la interfaz Validaciones
-    @Override
-    public boolean validarCadenaEsEntero(String cad)
-    {   //Valida si una cadena es un numero entero
-        int n;
-        //try-catch para evitar que el programa se caiga si se ingresa un valor
-        try 
-        {
-            //Si el valor ingresado es un numero entero, se parsea a entero
-            n = Integer.parseInt(cad);
-            return true;
-        } 
-        catch (NumberFormatException ex) 
-        {   //Si el valor ingresado no es un numero entero, se muestra un mensaje de error
-            System.out.print("\nERROR, el valor ingresado no es un numero");
-            return false;
-        }
-    }
-    
-    @Override
-    public boolean validarCadenaEsDouble(String cad)
-    {   //Valida si una cadena es un numero double
-        double n;
-        //try-catch para evitar que el programa se caiga si se ingresa un valor
-        try 
-        {  //Si el valor ingresado es un numero double, se parsea a double
-           n = Double.parseDouble(cad);
-           return true;
-        } 
-        catch (NumberFormatException ex) 
-        {   //Si el valor ingresado no es un numero double, se muestra un mensaje de error
-            System.out.print("\nERROR, el valor ingresado no es un numero");
-            return false;
-        }
-    }
-    
-    @Override
-    public boolean validarLongitudMaximaCadena(String cad, int nLen)
-    {   //Valida si una cadena no excede de un numero de caracteres     
-        if(cad.length() > nLen)
-        {   //Si la cadena excede el numero de caracteres, se muestra un mensaje de error     
-            System.out.print("Error, el dato ingresado no puede exceder de "
-                    + "los "+nLen+" caracteres, intente de nuevo: ");
-            return false;    
-        }
-        else
-            //Si la cadena no excede el numero de caracteres, se retorna true
-            return true;
-    }
-    
-    @Override
-    public boolean validarRangoNumerico(int start, int end, int n)
-    {   //Valida si un numero entero esta dentro de un rango
-        if((n < start)||(n > end))
-            return false;
-        else
-            return true;
-    }
-    
-    @Override
-    public boolean validarCadenaNumericaYRango(String cad, int start, int end)
-    {   //Valida si una cadena es un numero entero y si esta dentro de un rango
-        if(!validarCadenaEsEntero(cad))
-        {   //Si la cadena no es un numero entero, se muestra un mensaje de error
-            System.out.print("\nError, el valor ingresado no es un numero " + "entero");
-            return false;
-        }
-        else //Si la cadena es un numero entero, se valida si esta dentro del rango
-            if(validarCadenaEsEntero(cad) && !(validarRangoNumerico(start,end,Integer.parseInt(cad))))
-            {   //Si la cadena no esta dentro del rango, se muestra un mensaje de error
-                System.out.print("\nError, el numero entero ingresado no esta "
-                    + "comprendido entre los valores "+start+" y "+end);
-                return false;
-            }
-            else //Si la cadena esta dentro del rango, se retorna true
-                return true;
-    }    
-    
+
     @Override
     public int validarValorNumerico(String nombreAtributo, int start, int end) 
     {   //Valida si un numero entero esta dentro de un rango
@@ -649,20 +573,5 @@ public class Refrigerado extends Medicamento implements Validaciones
         return nComprar;
     }
     
-    @Override
-    protected double calcularTotalCompra(int nComprar) 
-    {   //Calcula el total de la compra de medicamentos refrigerados
-        return nComprar*precioVentaPublica;
-    }
-    
-    @Override
-    protected int devolverCompra(int nComprar)
-    {   //Permite devolver la compra de un medicamento refrigerado
-        nComprar = validarValorNumerico("numero de unidades "
-                + "a devolver",1,nComprar);
-        this.setUnidadesExistentes(unidadesExistentes+nComprar);
-        this.setUnidadesVendidas(unidadesVendidas-nComprar);
-        return nComprar;
-    }
-        
+
 }
