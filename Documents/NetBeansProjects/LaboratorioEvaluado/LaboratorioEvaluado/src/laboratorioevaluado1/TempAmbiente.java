@@ -12,7 +12,7 @@ public class TempAmbiente extends Medicamento
     private ArrayList<String> lugaresNoAlmacenar;
     // Atributo de tipo ArrayList que almacena los lugares donde no se debe almacenar el medicamento
 
-    //constructores de la clase
+    ///////////////////// CONSTRUCTORES DE LA CLASE /////////////////////////////////
 
     public TempAmbiente()
     {   // Constructor por defecto
@@ -69,7 +69,7 @@ public class TempAmbiente extends Medicamento
         lugaresNoAlmacenar = null;
     }
 
-    // getters y setters de la clase
+    ////////////////// METODOS GETTERS Y SETTERS DE LA CLASE ////////////////////////
 
     public ArrayList<String> getLugaresNoAlmacenar() 
     {// getter del ArrayList de tipo String
@@ -81,7 +81,7 @@ public class TempAmbiente extends Medicamento
         this.lugaresNoAlmacenar = lugaresNoAlmacenar;
     }
 
-    //Sobreescritura de metodos de la clase padre
+    //////////// sobreescritura de metodos de la interfaz Validaciones/////////////
     
     @Override
     public int validarValorNumerico(String nombreAtributo, int start, int end) 
@@ -104,7 +104,7 @@ public class TempAmbiente extends Medicamento
             sNum = scn.nextLine();  
         }                
         n = Integer.parseInt(sNum);        
-        //scn.close();
+        scn.close();
         return n;
     }
     
@@ -136,7 +136,7 @@ public class TempAmbiente extends Medicamento
             else
                 return true;
     }    
-        
+          
     @Override
     public double validarValorNumerico(String nombreAtributo, double start, double end) 
     {
@@ -157,7 +157,7 @@ public class TempAmbiente extends Medicamento
             sNum = scn.next();  
         }                
         n = Double.parseDouble(sNum);        
-        //scn.close();
+        scn.close();
         return n;
     }
     
@@ -177,7 +177,8 @@ public class TempAmbiente extends Medicamento
         }
     }
 
-    
+    /////////////sobreescritura de metodos de la clase Medicamento///////////////
+
     @Override
     protected double calcularPrecioFinal(int porcentajeAdicional)
     {// Metodo que calcula el precio final de un medicamento        
@@ -252,6 +253,7 @@ public class TempAmbiente extends Medicamento
             }
             lugaresNoAlmacenar.add(cad);
         }
+        scn.close();
        
     }    
     
@@ -292,41 +294,5 @@ public class TempAmbiente extends Medicamento
             i++;
         }
     }    
-    
-    @Override
-    protected void colocarOferta(int numeroLoteMedicamento)
-    {
-        if(numeroLoteMedicamento == this.getNumeroLoteMedicamento())
-        {            
-            this.setVigenciaMercado(1);
-            System.out.println("Se ha colocado la oferta del "
-                    + "medicamento "
-                    +this.getNombreMedicamento().toUpperCase()
-                            + " en el mercado");
-        }
-        else
-        {
-            System.out.println("Error, el numero de lote "
-                    +numeroLoteMedicamento+" no es valido");
-        }
-        //scn.close();
-    }
-    
-    @Override
-    protected void retirarLote(int numeroLoteMedicamento)
-    {
-        if(numeroLoteMedicamento == this.getNumeroLoteMedicamento())
-        {            
-            this.setVigenciaMercado(2);
-            System.out.println("Se ha retirado el medicamento "
-                    +this.getNombreMedicamento().toUpperCase()+
-                    " del mercado");
-        }
-        else
-        {
-            System.out.println("Error, el numero de lote "
-                    +numeroLoteMedicamento+" no es valido");
-        }
-    }
     
 }

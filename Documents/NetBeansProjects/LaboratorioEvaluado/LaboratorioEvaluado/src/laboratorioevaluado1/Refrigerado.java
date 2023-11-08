@@ -83,7 +83,7 @@ public class Refrigerado extends Medicamento
         this.diasRefrigerado = diasRefrigerado;
     }        
     
-    // sobreescritura de metodos de la interfaz Validaciones
+    //////////// sobreescritura de metodos de la interfaz Validaciones/////////////
 
     @Override
     public int validarValorNumerico(String nombreAtributo, int start, int end) 
@@ -105,7 +105,7 @@ public class Refrigerado extends Medicamento
             sNum = scn.nextLine();  
         }                
         n = Integer.parseInt(sNum);        
-        // este metodo se deberia cerrar? scn.close();
+        scn.close();
         return n;
     }
     
@@ -158,10 +158,13 @@ public class Refrigerado extends Medicamento
             sNum = scn.next();  
         }                
         n = Double.parseDouble(sNum);        
-        //scn.close();
+        scn.close();
         return n;
     }
     
+
+    /////////////sobreescritura de metodos de la clase Medicamento///////////////
+
     @Override
     public boolean validarFecha(String fecha) 
     {   //Valida si una cadena es una fecha con el formato MM/yyyy
@@ -178,7 +181,6 @@ public class Refrigerado extends Medicamento
         }
     }    
         
-    
     @Override
     protected double calcularPrecioFinal(int porcentajeAdicional)
     {   //Calcula el precio de venta al publico de un medicamento refrigerado        
@@ -192,7 +194,6 @@ public class Refrigerado extends Medicamento
                 ((25*costoMedicamento)/100);
         return precioFinal;
     }        
-
 
     protected void leerDatos() 
     {   //Lee los datos de un medicamento refrigerado
@@ -247,6 +248,7 @@ public class Refrigerado extends Medicamento
         diasRefrigerado = validarValorNumerico("numero de dias que se "
                 + "puede mantener refrigerado una "
                 + "vez abierto",1,28);
+        scn.close();
     }    
     
     @Override
@@ -285,42 +287,6 @@ public class Refrigerado extends Medicamento
                 + "el medicamento una vez abierto: "+diasRefrigerado);
         //scn.close();
     }    
-    
-    @Override
-    protected void colocarOferta(int numeroLoteMedicamento)
-    {   //Coloca una oferta de un medicamento refrigerado en el mercado
-        if(numeroLoteMedicamento == this.getNumeroLoteMedicamento())
-        {   //Si el numero de lote ingresado es igual al numero de lote del medicamento, se coloca la oferta         
-            this.setVigenciaMercado(1);
-            System.out.println("Se ha colocado la oferta del "
-                    + "medicamento refrigerado "
-                    +this.getNombreMedicamento().toUpperCase()
-                            + " en el mercado");
-        }
-        else
-        {   //Si el numero de lote ingresado no es igual al numero de lote del medicamento, se muestra un mensaje de error
-            System.out.println("Error, el numero de lote "
-                    +numeroLoteMedicamento+" no es valido");
-        }
-        //scn.close();
-    }
-    
-    @Override
-    protected void retirarLote(int numeroLoteMedicamento)
-    {   //Retira un medicamento refrigerado del mercado
-        if(numeroLoteMedicamento == this.getNumeroLoteMedicamento())
-        {   //Si el numero de lote ingresado es igual al numero de lote del medicamento, se retira el medicamento del mercado         
-            this.setVigenciaMercado(2);
-            System.out.println("Se ha retirado el medicamento refrigerado "
-                    +this.getNombreMedicamento().toUpperCase()+
-                    " del mercado");
-        }
-        else
-        {   //Si el numero de lote ingresado no es igual al numero de lote del medicamento, se muestra un mensaje de error
-            System.out.println("Error, el numero de lote "
-                    +numeroLoteMedicamento+" no es valido");
-        }
-    }
     
     
 }

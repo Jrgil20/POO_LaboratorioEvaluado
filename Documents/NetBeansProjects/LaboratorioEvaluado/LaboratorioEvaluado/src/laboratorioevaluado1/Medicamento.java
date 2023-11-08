@@ -23,13 +23,11 @@ public abstract class Medicamento implements Validaciones
     protected int vigenciaMercado;//
     protected int numeroLoteMedicamento;//
            
-/////////////////////////METODOS ABSTRACTOS/////////////////////////////////////
+    /////////////////////////METODOS ABSTRACTOS/////////////////////////////////////
 
     protected abstract void leerDatos();
     protected abstract double calcularPrecioFinal(int porcentajeAdicional);
-    protected abstract void mostrarInformacion();
-    protected abstract void colocarOferta(int numeroLoteMedicamento);
-    protected abstract void retirarLote(int numeroLoteMedicamento);     
+    protected abstract void mostrarInformacion();  
     
     /////////////////////////METODOS CONCRETOS GET Y SET/////////////////////////////////////
 
@@ -97,22 +95,9 @@ public abstract class Medicamento implements Validaciones
     }
 
     /////////////////////////METODOS CONCRETOS/////////////////////////////////////
-    protected double calcularTotalCompra(int nComprar)
-    {   // Metodo que calcula el total de la compra de un medicamento
-        return nComprar*precioVentaPublica;
-    }
-
-    protected int devolverCompra(int nComprar)
-    { // Metodo que devuelve la compra de un medicamento
-        nComprar = validarValorNumerico("numero de unidades "
-                + "a devolver",1,nComprar);
-        this.setUnidadesExistentes(unidadesExistentes+nComprar);
-        this.setUnidadesVendidas(unidadesVendidas-nComprar);
-        return nComprar;
-    }    
     
     protected void determinarVencido() 
-    {   //Determina si un medicamento refrigerado esta vencido
+    {//Determina si un medicamento refrigerado esta vencido
         try 
         {   //Se parsea la fecha de caducidad a un objeto de tipo Date
             SimpleDateFormat formatoFecha = new SimpleDateFormat("MM/yyyy");
@@ -156,36 +141,42 @@ public abstract class Medicamento implements Validaciones
           }
     }
 
-    protected int comprarMedicamentos()
-    {   //Permite comprar un medicamento refrigerado
-        Scanner scn = new Scanner(System.in);
-        String cad = "";
-        int nComprar = 0;
-        while(!"SI".equals(cad))
-        {   //Se valida si se desea comprar el medicamento
-            nComprar = validarValorNumerico("numero de medicamentos "
-                    + "a comprar",1, unidadesExistentes);
-            double totalCompra = nComprar*precioVentaPublica;
-            System.out.print("Se añadiran "+nComprar+" unidades del\n"
-                    + "medicamento refrigerado "+nombreMedicamento+" a su factura\n"
-                            + "¿Está seguro de su compra? (SI/NO): ");
-            cad = scn.nextLine().toUpperCase();
-            while(!validarLongitudMaximaCadena(cad, 2) && 
-                    ((!"SI".equals(cad)) || (!"NO".equals(cad))))
-            {
-                System.out.print("Se añadiran "+nComprar+" unidades del\n"
-                    + "medicamento refrigerado "+nombreMedicamento+" a su factura\n"
-                            + "¿Está seguro de su compra? (SI/NO): ");
-                cad = scn.nextLine().toUpperCase();
-            }
+    protected void retirarLote(int numeroLoteMedicamento)
+    {//Retira un medicamento refrigerado del mercado
+        if(numeroLoteMedicamento == this.getNumeroLoteMedicamento())
+        {   //Si el numero de lote ingresado es igual al numero de lote del medicamento, se retira el medicamento del mercado         
+            this.setVigenciaMercado(2);
+            System.out.println("Se ha retirado el medicamento refrigerado "
+                    +this.getNombreMedicamento().toUpperCase()+
+                    " del mercado");
         }
-        this.setUnidadesExistentes(unidadesExistentes-nComprar);
-        this.setUnidadesVendidas(unidadesVendidas+nComprar);
-        return nComprar;
+        else
+        {   //Si el numero de lote ingresado no es igual al numero de lote del medicamento, se muestra un mensaje de error
+            System.out.println("Error, el numero de lote "
+                    +numeroLoteMedicamento+" no es valido");
+        }
     }
-    
+
+    protected void colocarOferta(int numeroLoteMedicamento)
+    {   //Coloca una oferta de un medicamento refrigerado en el mercado
+        if(numeroLoteMedicamento == this.getNumeroLoteMedicamento())
+        {   //Si el numero de lote ingresado es igual al numero de lote del medicamento, se coloca la oferta         
+            this.setVigenciaMercado(1);
+            System.out.println("Se ha colocado la oferta del "
+                    + "medicamento refrigerado "
+                    +this.getNombreMedicamento().toUpperCase()
+                            + " en el mercado");
+        }
+        else
+        {   //Si el numero de lote ingresado no es igual al numero de lote del medicamento, se muestra un mensaje de error
+            System.out.println("Error, el numero de lote "
+                    +numeroLoteMedicamento+" no es valido");
+        }
+        //scn.close();
+    }
+
     protected void mostrarCostoYPrecio()
-    {   //Muestra el costo y el precio de venta al publico de un medicamento refrigerado
+    {//Muestra el costo y el precio de venta al publico de un medicamento refrigerado
         System.out.println("El costo del medicamento "
                 + "refrigerado "+nombreMedicamento+" es: "+costoMedicamento
                 +  "trumps");
@@ -203,6 +194,49 @@ public abstract class Medicamento implements Validaciones
                 + "medicamento refrigerado, se le aplica otro 25% adicional\n"
                 + "al costo");
     }
+
+    protected int comprarMedicamentos()
+    {   //Permite comprar un medicamento refrigerado
+        try (Scanner scn = new Scanner(System.in)) {
+            String cad = "";
+            int nComprar = 0;
+            while(!"SI".equals(cad))
+            {   //Se valida si se desea comprar el medicamento
+                nComprar = validarValorNumerico("numero de medicamentos "
+                        + "a comprar",1, unidadesExistentes);
+                double totalCompra = nComprar*precioVentaPublica;
+                System.out.print("Se añadiran "+nComprar+" unidades del\n"
+                        + "medicamento refrigerado "+nombreMedicamento+" a su factura\n"
+                                + "¿Está seguro de su compra? (SI/NO): ");
+                cad = scn.nextLine().toUpperCase();
+                while(!validarLongitudMaximaCadena(cad, 2) && 
+                        ((!"SI".equals(cad)) || (!"NO".equals(cad))))
+                {
+                    System.out.print("Se añadiran "+nComprar+" unidades del\n"
+                        + "medicamento refrigerado "+nombreMedicamento+" a su factura\n"
+                                + "¿Está seguro de su compra? (SI/NO): ");
+                    cad = scn.nextLine().toUpperCase();
+                }
+            }
+            this.setUnidadesExistentes(unidadesExistentes-nComprar);
+            this.setUnidadesVendidas(unidadesVendidas+nComprar);
+            return nComprar;
+        }
+    }
+
+    protected double calcularTotalCompra(int nComprar)
+    {   // Metodo que calcula el total de la compra de un medicamento
+        return nComprar*precioVentaPublica;
+    } 
+
+    protected int devolverCompra(int nComprar)
+    { // Metodo que devuelve la compra de un medicamento
+        nComprar = validarValorNumerico("numero de unidades "
+                + "a devolver",1,nComprar);
+        this.setUnidadesExistentes(unidadesExistentes+nComprar);
+        this.setUnidadesVendidas(unidadesVendidas-nComprar);
+        return nComprar;
+    }   
 
     protected int alertaReponerInventario()
     {   //Alerta si el inventario de un medicamento refrigerado esta por debajo de 5 unidades
@@ -227,6 +261,7 @@ public abstract class Medicamento implements Validaciones
                             + "\nSu respuesta: ");
         // se solicita la opcion a realizar para reponer el inventario (JRG: que opcion?)
         sNum = scn.nextLine();
+        scn.close();
         while(!validarCadenaNumericaYRango(sNum, 1, 2))
         {   //Si el valor ingresado no es un numero entero o no esta dentro del rango, se pide de nuevo
             System.out.print("Elija como proceder:"
@@ -261,6 +296,5 @@ public abstract class Medicamento implements Validaciones
         System.out.println("Ahora hay un total de: "
                 + unidadesExistentes+" unidades existentes");
     }  
-
-   
+ 
 }
