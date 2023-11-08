@@ -193,7 +193,7 @@ public class Refrigerado extends Medicamento
         return precioFinal;
     }        
 
-    @Override
+
     protected void leerDatos() 
     {   //Lee los datos de un medicamento refrigerado
         Scanner scn = new Scanner(System.in);
@@ -359,78 +359,5 @@ public class Refrigerado extends Medicamento
         return op;
     }
     
-    @Override
-    protected void reponerInventario()
-    {   //Repone el inventario de un medicamento refrigerado     
-        System.out.println("Se procederá a reponer las unidades existentes"
-                + " del medicamento refrigerado "+nombreMedicamento);
-        int unidadesAReponer = unidadesExistentes + 
-                validarValorNumerico("unidades a reponer",
-                1, 9999999);
-        // validar que el total de unidades no exceda de 9999999
-        while(unidadesExistentes+unidadesAReponer > 9999999){
-            System.out.println("ERROR, la suma de unidades a reponer "
-                    + " con las\nunidades existentes ("+unidadesExistentes+")"
-                            + "no puede exceder\nde 9999999");
-            unidadesAReponer = unidadesExistentes + 
-                validarValorNumerico("unidades a reponer",
-                1, 9999999);
-        }
-        //se muestra el total de unidades 
-        unidadesExistentes = unidadesAReponer;
-        System.out.println("Ahora hay un total de: "
-                + unidadesExistentes+" unidades existentes");
-    }
     
-    @Override
-    protected void mostrarCostoYPrecio()
-    {   //Muestra el costo y el precio de venta al publico de un medicamento refrigerado
-        System.out.println("El costo del medicamento "
-                + "refrigerado "+nombreMedicamento+" es: "+costoMedicamento
-                +  "trumps");
-        int i = 20;
-        while(((precioVentaPublica-((i*costoMedicamento)/100)-
-                ((25*costoMedicamento)/100)) != costoMedicamento)&&
-                (i <= 100))
-        {   //Se calcula el porcentaje adicional de venta al publico del medicamento
-            i++;
-        }
-        System.out.println("\nEl precio de venta publica del medicamento"
-                + " refrigerado\n"+nombreMedicamento+" es: "+precioVentaPublica
-        +"trumps\nEsto se debe a que al medicamento se le aplica un "+i+"% "
-                + "adicional para su venta publica\ny que, al ser un "
-                + "medicamento refrigerado, se le aplica otro 25% adicional\n"
-                + "al costo");
-    }      
-    
-    @Override
-    protected int comprarMedicamentos()
-    {   //Permite comprar un medicamento refrigerado
-        Scanner scn = new Scanner(System.in);
-        String cad = "";
-        int nComprar = 0;
-        while(!"SI".equals(cad))
-        {   //Se valida si se desea comprar el medicamento
-            nComprar = validarValorNumerico("numero de medicamentos "
-                    + "a comprar",1, unidadesExistentes);
-            double totalCompra = nComprar*precioVentaPublica;
-            System.out.print("Se añadiran "+nComprar+" unidades del\n"
-                    + "medicamento refrigerado "+nombreMedicamento+" a su factura\n"
-                            + "¿Está seguro de su compra? (SI/NO): ");
-            cad = scn.nextLine().toUpperCase();
-            while(!validarLongitudMaximaCadena(cad, 2) && 
-                    ((!"SI".equals(cad)) || (!"NO".equals(cad))))
-            {
-                System.out.print("Se añadiran "+nComprar+" unidades del\n"
-                    + "medicamento refrigerado "+nombreMedicamento+" a su factura\n"
-                            + "¿Está seguro de su compra? (SI/NO): ");
-                cad = scn.nextLine().toUpperCase();
-            }
-        }
-        this.setUnidadesExistentes(unidadesExistentes-nComprar);
-        this.setUnidadesVendidas(unidadesVendidas+nComprar);
-        return nComprar;
-    }
-    
-
 }
