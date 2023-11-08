@@ -3,8 +3,11 @@ package laboratorioevaluado1;
  *
  * @author Jesus Gil y Matias silveira
  */
+
 public abstract class Medicamento 
-{        
+{//clase que define la estructura de los medicamentos   
+    
+    //Atributos de la clase abstracta Medicamento     
     protected String nombreMedicamento;//
     protected int codigoMedicamento;//
     protected double costoMedicamento;//
@@ -15,7 +18,7 @@ public abstract class Medicamento
     protected int vigenciaMercado;//
     protected int numeroLoteMedicamento;//
            
-    
+    //metodos abstractos
     protected abstract void leerDatos();
     protected abstract double calcularPrecioFinal(int porcentajeAdicional);
     protected abstract void mostrarInformacion();
@@ -27,7 +30,5 @@ public abstract class Medicamento
     protected abstract void determinarVencido();    
     protected abstract int comprarMedicamentos();
     protected abstract double calcularTotalCompra(int nComprar);
-    protected abstract int devolverCompra(int nComprar);
-    
+    protected abstract int devolverCompra(int nComprar);   
 }
-
