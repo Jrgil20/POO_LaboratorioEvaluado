@@ -1,0 +1,29 @@
+GitHub Copilot: 
+Sí, hay una forma de evitar la repetición innecesaria de código en las clases hijas.
+Si tienes un método que se implementa de la misma manera en todas las clases hijas,
+puedes considerar mover ese método a la clase padre.
+
+En tu caso, si tienes un método en la clase abstracta `Medicamento` que se implementa
+de la misma manera en todas las clases que extienden `Medicamento`, puedes mover 
+la implementación de ese método a la clase `Medicamento`.
+
+Aquí tienes un ejemplo de cómo hacerlo:
+
+```java
+public abstract class Medicamento {
+    // Atributos y métodos abstractos...
+
+    // Método que se implementa de la misma manera en todas las clases hijas
+    protected double calcularTotalCompra(int nComprar) {
+        // Implementación del método...
+    }
+}
+```
+
+Ahora, todas las clases que extienden `Medicamento` tendrán acceso a la implementación
+de `calcularTotalCompra(int nComprar)` y no necesitarán proporcionar su propia implementación, 
+a menos que necesiten sobrescribir el comportamiento definido en la clase `Medicamento`.
+
+Recuerda que si decides mover la implementación de un método a la clase padre, 
+debes asegurarte de que la implementación es aplicable a todas las clases hijas. 
+Si alguna clase hija necesita una implementación diferente, aún puede sobrescribir el método.
