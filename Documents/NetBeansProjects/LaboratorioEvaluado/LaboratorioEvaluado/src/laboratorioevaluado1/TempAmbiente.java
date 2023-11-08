@@ -329,40 +329,4 @@ public class TempAmbiente extends Medicamento
         }
     }
     
-    @Override
-    protected int alertaReponerInventario()
-    {
-        Scanner scn = new Scanner(System.in);
-        String sNum;
-        if(this.getUnidadesExistentes() < 5)
-        {
-            System.out.println("ALERTA: restan menos de 5 unidades existentes "
-                    + "del medicamento "
-                    +this.getNombreMedicamento().toUpperCase());
-        }
-        else
-        {
-            System.out.println("No es necesario reponer el inventario\npara "
-                    + "el medicamento "
-                    +this.getNombreMedicamento().toUpperCase());
-        }
-        System.out.print("Elija como proceder:"
-                            + "\n1.Reponer el inventario del medicamento"
-                            + " seleccionado"
-                            + "\n2.Regresar al menú principal"
-                            + "\nSu respuesta: ");
-        sNum = scn.nextLine();
-        while(!validarCadenaNumericaYRango(sNum, 1, 2))
-        {
-            System.out.print("Elija como proceder:"
-                            + "\n1.Reponer el inventario del medicamento"
-                            + "seleccionado"
-                            + "\n2.Regresar al menú principal"
-                            + "\nSu respuesta: ");
-        }            
-        int op = Integer.parseInt(sNum);
-        return op;
-    }
-    
-    
 }

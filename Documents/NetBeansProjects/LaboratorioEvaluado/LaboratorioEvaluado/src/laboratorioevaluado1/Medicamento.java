@@ -29,8 +29,7 @@ public abstract class Medicamento implements Validaciones
     protected abstract double calcularPrecioFinal(int porcentajeAdicional);
     protected abstract void mostrarInformacion();
     protected abstract void colocarOferta(int numeroLoteMedicamento);
-    protected abstract void retirarLote(int numeroLoteMedicamento);
-    protected abstract int alertaReponerInventario();      
+    protected abstract void retirarLote(int numeroLoteMedicamento);     
     
     /////////////////////////METODOS CONCRETOS GET Y SET/////////////////////////////////////
 
@@ -205,6 +204,42 @@ public abstract class Medicamento implements Validaciones
                 + "al costo");
     }
 
+    protected int alertaReponerInventario()
+    {   //Alerta si el inventario de un medicamento refrigerado esta por debajo de 5 unidades
+        Scanner scn = new Scanner(System.in);
+        String sNum;
+        if(this.getUnidadesExistentes() < 5)
+        {   //Si el inventario esta por debajo de 5 unidades, se muestra un mensaje de alerta
+            System.out.println("ALERTA: restan menos de 5 unidades existentes "
+                    + "del medicamento refrigerado "
+                    +this.getNombreMedicamento().toUpperCase());
+        }
+        else
+        {   //Si el inventario no esta por debajo de 5 unidades, se muestra un mensaje indicando que no es necesario reponer el inventario
+            System.out.println("No es necesario reponer el inventario\npara "
+                    + "el medicamento refrigerado "
+                    +this.getNombreMedicamento().toUpperCase());
+        }
+        System.out.print("Elija como proceder:"
+                            + "\n1.Reponer el inventario del medicamento"
+                            + " refrigerado seleccionado"
+                            + "\n2.Regresar al menú principal"
+                            + "\nSu respuesta: ");
+        // se solicita la opcion a realizar para reponer el inventario (JRG: que opcion?)
+        sNum = scn.nextLine();
+        while(!validarCadenaNumericaYRango(sNum, 1, 2))
+        {   //Si el valor ingresado no es un numero entero o no esta dentro del rango, se pide de nuevo
+            System.out.print("Elija como proceder:"
+                            + "\n1.Reponer el inventario del medicamento"
+                            + "seleccionado"
+                            + "\n2.Regresar al menú principal"
+                            + "\nSu respuesta: ");
+        }            
+        int op = Integer.parseInt(sNum);
+        //se retorna la opcion elegida
+        return op;
+    }
+
     protected void reponerInventario()
     {   //Repone el inventario de un medicamento refrigerado     
         System.out.println("Se procederá a reponer las unidades existentes"
@@ -227,4 +262,5 @@ public abstract class Medicamento implements Validaciones
                 + unidadesExistentes+" unidades existentes");
     }  
 
+   
 }
