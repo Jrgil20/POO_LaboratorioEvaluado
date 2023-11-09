@@ -1,6 +1,11 @@
+/**
+ * Interfaz que define los métodos de validación de datos.
+ */
 package laboratorioevaluado1;
 
-
+/**
+ * Interfaz que define los métodos de validación de datos.
+ */
 
 public interface Validaciones 
 {// Interface que define los metodos de validacion de datos       

@@ -1,7 +1,14 @@
+/**
+ * Clase que hereda de la clase Medicamento e implementa la interfaz Validaciones.
+ * Representa un medicamento que requiere refrigeración para su conservación.
+ * Contiene atributos como la temperatura mínima y máxima de conservación, y los días que se puede mantener refrigerado una vez abierto.
+ * Además, implementa métodos para validar valores numéricos y fechas, y para calcular el precio de venta al público.
+ */
 package laboratorioevaluado1;
+
+
 //Librerias importadas
 import java.text.ParseException;
-import java.util.Scanner;
 import java.util.Random;
 import java.text.SimpleDateFormat;
 
@@ -88,7 +95,6 @@ public class Refrigerado extends Medicamento
     @Override
     public int validarValorNumerico(String nombreAtributo, int start, int end) 
     {   //Valida si un numero entero esta dentro de un rango
-        Scanner scn = new Scanner(System.in);
         String sNum;
         int n;
         System.out.print("\nPor favor ingrese el "+nombreAtributo
@@ -105,7 +111,6 @@ public class Refrigerado extends Medicamento
             sNum = scn.nextLine();  
         }                
         n = Integer.parseInt(sNum);        
-        scn.close();
         return n;
     }
     
@@ -141,7 +146,7 @@ public class Refrigerado extends Medicamento
     @Override
     public double validarValorNumerico(String nombreAtributo, double start, double end) 
     {   //Valida si un numero double esta dentro de un rango
-        Scanner scn = new Scanner(System.in);
+
         String sNum;
         double n;
         System.out.print("\nPor favor ingrese el "+nombreAtributo
@@ -155,10 +160,10 @@ public class Refrigerado extends Medicamento
                 + " del medicamento refrigerado "+nombreMedicamento+"\n"
                         + "Este valor no puede ser inferior a "+start+
                 " ni superior a "+end+": ");
-            sNum = scn.next();  
+            sNum = scn.next();
+            scn.nextLine();  
         }                
         n = Double.parseDouble(sNum);        
-        scn.close();
         return n;
     }
     
@@ -180,7 +185,28 @@ public class Refrigerado extends Medicamento
             return false;
         }
     }    
-        
+      
+    @Override
+    protected void mostrarCostoYPrecio()
+    {//Muestra el costo y el precio de venta al publico de un medicamento refrigerado
+        System.out.println("El costo del medicamento "
+                + "refrigerado "+nombreMedicamento+" es: "+costoMedicamento
+                +  "trumps");
+        int i = 20;
+        while(((precioVentaPublica-((i*costoMedicamento)/100)-
+                ((25*costoMedicamento)/100)) != costoMedicamento)&&
+                (i <= 100))
+        {   //Se calcula el porcentaje adicional de venta al publico del medicamento
+            i++;
+        }
+        System.out.println("\nEl precio de venta publica del medicamento"
+                + " refrigerado\n"+nombreMedicamento+" es: "+precioVentaPublica
+        +"trumps\nEsto se debe a que al medicamento se le aplica un "+i+"% "
+                + "adicional para su venta publica\ny que, al ser un "
+                + "medicamento refrigerado, se le aplica otro 25% adicional\n"
+                + "al costo");
+    }
+
     @Override
     protected double calcularPrecioFinal(int porcentajeAdicional)
     {   //Calcula el precio de venta al publico de un medicamento refrigerado        
@@ -195,9 +221,9 @@ public class Refrigerado extends Medicamento
         return precioFinal;
     }        
 
+    @Override
     protected void leerDatos() 
     {   //Lee los datos de un medicamento refrigerado
-        Scanner scn = new Scanner(System.in);
         String cad;
         int numInt;
         System.out.print("Por favor ingrese el nombre del medicamento "
@@ -248,7 +274,6 @@ public class Refrigerado extends Medicamento
         diasRefrigerado = validarValorNumerico("numero de dias que se "
                 + "puede mantener refrigerado una "
                 + "vez abierto",1,28);
-        scn.close();
     }    
     
     @Override
@@ -285,8 +310,7 @@ public class Refrigerado extends Medicamento
         System.out.println("Temperatura máxima de conservación: "+tempMaxima);
         System.out.println("Dias que se puede mantener refrigerado\n"
                 + "el medicamento una vez abierto: "+diasRefrigerado);
-        //scn.close();
+
     }    
-    
-    
+      
 }

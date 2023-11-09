@@ -1,7 +1,17 @@
 package laboratorioevaluado1;
+
+/**
+ * Clase TempAmbiente que hereda de la clase Medicamento y que implementa la interfaz Validaciones.
+ * Esta clase representa un medicamento que debe ser almacenado a temperatura ambiente y que tiene una serie de restricciones en cuanto a los lugares donde puede ser almacenado.
+ * Contiene un ArrayList de lugares donde no se debe almacenar el medicamento.
+ * Tiene dos constructores, uno por defecto y otro que se ejecuta cuando se crea un objeto de tipo TempAmbiente.
+ * Implementa los métodos de la interfaz Validaciones para validar valores numéricos y fechas.
+ * También sobrescribe los métodos de la clase Medicamento para calcular el precio final de venta y leer los datos del medicamento.
+ * Finalmente, tiene un método para mostrar la información del medicamento.
+ */
+
 // clases importadas
 import java.text.ParseException;
-import java.util.Scanner;
 import java.util.Random;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -86,8 +96,6 @@ public class TempAmbiente extends Medicamento
     @Override
     public int validarValorNumerico(String nombreAtributo, int start, int end) 
     {// Metodo que valida si un numero esta dentro de un rango
-        
-        Scanner scn = new Scanner(System.in);
         String sNum;
         int n;
         System.out.print("\nPor favor ingrese el "+nombreAtributo
@@ -104,7 +112,6 @@ public class TempAmbiente extends Medicamento
             sNum = scn.nextLine();  
         }                
         n = Integer.parseInt(sNum);        
-        scn.close();
         return n;
     }
     
@@ -140,7 +147,6 @@ public class TempAmbiente extends Medicamento
     @Override
     public double validarValorNumerico(String nombreAtributo, double start, double end) 
     {
-        Scanner scn = new Scanner(System.in);
         String sNum;
         double n;
         System.out.print("\nPor favor ingrese el "+nombreAtributo
@@ -157,7 +163,6 @@ public class TempAmbiente extends Medicamento
             sNum = scn.next();  
         }                
         n = Double.parseDouble(sNum);        
-        scn.close();
         return n;
     }
     
@@ -187,6 +192,25 @@ public class TempAmbiente extends Medicamento
         return precioFinal;
     }      
     
+    @Override
+    protected void mostrarCostoYPrecio()
+    {//Muestra el costo y el precio de venta al publico de un medicamento refrigerado
+        System.out.println("El costo del medicamento "
+                + "refrigerado "+nombreMedicamento+" es: "+costoMedicamento
+                +  "trumps");
+        int i = 20;
+        while(((precioVentaPublica-((i*costoMedicamento)/100)-
+                ((25*costoMedicamento)/100)) != costoMedicamento)&&
+                (i <= 100))
+        {   //Se calcula el porcentaje adicional de venta al publico del medicamento
+            i++;
+        }
+        System.out.println("\nEl precio de venta publica del medicamento"
+                + "\n"+nombreMedicamento+" es: "+precioVentaPublica
+        +"trumps");
+    }
+
+
     public boolean verificarExistenciaLugarNoAlmacenar(String cad)
     {   // Metodo que verifica si un lugar ya existe en el ArrayList de lugares donde no almacenar
         ArrayList<String> aux = lugaresNoAlmacenar;
@@ -196,7 +220,6 @@ public class TempAmbiente extends Medicamento
     @Override
     protected void leerDatos() 
     {// Metodo que lee los datos de un medicamento
-        Scanner scn = new Scanner(System.in);
         String cad;
         int numInt;
         System.out.print("Por favor ingrese el nombre del medicamento\n"
@@ -253,8 +276,7 @@ public class TempAmbiente extends Medicamento
             }
             lugaresNoAlmacenar.add(cad);
         }
-        scn.close();
-       
+
     }    
     
     @Override

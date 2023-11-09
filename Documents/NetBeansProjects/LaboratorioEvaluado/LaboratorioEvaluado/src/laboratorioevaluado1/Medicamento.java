@@ -1,3 +1,14 @@
+/**
+ * Clase abstracta que define la estructura de los medicamentos.
+ * Contiene atributos y métodos abstractos y concretos para la gestión de medicamentos.
+ * Implementa la interfaz Validaciones para validar valores numéricos y de longitud de cadenas.
+ * Esta clase es utilizada por las clases MedicamentoRefrigerado y MedicamentoNoRefrigerado.
+ * @author Jesus Gil
+ * @version 1.0
+ * @see Validaciones
+ * @see MedicamentoRefrigerado
+ * @see MedicamentoNoRefrigerado
+ */
 package laboratorioevaluado1;
 
 import java.text.SimpleDateFormat;
@@ -26,8 +37,12 @@ public abstract class Medicamento implements Validaciones
     /////////////////////////METODOS ABSTRACTOS/////////////////////////////////////
 
     protected abstract void leerDatos();
+    protected abstract void mostrarCostoYPrecio();
     protected abstract double calcularPrecioFinal(int porcentajeAdicional);
     protected abstract void mostrarInformacion();  
+
+    // Crear una única instancia de Scanner como variable estática
+    public static Scanner scn = new Scanner(System.in);
     
     /////////////////////////METODOS CONCRETOS GET Y SET/////////////////////////////////////
 
@@ -172,32 +187,11 @@ public abstract class Medicamento implements Validaciones
             System.out.println("Error, el numero de lote "
                     +numeroLoteMedicamento+" no es valido");
         }
-        //scn.close();
-    }
 
-    protected void mostrarCostoYPrecio()
-    {//Muestra el costo y el precio de venta al publico de un medicamento refrigerado
-        System.out.println("El costo del medicamento "
-                + "refrigerado "+nombreMedicamento+" es: "+costoMedicamento
-                +  "trumps");
-        int i = 20;
-        while(((precioVentaPublica-((i*costoMedicamento)/100)-
-                ((25*costoMedicamento)/100)) != costoMedicamento)&&
-                (i <= 100))
-        {   //Se calcula el porcentaje adicional de venta al publico del medicamento
-            i++;
-        }
-        System.out.println("\nEl precio de venta publica del medicamento"
-                + " refrigerado\n"+nombreMedicamento+" es: "+precioVentaPublica
-        +"trumps\nEsto se debe a que al medicamento se le aplica un "+i+"% "
-                + "adicional para su venta publica\ny que, al ser un "
-                + "medicamento refrigerado, se le aplica otro 25% adicional\n"
-                + "al costo");
     }
 
     protected int comprarMedicamentos()
     {   //Permite comprar un medicamento refrigerado
-        try (Scanner scn = new Scanner(System.in)) {
             String cad = "";
             int nComprar = 0;
             while(!"SI".equals(cad))
@@ -221,7 +215,6 @@ public abstract class Medicamento implements Validaciones
             this.setUnidadesExistentes(unidadesExistentes-nComprar);
             this.setUnidadesVendidas(unidadesVendidas+nComprar);
             return nComprar;
-        }
     }
 
     protected double calcularTotalCompra(int nComprar)
@@ -240,7 +233,6 @@ public abstract class Medicamento implements Validaciones
 
     protected int alertaReponerInventario()
     {   //Alerta si el inventario de un medicamento refrigerado esta por debajo de 5 unidades
-        Scanner scn = new Scanner(System.in);
         String sNum;
         if(this.getUnidadesExistentes() < 5)
         {   //Si el inventario esta por debajo de 5 unidades, se muestra un mensaje de alerta
@@ -261,7 +253,6 @@ public abstract class Medicamento implements Validaciones
                             + "\nSu respuesta: ");
         // se solicita la opcion a realizar para reponer el inventario (JRG: que opcion?)
         sNum = scn.nextLine();
-        scn.close();
         while(!validarCadenaNumericaYRango(sNum, 1, 2))
         {   //Si el valor ingresado no es un numero entero o no esta dentro del rango, se pide de nuevo
             System.out.print("Elija como proceder:"
