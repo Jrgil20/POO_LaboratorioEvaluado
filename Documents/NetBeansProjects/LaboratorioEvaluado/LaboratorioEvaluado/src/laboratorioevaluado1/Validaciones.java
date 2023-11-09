@@ -3,6 +3,10 @@
  */
 package laboratorioevaluado1;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Interfaz que define los métodos de validación de datos.
  */
@@ -80,10 +84,30 @@ public interface Validaciones
                 return true;
     }
 
+    default boolean validarFecha(String fecha) 
+    {   //Valida si una cadena es una fecha con el formato MM/yyyy y si es posterior a la fecha actual
+        try 
+        {   //Si la cadena es una fecha con el formato MM/yyyy y es posterior a la fecha actual, se retorna true
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("MM/yyyy");
+            formatoFecha.setLenient(false);
+            Date fechaIngresada = formatoFecha.parse(fecha);
+            Date fechaActual = new Date();
+            if (fechaIngresada.after(fechaActual)) {
+                return true;
+            } else {
+                System.out.print("\nError, la fecha ingresada debe ser posterior a la fecha actual");
+                return false;
+            }
+        } 
+        catch (ParseException e) 
+        {   //Si la cadena no es una fecha con el formato MM/yyyy, se retorna false
+            System.out.print("\nError, el formato de la fecha debe ser MM/yyyy");
+            return false;
+        }
+    }
+
 /////////////////////////METODOS ABSTRACTOS/////////////////////////////////////
 
     public abstract int validarValorNumerico(String nombreAtributo, int start, int end);
-    public abstract double validarValorNumerico(String nombreAtributo, double start,
-            double end);
-    public boolean validarFecha(String fecha);
+    public abstract double validarValorNumerico(String nombreAtributo, double start,double end);
 }

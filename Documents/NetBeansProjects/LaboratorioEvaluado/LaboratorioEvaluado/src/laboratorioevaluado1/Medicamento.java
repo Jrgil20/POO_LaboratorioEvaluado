@@ -34,13 +34,6 @@ public abstract class Medicamento implements Validaciones
     protected int vigenciaMercado;//
     protected int numeroLoteMedicamento;//
            
-    /////////////////////////METODOS ABSTRACTOS/////////////////////////////////////
-
-    protected abstract void leerDatos();
-    protected abstract void mostrarCostoYPrecio();
-    protected abstract double calcularPrecioFinal(int porcentajeAdicional);
-    protected abstract void mostrarInformacion();  
-
     // Crear una única instancia de Scanner como variable estática
     public static Scanner scn = new Scanner(System.in);
     
@@ -288,4 +281,36 @@ public abstract class Medicamento implements Validaciones
                 + unidadesExistentes+" unidades existentes");
     }  
  
+    public String solicitarNombreMedicamento() {
+        String Nombre;
+        System.out.print("Por favor ingrese el nombre del medicamento\n");
+        System.out.print("Recuerde que dicho nombre no "
+        + "debe exceder a 8 caracteres\nni tener solo espacios  en blanco:");  
+        Nombre = scn.nextLine();
+        while(!validarLongitudMaximaCadena(Nombre, 8) || Nombre.isBlank()) {
+            Nombre = scn.nextLine();
+        }
+        return Nombre;
+    }
+
+    public String solicitarFechaCaducidad() {
+        String FCaducidad;
+        System.out.print("\nIngrese la fecha de caducidad del medicamento\ncon formato (mes/año): ");
+        FCaducidad = scn.nextLine();
+        while (!validarFecha(FCaducidad)) 
+        {
+            System.out.print("\nERROR, la fecha ingresada no tiene el formato "
+                    + "correcto (mes/año). Por favor, ingrese la fecha nuevamente: ");
+            FCaducidad = scn.nextLine();
+        }
+        return FCaducidad;
+    }
+
+    /////////////////////////METODOS ABSTRACTOS/////////////////////////////////////
+
+    protected abstract void leerDatos();
+    protected abstract void mostrarCostoYPrecio();
+    protected abstract double calcularPrecioFinal(int porcentajeAdicional);
+    protected abstract void mostrarInformacion();  
+
 }

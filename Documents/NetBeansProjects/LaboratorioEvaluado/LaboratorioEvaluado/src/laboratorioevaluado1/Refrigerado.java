@@ -8,9 +8,7 @@ package laboratorioevaluado1;
 
 
 //Librerias importadas
-import java.text.ParseException;
 import java.util.Random;
-import java.text.SimpleDateFormat;
 
 public class Refrigerado extends Medicamento 
 {   //Clase que hereda de la clase Medicamento e implementa la interfaz Validaciones
@@ -84,7 +82,6 @@ public class Refrigerado extends Medicamento
     {   //Getter para obtener los dias que se puede mantener refrigerado una vez abierto
         return diasRefrigerado;
     }
-
     public void setDiasRefrigerado(int diasRefrigerado) 
     {   //Setter para establecer los dias que se puede mantener refrigerado una vez abierto
         this.diasRefrigerado = diasRefrigerado;
@@ -169,22 +166,6 @@ public class Refrigerado extends Medicamento
     
 
     /////////////sobreescritura de metodos de la clase Medicamento///////////////
-
-    @Override
-    public boolean validarFecha(String fecha) 
-    {   //Valida si una cadena es una fecha con el formato MM/yyyy
-        try 
-        {   //Si la cadena es una fecha con el formato MM/yyyy, se retorna true
-            SimpleDateFormat formatoFecha = new SimpleDateFormat("MM/yyyy");
-            formatoFecha.setLenient(false);
-            formatoFecha.parse(fecha);
-            return true;
-        } 
-        catch (ParseException e) 
-        {   //Si la cadena no es una fecha con el formato MM/yyyy, se retorna false
-            return false;
-        }
-    }    
       
     @Override
     protected void mostrarCostoYPrecio()
@@ -224,20 +205,9 @@ public class Refrigerado extends Medicamento
     @Override
     protected void leerDatos() 
     {   //Lee los datos de un medicamento refrigerado
-        String cad;
         int numInt;
-        System.out.print("Por favor ingrese el nombre del medicamento "
-                + "refrigerado\n"
-                + "Recuerde que el nombre no puede exceder de los "
-                + "8 caacteres: "); 
-        //  limpiar el buffer 
-        cad = scn.nextLine();
-        while(!validarLongitudMaximaCadena(cad, 8))
-        {   //Si el nombre excede los 8 caracteres, se pide de nuevo
-            cad = scn.nextLine();
-        }
         //  asignar el nombre del medicamento
-        nombreMedicamento = cad;
+        nombreMedicamento = solicitarNombreMedicamento();
         //  asignar el codigo del medicamento
         codigoMedicamento = validarValorNumerico("codigo",10000000,99999999);
         //  asignar el costo del medicamento
@@ -255,25 +225,14 @@ public class Refrigerado extends Medicamento
         //  asignar el numero de lote del medicamento
         numeroLoteMedicamento = validarValorNumerico("numero de lote",10000000,99999999);
         //  asignar la fecha de caducidad del medicamento
-        System.out.print("\nIngrese la fecha de caducidad del medicamento "
-                +"refrigerado\ncon formato (mes/año): ");
-        cad = scn.nextLine();
-        while (!validarFecha(cad)) 
-        {   //Si la fecha no tiene el formato correcto, se pide de nuevo
-            System.out.print("\nERROR, la fecha ingresada no tiene el formato "
-                    + "correcto (mes/año). Por favor, ingrese la fecha "
-                    + "nuevamente: ");
-            cad= scn.nextLine();
-        }
-        fechaCaducidad = cad;
+        fechaCaducidad = solicitarFechaCaducidad();
         //  asignar la temperatura minima de conservacion del medicamento
         tempMinima = validarValorNumerico("temperatura mínima",0.0,2.0);
         //  asignar la temperatura maxima de conservacion del medicamento
         tempMaxima = validarValorNumerico("temperatura máxima",tempMinima+2.1,8.0);
         //  asignar los dias que se puede mantener refrigerado una vez abierto
         diasRefrigerado = validarValorNumerico("numero de dias que se "
-                + "puede mantener refrigerado una "
-                + "vez abierto",1,28);
+                + "puede mantener refrigerado una vez abierto",1,28);
     }    
     
     @Override
@@ -312,5 +271,5 @@ public class Refrigerado extends Medicamento
                 + "el medicamento una vez abierto: "+diasRefrigerado);
 
     }    
-      
+     
 }

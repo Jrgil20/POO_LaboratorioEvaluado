@@ -11,9 +11,7 @@ package laboratorioevaluado1;
  */
 
 // clases importadas
-import java.text.ParseException;
 import java.util.Random;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class TempAmbiente extends Medicamento 
@@ -166,22 +164,6 @@ public class TempAmbiente extends Medicamento
         return n;
     }
     
-    @Override
-    public boolean validarFecha(String fecha) 
-    {   // Metodo que valida si una cadena es una fecha con el formato MM/yyyy
-        try 
-        {
-            SimpleDateFormat formatoFecha = new SimpleDateFormat("MM/yyyy");
-            formatoFecha.setLenient(false);
-            formatoFecha.parse(fecha);
-            return true;
-        } 
-        catch (ParseException e) 
-        {
-            return false;
-        }
-    }
-
     /////////////sobreescritura de metodos de la clase Medicamento///////////////
 
     @Override
@@ -222,42 +204,17 @@ public class TempAmbiente extends Medicamento
     {// Metodo que lee los datos de un medicamento
         String cad;
         int numInt;
-        System.out.print("Por favor ingrese el nombre del medicamento\n"
-                + "Recuerde que dicho nombre no "
-                + "debe exceder a 8 caracteres\nni tener solo espacios "
-                    + "en blanco: ");  
-        cad = scn.nextLine();
-        while(!validarLongitudMaximaCadena(cad, 8) || cad.isBlank())
-        {
-            cad = scn.nextLine();
-        }
-        nombreMedicamento = cad;
-        codigoMedicamento = validarValorNumerico("codigo",
-                10000000,99999999);
-        costoMedicamento = validarValorNumerico("costo", 1.0,
-                3500000.99);
-        numInt = validarValorNumerico("porcentaje adicional de "
-                + "venta al publico", 20, 100);
+        // Se le pide al usuario que ingrese los datos del medicamento
+        nombreMedicamento = solicitarNombreMedicamento();
+        codigoMedicamento = validarValorNumerico("codigo",10000000,99999999);
+        costoMedicamento = validarValorNumerico("costo", 1.0,3500000.99);
+        numInt = validarValorNumerico("porcentaje adicional de venta al publico", 20, 100);
         precioVentaPublica = calcularPrecioFinal(numInt);
-        unidadesExistentes = validarValorNumerico("unidades existentes",
-                1, 9999999);
-        unidadesVendidas = validarValorNumerico("unidades vendidas",1,
-                unidadesExistentes);
-        vigenciaMercado = validarValorNumerico("vigencia en mercado",
-                0,2);
-        numeroLoteMedicamento = validarValorNumerico("numero de lote",
-                10000000,99999999);
-        System.out.print("\nIngrese la fecha de caducidad del medicamento "
-                +"\ncon formato (mes/año): ");
-        cad = scn.nextLine();
-        while (!validarFecha(cad)) 
-        {
-            System.out.print("\nERROR, la fecha ingresada no tiene el formato "
-                    + "correcto (mes/año). Por favor, ingrese la fecha "
-                    + "nuevamente: ");
-            cad= scn.nextLine();
-        }
-        fechaCaducidad = cad;
+        unidadesExistentes = validarValorNumerico("unidades existentes",1, 9999999);
+        unidadesVendidas = validarValorNumerico("unidades vendidas",1,unidadesExistentes);
+        vigenciaMercado = validarValorNumerico("vigencia en mercado",0,2);
+        numeroLoteMedicamento = validarValorNumerico("numero de lote",10000000,99999999);
+        fechaCaducidad = solicitarFechaCaducidad();
         for(int i = 0; i < 3; i++)
         {
             System.out.print("Por favor ingrese un lugar donde no se debe\n"
