@@ -10,11 +10,15 @@ public class Menu
     
     // Crear una única instancia de Scanner como variable estática
     public static Scanner scn = new Scanner(System.in);
+    
+    //Crear una variable opcion para todo el menu
+    public static int opcion;    
 
     public static int validarOpcion(int a, int b)
-    {   // Metodo que valida si una opcion esta dentro de un rango
+    {   // Metodo que valida si una opcion esta dentro de un rango 
+        //entre los valores enteros a y b
 
-            int opcion = scn.nextInt();
+            opcion = scn.nextInt();
             scn.nextLine();
             if(opcion < a || opcion > b)
             {
@@ -58,7 +62,7 @@ public class Menu
     
     public static void menuDeCompra(Refrigerado mediRefri)
     {   // Metodo que permite comprar medicamentos
-        int opcion = -1;
+        opcion = -1;
         int mediRefriCompradas = 0;
         int mediTempAmbienteCompradas = 0;
         double totalFactura = 0;
@@ -75,7 +79,7 @@ public class Menu
                     + "\n3. Devolver medicamentos añadidos al carrito"
                     + "\n4. Finalizar compra");
             System.out.print("Opción: ");
-            opcion = validarOpcion(1,3);
+            opcion = validarOpcion(1,4);
             switch(opcion)
             {
                 case 1:
@@ -140,8 +144,7 @@ public class Menu
     }
     
     public static Refrigerado menuAgregarMedicamento(Refrigerado medi)
-    {   // Metodo que permite agregar medicamentos
-        int opcion;        
+    {   // Metodo que permite agregar medicamentos de tipo refrigerado
         System.out.println("Indique como desea crear el "
                 + "medicamento (1-3): ");
         System.out.println("1. Crear con valores "
@@ -168,8 +171,7 @@ public class Menu
     }
     
     public static TempAmbiente menuAgregarMedicamento(TempAmbiente medi)
-    {
-        int opcion;        
+    {   // Metodo que permite agregar medicamentos de tipo temperatura ambiente
         System.out.println("Indique como desea crear el "
                 + "medicamento (1-3): ");
         System.out.println("1. Crear con valores "
@@ -195,42 +197,84 @@ public class Menu
         return medi;
     }
     
-    public static void menuPrincipal()
-    {
-         // Crear un objetos de la clase Medicamento
+    public static void menuCliente()
+    {   //Metodo de menu para la interaccion del cliente de la famracia
+        //con el programa de gestion de la misma
+        
+        //Creacion de instacias de ambos tipos de medicamento para su compra
+        //por el cliente
         Refrigerado mediRefri = new Refrigerado();
         TempAmbiente mediTempAmbiente = new TempAmbiente();
-            OUTER:
-            while (true) {
-                int opcion;
-                System.out.println("Seleccione una opción:");
-                System.out.println("1. Verificar si un medicamento está vencido");
-                System.out.println("2. Consultar datos de un medicamento");
-                System.out.println("3. Agregar un medicamento");
-                System.out.println("4. Colocar oferta de medicamento");
-                System.out.println("5. Retirar lote de medicamento");
-                System.out.println("6. Verificar el inventario de un medicamento");
-                System.out.println("7. Ver costo y precio de un medicamento");
-                System.out.println("8. Comprar medicamentos");
-                System.out.println("9. Salir");
-                System.out.print("Opción: ");
+        
+        
+        boolean endOfClientMenu = true;
+        
+        while(endOfClientMenu)
+        {
+            System.out.print("\nMENU DEL CLIENTE"
+                    + "\nSeleccione una opcion:"
+                    + "\n1. Comprar medicamentos"
+                    + "\n2. Salir"
+                    + "\nOpcion: ");
+            opcion = validarOpcion(1,2);
+            switch(opcion)
+            {
+                case 1:
+                {
+                    menuDeCompra(mediRefri);
+                    systemPause();
+                    break;
+                }
+                case 2:
+                {
+                    System.out.println("\nRegresando al menú principal\n");
+                    endOfClientMenu = false;
+                    break;
+                }
+            }
+        }
+        
+    }
+    
+    public static void menuAdministrador()
+    {   //Metodo de menu para la interaccion del administrador de la famracia
+        //con el programa de gestion de la misma
+         // Crear objetos de la clase Medicamento
+        Refrigerado mediRefri = new Refrigerado();
+        TempAmbiente mediTempAmbiente = new TempAmbiente();
+        boolean endOfAdminMenu = true;
+            while (endOfAdminMenu) {
+                System.out.print("\nMENU DEL ADMINISTRADOR"
+                        + "\nSeleccione una opción:"
+                        +"\n1. Verificar si un medicamento está vencido"
+                        + "\n2. Consultar datos de un medicamento"
+                        + "\n3. Agregar un medicamento"
+                        + "\n4. Colocar oferta de medicamento"
+                        + "\n5. Retirar lote de medicamento"
+                        + "\n6. Verificar el inventario de un medicamento"
+                        + "\n7. Ver costo y precio de un medicamento"
+                        +"\n8. Regresar"
+                        + "\nOpcion: ");
                 opcion = validarOpcion(1,9);
                 switch (opcion) 
                 {
                     case 1:
                         {                             
                             mediRefri.determinarVencido(); 
+                            systemPause();
                             break;
                         }
                     case 2:
                         {
                             
                             mediRefri.mostrarInformacion();
+                            systemPause();
                             break;
                         }
                     case 3:
                         {       
-                            System.out.println("\nIndique el tipo de medicamento "
+                            System.out.println("\nIndique el tipo "
+                                    + "de medicamento "
                                     + "que desea agregar:"
                                     + "\n1. Medicamento de tipo refrigerado "
                                     + "(temperatura entre 2 y 8 grados)"
@@ -241,18 +285,17 @@ public class Menu
                             opcion = validarOpcion(1,2);
                             if(opcion == 1)
                             {
-                                //mediRefri = menuAgregarMedicamento(new Refrigerado());
                                 listaRefrigerado.add(menuAgregarMedicamento
                                         (new Refrigerado()
                                         ));
                             }
                             else
                             {
-                                //mediTempAmbiente = menuAgregarMedicamento(new TempAmbiente());
                                 listaTempAmbiente.add(
                                         menuAgregarMedicamento(new TempAmbiente()
                                         ));
                             }
+                            systemPause();
                             break;
                         }
                     case 4:
@@ -261,7 +304,8 @@ public class Menu
                                 + "medicamento que desea coloar en oferta: ");
                         int numeroLoteMedicamento = scn.nextInt();
                         scn.nextLine();
-                        mediRefri.colocarOferta(numeroLoteMedicamento);                    
+                        mediRefri.colocarOferta(numeroLoteMedicamento); 
+                        systemPause();
                         break;
                     }
                     case 5:
@@ -271,6 +315,7 @@ public class Menu
                         int numeroLoteMedicamento = scn.nextInt();
                         scn.nextLine();
                         mediRefri.retirarLote(numeroLoteMedicamento);
+                        systemPause();
                         break;
                     }                       
                     case 6:
@@ -278,25 +323,59 @@ public class Menu
                         opcion = mediRefri.alertaReponerInventario();                        
                         if(opcion == 1)
                             mediRefri.reponerInventario();
+                        systemPause();
                         break;
                     }
                     case 7:
                     {
                         mediRefri.mostrarCostoYPrecio();
+                        systemPause();
                         break;
                     }
                     case 8:
-                    {
-                        menuDeCompra(mediRefri);
+                    {                        
+                        System.out.println("\nRegresando al menú principal\n");
+                        endOfAdminMenu = false;
                         break;
                     }
-                    case 9:
-                    {
-                        break OUTER;
-                    }
                 }
-                systemPause();
-            }
-        scn.close();
+            }       
     }
+    
+    public static void menuPrincipal()
+    {
+        boolean endOfProgram = true; 
+        
+        while(endOfProgram)
+        {
+            System.out.println("¡Bienvenido a la FARMACIA GENÉRICA 2024!");
+            System.out.print("Seleccione una opcion: "
+                    + "\n1. Acceder como administrador"
+                    + "\n2. Acceder como cliente"
+                    + "\n3. Salir"
+                    + "\nOpcion: ");
+            opcion = validarOpcion(1,3);
+            switch(opcion)
+            {
+                case 1:
+                {
+                    menuAdministrador();
+                    break;
+                }
+                case 2:
+                {
+                    menuCliente();
+                    break;
+                }
+                case 3:
+                {
+                    System.out.println("Gracias por usar el programa de "
+                            + "la FARMACIA GENÉRICA 2024\nVuelva pronto ;)");
+                    endOfProgram = false;
+                    break;
+                }
+            }
+            systemPause(); 
+        }
+    }    
 }
