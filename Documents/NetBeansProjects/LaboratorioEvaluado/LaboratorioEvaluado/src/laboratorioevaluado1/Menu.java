@@ -5,8 +5,10 @@ import java.util.Scanner;
 
 public class Menu 
 {// Clase Menu
-    private static ArrayList<Refrigerado> listaRefrigerado = new ArrayList<>();
-    private static ArrayList<TempAmbiente> listaTempAmbiente = new ArrayList<>();
+    private static ArrayList<Refrigerado> listaRefrigerado = 
+            new ArrayList<>();
+    private static ArrayList<TempAmbiente> listaTempAmbiente = 
+            new ArrayList<>();
     
     // Crear una única instancia de Scanner como variable estática
     public static Scanner scn = new Scanner(System.in);
@@ -60,43 +62,58 @@ public class Menu
         return mediCompradas;
     }
     
-    public static void menuDeCompra(Refrigerado mediRefri)
+    public static void menuDeCompra(Refrigerado mediRefri
+            , TempAmbiente mediTempAmbiente)
     {   // Metodo que permite comprar medicamentos
         opcion = -1;
         int mediRefriCompradas = 0;
         int mediTempAmbienteCompradas = 0;
         double totalFactura = 0;
-        while(opcion != 4)
-        {   // Mientras el usuario no seleccione la opcion de finalizar compra
-            System.out.println("\nSu carrito ahora mismo consta de:\n"
-                    + "Medicinas refrigeradas: "+mediRefriCompradas
-                    +"\nMedicinas a temperatura ambiente: "
-                    +mediTempAmbienteCompradas
-                    +"\nTotal de compra: "+totalFactura+"trumps");
+        ArrayList<Refrigerado> carritoDeCompraRefri = 
+            new ArrayList<>();
+        ArrayList<TempAmbiente> carritoDeCompraTempAmbiente = 
+            new ArrayList<>();
+        
+        while(opcion != 5)
+        {   // Mientras el usuario no seleccione la opcion de finalizar compra            
             System.out.println("\nSeleccione una opción:"
                     + "\n1. Comprar medicamentos termolábiles/refrigerados"
                     + "\n2. Comprar medicamentos de temperatura ambiente"
-                    + "\n3. Devolver medicamentos añadidos al carrito"
-                    + "\n4. Finalizar compra");
+                    + "\n3. Ver estado actual del carrito de compras"
+                    + "\n4. Devolver medicamentos añadidos al carrito"
+                    + "\n5. Finalizar compra");
             System.out.print("Opción: ");
-            opcion = validarOpcion(1,4);
+            opcion = validarOpcion(1,5);
             switch(opcion)
             {
                 case 1:
                 {
                     mediRefriCompradas += mediRefri.comprarMedicamentos();
-                    totalFactura = mediRefriCompradas*
+                    totalFactura += mediRefriCompradas*
                             mediRefri.getPrecioVentaPublica();
                     systemPause();
                     break;
                 }
                 case 2:
                 {
-                    System.out.println("Esta opción no está disponible.");
+                    mediTempAmbienteCompradas += 
+                            mediTempAmbiente.comprarMedicamentos();
+                    totalFactura += mediTempAmbienteCompradas*
+                            mediRefri.getPrecioVentaPublica();
                     systemPause();
                     break;
                 }
                 case 3:
+                {
+                    System.out.println("\nSu carrito ahora mismo consta de:\n"
+                    + "Medicinas refrigeradas: "+mediRefriCompradas
+                    +"\nMedicinas a temperatura ambiente: "
+                    +mediTempAmbienteCompradas
+                    +"\nTotal de compra: "+totalFactura+"trumps\n");
+                    systemPause();
+                    break;
+                }
+                case 4:
                 {
                     System.out.println("Indique el tipo de medicamentos"
                             + "que desea devolver:"
@@ -134,7 +151,7 @@ public class Menu
                     }
                     break;
                 }
-                case 4:
+                case 5:
                 {
                     System.out.println("Ahora regresará al menú principal");                    
                     break;
@@ -221,7 +238,7 @@ public class Menu
             {
                 case 1:
                 {
-                    menuDeCompra(mediRefri);
+                    menuDeCompra(mediRefri, mediTempAmbiente);
                     systemPause();
                     break;
                 }
