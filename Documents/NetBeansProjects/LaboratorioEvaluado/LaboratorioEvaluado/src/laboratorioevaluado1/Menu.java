@@ -8,14 +8,50 @@ public class Menu
     private static ArrayList<Refrigerado> listaRefrigerado = 
             new ArrayList<>();
     private static ArrayList<TempAmbiente> listaTempAmbiente = 
-            new ArrayList<>();
+            new ArrayList<>();   
     
     // Crear una única instancia de Scanner como variable estática
     public static Scanner scn = new Scanner(System.in);
     
     //Crear una variable opcion para todo el menu
-    public static int opcion;    
-
+    public static int opcion;  
+    
+    
+/////////////////////////////VALIDACIONES///////////////////////////////////////
+    
+    public static boolean existeLoteMedicamento(int nLote){
+        //Metodo para validar la existencia de ciertos medicamentos según el 
+        //lote
+        for(int i = 0; i < listaRefrigerado.size(); i++){
+            if(listaRefrigerado.get(i).getNumeroLoteMedicamento() == nLote)
+                return true;
+        }
+        for(int i = 0; i < listaTempAmbiente.size(); i++){
+            if(listaTempAmbiente.get(i).getNumeroLoteMedicamento() == nLote)
+                return true;
+        }
+        return false;
+    }
+    
+    public static boolean existeNombreMedicamento(String nombre){
+        //Metodo para validar la existencia de ciertos medicamentos según el 
+        //lote
+        for(int i = 0; i < listaRefrigerado.size(); i++){
+            if(listaRefrigerado.get(i)
+                    .getNombreMedicamento()
+                    .equals(nombre))
+                return true;
+        }
+        for(int i = 0; i < listaTempAmbiente.size(); i++){
+            if(listaTempAmbiente
+                    .get(i)
+                    .getNombreMedicamento()
+                    .equals(nombre))
+                return true;
+        }
+        return false;
+    }
+    
     public static int validarOpcion(int a, int b)
     {   // Metodo que valida si una opcion esta dentro de un rango 
         //entre los valores enteros a y b
@@ -31,6 +67,50 @@ public class Menu
             }
             return opcion;
     }
+    
+/////////////////////////////FIN VALIDACIONES///////////////////////////////////
+    
+/////////////////////////////BUSQUEDAS///////////////////////////////////////    
+    
+    public static ArrayList<Refrigerado> buscarRefriPorLote(int nLote, 
+            ArrayList<Refrigerado> lista){        
+        for(int i = 0; i < listaRefrigerado.size(); i++){
+            if(listaRefrigerado.get(i).getNumeroLoteMedicamento() == nLote)
+                lista.add(listaRefrigerado.get(i));
+        }
+        return lista;
+    }
+    
+    public static ArrayList<TempAmbiente> buscarTempAmbientePorLote(int nLote, 
+            ArrayList<TempAmbiente> lista){        
+        for(int i = 0; i < listaTempAmbiente.size(); i++){
+            if(listaTempAmbiente.get(i).getNumeroLoteMedicamento() == nLote)
+                lista.add(listaTempAmbiente.get(i));
+        }
+        return lista;
+    }
+    
+    public static Refrigerado buscarRefriPorNombre(String nombre){        
+        for(int i = 0; i < listaRefrigerado.size(); i++){
+            if(listaRefrigerado.get(i)
+                    .getNombreMedicamento()
+                    .equals(nombre))
+                return listaRefrigerado.get(i);
+        }
+        return null;
+    }
+    
+    public static TempAmbiente buscarTempAmbientePorNombre(String nombre){        
+        for(int i = 0; i < listaTempAmbiente.size(); i++){
+            if(listaTempAmbiente.get(i)
+                    .getNombreMedicamento()
+                    .equals(nombre))
+                return listaTempAmbiente.get(i);
+        }
+        return null;
+    }
+
+/////////////////////////////FIN BUSQUEDAS//////////////////////////////////////  
     
     public static void systemPause()
     {   // Metodo que pausa el sistema hasta que el usuario presione enter
@@ -62,8 +142,7 @@ public class Menu
         return mediCompradas;
     }
     
-    public static void menuDeCompra(Refrigerado mediRefri
-            , TempAmbiente mediTempAmbiente)
+    public static void menuDeCompra()
     {   // Metodo que permite comprar medicamentos
         opcion = -1;
         int mediRefriCompradas = 0;
@@ -88,18 +167,35 @@ public class Menu
             {
                 case 1:
                 {
-                    mediRefriCompradas += mediRefri.comprarMedicamentos();
-                    totalFactura += mediRefriCompradas*
-                            mediRefri.getPrecioVentaPublica();
+                    
+                    carritoDeCompraRefri.add(listaRefrigerado.get(0));
+                    for(int i = 0; i < carritoDeCompraRefri.size(); i++){
+                        mediRefriCompradas +=
+                                carritoDeCompraRefri
+                                        .get(i)
+                                        .comprarMedicamentos();
+                        totalFactura += mediRefriCompradas*
+                                carritoDeCompraRefri
+                                        .get(i)
+                                        .getPrecioVentaPublica();
+                    }
                     systemPause();
                     break;
                 }
                 case 2:
                 {
-                    mediTempAmbienteCompradas += 
-                            mediTempAmbiente.comprarMedicamentos();
-                    totalFactura += mediTempAmbienteCompradas*
-                            mediRefri.getPrecioVentaPublica();
+                    carritoDeCompraTempAmbiente
+                            .add(listaTempAmbiente.get(0));
+                    for(int i = 0; i < carritoDeCompraTempAmbiente.size(); i++){
+                        mediTempAmbienteCompradas +=
+                                carritoDeCompraTempAmbiente
+                                        .get(i)
+                                        .comprarMedicamentos();
+                        totalFactura += mediTempAmbienteCompradas*
+                                carritoDeCompraTempAmbiente
+                                        .get(i)
+                                        .getPrecioVentaPublica();
+                    }
                     systemPause();
                     break;
                 }
@@ -126,11 +222,11 @@ public class Menu
                     {
                         case 1:
                         {
-                            mediRefriCompradas = menuDeDevolucion(mediRefri,
-                                    null,
-                                    mediRefriCompradas);
-                            totalFactura = mediRefriCompradas*
-                                    mediRefri.getPrecioVentaPublica();
+                           // mediRefriCompradas = menuDeDevolucion(mediRefri,
+                            //        null,
+                            //        mediRefriCompradas);
+                            //totalFactura = mediRefriCompradas*
+                                    //mediRefri.getPrecioVentaPublica();
                             break;
                         }
                         case 2:
@@ -238,7 +334,7 @@ public class Menu
             {
                 case 1:
                 {
-                    menuDeCompra(mediRefri, mediTempAmbiente);
+                    menuDeCompra();
                     systemPause();
                     break;
                 }
@@ -256,9 +352,6 @@ public class Menu
     public static void menuAdministrador()
     {   //Metodo de menu para la interaccion del administrador de la famracia
         //con el programa de gestion de la misma
-         // Crear objetos de la clase Medicamento
-        Refrigerado mediRefri = new Refrigerado();
-        TempAmbiente mediTempAmbiente = new TempAmbiente();
         boolean endOfAdminMenu = true;
             while (endOfAdminMenu) {
                 System.out.print("\nMENU DEL ADMINISTRADOR"
@@ -277,14 +370,14 @@ public class Menu
                 {
                     case 1:
                         {                             
-                            mediRefri.determinarVencido(); 
+                            listaRefrigerado.get(0).determinarVencido(); 
                             systemPause();
                             break;
                         }
                     case 2:
                         {
                             
-                            mediRefri.mostrarInformacion();
+                            listaRefrigerado.get(0).mostrarInformacion();
                             systemPause();
                             break;
                         }
@@ -321,7 +414,8 @@ public class Menu
                                 + "medicamento que desea coloar en oferta: ");
                         int numeroLoteMedicamento = scn.nextInt();
                         scn.nextLine();
-                        mediRefri.colocarOferta(numeroLoteMedicamento); 
+                        listaRefrigerado.get(0)
+                                .colocarOferta(numeroLoteMedicamento); 
                         systemPause();
                         break;
                     }
@@ -331,21 +425,25 @@ public class Menu
                                 + "medicamento que desea retirar del mercado: ");
                         int numeroLoteMedicamento = scn.nextInt();
                         scn.nextLine();
-                        mediRefri.retirarLote(numeroLoteMedicamento);
+                        listaRefrigerado.get(0)
+                                .retirarLote(numeroLoteMedicamento);
                         systemPause();
                         break;
                     }                       
                     case 6:
                     {
-                        opcion = mediRefri.alertaReponerInventario();                        
+                        opcion = listaRefrigerado.get(0)
+                                .alertaReponerInventario();                        
                         if(opcion == 1)
-                            mediRefri.reponerInventario();
+                            listaRefrigerado.get(0)
+                                    .reponerInventario();
                         systemPause();
                         break;
                     }
                     case 7:
                     {
-                        mediRefri.mostrarCostoYPrecio();
+                        listaRefrigerado.get(0)
+                                .mostrarCostoYPrecio();
                         systemPause();
                         break;
                     }
@@ -362,6 +460,8 @@ public class Menu
     public static void menuPrincipal()
     {
         boolean endOfProgram = true; 
+        listaRefrigerado.add(new Refrigerado());
+        listaTempAmbiente.add(new TempAmbiente());
         
         while(endOfProgram)
         {
