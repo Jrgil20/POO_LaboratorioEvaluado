@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu 
-{// Clase Menu
+{
+    // Clase Menu
     private static ArrayList<Refrigerado> listaRefrigerado = 
             new ArrayList<>();
     private static ArrayList<TempAmbiente> listaTempAmbiente = 
-            new ArrayList<>();   
+            new ArrayList<>();
+    private static ArrayList<Integer> lotesRegistradosRefri = new ArrayList<>();
+    private static ArrayList<Integer> lotesRegistradosTempAmbiente 
+            = new ArrayList<>();
     
     // Crear una única instancia de Scanner como variable estática
     public static Scanner scn = new Scanner(System.in);
@@ -19,16 +23,27 @@ public class Menu
     
 /////////////////////////////VALIDACIONES///////////////////////////////////////
     
-    public static boolean existeLoteMedicamento(int nLote){
+    public static boolean existeLoteMedicamento(int nLote, boolean esRefri, 
+            boolean esTempAmbiente){
         //Metodo para validar la existencia de ciertos medicamentos según el 
         //lote
-        for(int i = 0; i < listaRefrigerado.size(); i++){
-            if(listaRefrigerado.get(i).getNumeroLoteMedicamento() == nLote)
-                return true;
+        if(esRefri == true && esTempAmbiente == false)
+        {
+            for(int i = 0; i < listaRefrigerado.size(); i++)
+            {
+                if(listaRefrigerado.get(i)
+                        .getNumeroLoteMedicamento() == nLote)
+                    return true;
+            }
         }
-        for(int i = 0; i < listaTempAmbiente.size(); i++){
-            if(listaTempAmbiente.get(i).getNumeroLoteMedicamento() == nLote)
-                return true;
+        else if(esTempAmbiente == true && esRefri == false)
+        {
+            for(int i = 0; i < listaTempAmbiente.size(); i++)
+            {
+                if(listaTempAmbiente.get(i)
+                        .getNumeroLoteMedicamento() == nLote)
+                    return true;
+            }
         }
         return false;
     }
@@ -72,26 +87,36 @@ public class Menu
     
 /////////////////////////////BUSQUEDAS///////////////////////////////////////    
     
-    public static ArrayList<Refrigerado> buscarRefriPorLote(int nLote){        
+    public static ArrayList<Refrigerado> buscarRefriPorLote(int nLote)
+    { 
         ArrayList<Refrigerado> lista = new ArrayList<>();
-        for(int i = 0; i < listaRefrigerado.size(); i++){
-            if(listaRefrigerado.get(i).getNumeroLoteMedicamento() == nLote)
+        
+        for(int i = 0; i < listaRefrigerado.size(); i++)
+        {
+            if(listaRefrigerado.get(i)
+                    .getNumeroLoteMedicamento() == nLote)
                 lista.add(listaRefrigerado.get(i));
         }
         return lista;
     }
     
-    public static ArrayList<TempAmbiente> buscarTempAmbientePorLote(int nLote){
+    public static ArrayList<TempAmbiente> buscarTempAmbientePorLote(int nLote)
+    {
         ArrayList<TempAmbiente> lista = new ArrayList<>();
-        for(int i = 0; i < listaTempAmbiente.size(); i++){
-            if(listaTempAmbiente.get(i).getNumeroLoteMedicamento() == nLote)
+        
+        for(int i = 0; i < listaTempAmbiente.size(); i++)
+        {
+            if(listaTempAmbiente.get(i)
+                    .getNumeroLoteMedicamento() == nLote)
                 lista.add(listaTempAmbiente.get(i));
         }
         return lista;
     }
     
-    public static Refrigerado buscarRefriPorNombre(String nombre){        
-        for(int i = 0; i < listaRefrigerado.size(); i++){
+    public static Refrigerado buscarRefriPorNombre(String nombre)
+    {        
+        for(int i = 0; i < listaRefrigerado.size(); i++)
+        {
             if(listaRefrigerado.get(i)
                     .getNombreMedicamento()
                     .equals(nombre))
@@ -100,8 +125,10 @@ public class Menu
         return null;
     }
     
-    public static TempAmbiente buscarTempAmbientePorNombre(String nombre){        
-        for(int i = 0; i < listaTempAmbiente.size(); i++){
+    public static TempAmbiente buscarTempAmbientePorNombre(String nombre)
+    {        
+        for(int i = 0; i < listaTempAmbiente.size(); i++)
+        {
             if(listaTempAmbiente.get(i)
                     .getNombreMedicamento()
                     .equals(nombre))
@@ -230,7 +257,8 @@ public class Menu
                             + " del o\nde los medicamentos que desea agregar"
                             + " a su carrito: ");
                     lote = scn.nextInt();
-                    while(existeLoteMedicamento(lote) != true)
+                    while(existeLoteMedicamento(lote, 
+                            true, false) != true)
                     {
                         System.out.print("Error, el lote ingresado no existe "
                                 + "para medicamentos de tipo refrigerado\n"
@@ -264,18 +292,26 @@ public class Menu
                 }
                 case 2:
                 {
-                    carritoDeCompraTempAmbiente
-                            .add(listaTempAmbiente.get(0));
-                    for(int i = 0; i < carritoDeCompraTempAmbiente.size(); i++){
-                        mediTempAmbienteCompradas +=
-                                carritoDeCompraTempAmbiente
-                                        .get(i)
-                                        .comprarMedicamentos();
-                        totalFactura += mediTempAmbienteCompradas*
-                                carritoDeCompraTempAmbiente
-                                        .get(i)
-                                        .getPrecioVentaPublica();
+                    System.out.print("Por favor ingrese el número de lote"
+                            + " del o\nde los medicamentos que desea agregar"
+                            + " a su carrito: ");
+                    lote = scn.nextInt();
+                    while(existeLoteMedicamento(lote, 
+                            false, true) != true)
+                    {
+                        System.out.print("Error, el lote ingresado no existe "
+                                + "para medicamentos de "
+                                + "tipo temperatura ambiente\n"
+                                + "Por favor ingrese el número de lote"
+                            + " del o\nde los medicamentos que desea agregar"
+                            + " a sucarrito: ");
+                        lote = scn.nextInt();    
                     }
+                    auxListaTempAmbiente = buscarTempAmbientePorLote(lote);
+                    medTempAmbiente = listaTempAmbiente
+                            .get(elegirDelLoteTempAmbiente
+                                (auxListaTempAmbiente, lote));
+                    carritoDeCompraTempAmbiente.add(medTempAmbiente);
                     systemPause();
                     break;
                 }
@@ -360,6 +396,9 @@ public class Menu
                 medi.leerDatos();
                 break;
         }
+        if(lotesRegistradosRefri.indexOf(medi.getNumeroLoteMedicamento())
+                        == -1)
+                    lotesRegistradosRefri.add(medi.getNumeroLoteMedicamento());
         return medi;
     }
     
@@ -387,6 +426,11 @@ public class Menu
                 medi.leerDatos();
                 break;
         }
+        if(lotesRegistradosTempAmbiente
+                .indexOf(medi.getNumeroLoteMedicamento())
+                        == -1)
+                    lotesRegistradosTempAmbiente
+                            .add(medi.getNumeroLoteMedicamento());
         return medi;
     }
     
@@ -433,7 +477,11 @@ public class Menu
     {   //Metodo de menu para la interaccion del administrador de la famracia
         //con el programa de gestion de la misma
         boolean endOfAdminMenu = true;
+        int lote = 0;     
             while (endOfAdminMenu) {
+                int cont = 0;
+                ArrayList<Refrigerado> auxListaRefri = new ArrayList<>();
+                ArrayList<TempAmbiente> auxListaTempAmbiente = new ArrayList<>();
                 System.out.print("\nMENU DEL ADMINISTRADOR"
                         + "\nSeleccione una opción:"
                         +"\n1. Verificar si un medicamento está vencido"
@@ -449,15 +497,133 @@ public class Menu
                 switch (opcion) 
                 {
                     case 1:
-                        {                             
+                        {   
                             listaRefrigerado.get(0).determinarVencido(); 
                             systemPause();
                             break;
                         }
                     case 2:
                         {
-                            
-                            listaRefrigerado.get(0).mostrarInformacion();
+                            System.out.print("\n\nPor favor indique cual de "
+                                    + "los dos tipos de medicamentos desea "
+                                    + "consultar su información"
+                                    + "\n1. Tipo Refrigerado"
+                                    + "\n2. Tipo Temperatura Ambiente"
+                                    + "\nOpción: ");
+                            opcion = validarOpcion(1,2);
+                            switch(opcion)
+                            {
+                                case 1: 
+                                {                                   
+                                    System.out.println("Por favor indique "
+                                            + "cual de los siguientes lotes\n"
+                                            + "de medicamentos refrigerados"
+                                            + " desea revisar");                                    
+                                    for(int i = 0; i < lotesRegistradosRefri
+                                            .size();
+                                            i++)
+                                    {
+                                        System.out.println(i+". "+
+                                                lotesRegistradosRefri
+                                                        .get(i));
+                                        cont++;
+                                    }
+                                    System.out.print("Opcion: ");
+                                    opcion = validarOpcion(0,cont);
+                                    lote = lotesRegistradosRefri
+                                            .get(opcion);
+                                    for(int i = 0; i < listaRefrigerado.size();
+                                            i++)
+                                    {
+                                        if(listaRefrigerado.get(i)
+                                            .getNumeroLoteMedicamento() == lote)
+                                            auxListaRefri.add(
+                                                    listaRefrigerado
+                                                            .get(i));
+                                    }
+                                    System.out.println("Por favor indique "
+                                            + "cual de los siguientes"
+                                            + " medicamentos refrigerados\n"
+                                            + "del lote indicado "
+                                            + "desea consultar");
+                                    cont = 0;
+                                    for(int i = 0; i < auxListaRefri.size();
+                                            i++)
+                                    {
+                                        System.out.println(i+". "+
+                                                auxListaRefri.get(i)
+                                                .getNombreMedicamento());
+                                        cont++;
+                                    }
+                                    System.out.print("Opcion: ");
+                                    opcion = validarOpcion(0,cont);
+                                    for(int i = 0; i < auxListaRefri.size();
+                                            i++)
+                                    {
+                                        if(i == opcion)
+                                            auxListaRefri.get(i)
+                                            .mostrarInformacion();   
+                                    }                                    
+                                    break;
+                                }
+                                case 2: 
+                                {
+                                    System.out.println("Por favor indique "
+                                            + "cual de los siguientes lotes\n"
+                                            + "de medicamentos de temperatura "
+                                            + "ambiente"
+                                            + " desea revisar");                                    
+                                    for(int i = 0; i < 
+                                            lotesRegistradosTempAmbiente
+                                            .size();
+                                            i++)
+                                    {
+                                        System.out.println(i+". "+
+                                                lotesRegistradosTempAmbiente
+                                                        .get(i));
+                                        cont++;
+                                    }
+                                    System.out.print("Opcion: ");
+                                    opcion = validarOpcion(0,cont);
+                                    lote = lotesRegistradosTempAmbiente
+                                            .get(opcion);
+                                    for(int i = 0; i < listaTempAmbiente.size();
+                                            i++)
+                                    {
+                                        if(listaTempAmbiente.get(i)
+                                            .getNumeroLoteMedicamento() == lote)
+                                            auxListaTempAmbiente.add(
+                                                    listaTempAmbiente
+                                                            .get(i));
+                                    }
+                                    System.out.println("Por favor indique "
+                                            + "cual de los siguientes"
+                                            + " medicamentos de temperatura "
+                                            + "ambiente\n"
+                                            + "del lote indicado "
+                                            + "desea consultar");
+                                    cont = 0;
+                                    for(int i = 0; i < auxListaTempAmbiente
+                                            .size();
+                                            i++)
+                                    {
+                                        System.out.println(i+". "+
+                                                auxListaTempAmbiente.get(i)
+                                                .getNombreMedicamento());
+                                        cont++;
+                                    }
+                                    System.out.print("Opcion: ");
+                                    opcion = validarOpcion(0,cont);                                    
+                                    for(int i = 0; i < auxListaTempAmbiente.size();
+                                            i++)
+                                    {
+                                        if(i == opcion)
+                                            auxListaTempAmbiente.get(i)
+                                            .mostrarInformacion();   
+                                    }                                    
+                                    break;
+                                }
+                            }
                             systemPause();
                             break;
                         }
@@ -542,6 +708,10 @@ public class Menu
         boolean endOfProgram = true; 
         listaRefrigerado.add(new Refrigerado());
         listaTempAmbiente.add(new TempAmbiente());
+        lotesRegistradosRefri.add(listaRefrigerado.get(0)
+                .getNumeroLoteMedicamento());
+        lotesRegistradosTempAmbiente.add(listaTempAmbiente.get(0)
+                .getNumeroLoteMedicamento());
         
         while(endOfProgram)
         {
