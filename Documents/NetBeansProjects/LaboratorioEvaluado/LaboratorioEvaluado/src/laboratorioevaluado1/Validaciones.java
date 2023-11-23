@@ -24,7 +24,7 @@ public interface Validaciones
             // se elimino n, ya que no se usa y solo queremos saver si se paresa a un numero
             return true;
         } 
-        catch (NumberFormatException ex) 
+        catch (NumberFormatException e) 
         {
             System.out.print("\nERROR, el valor ingresado no es un numero");
             return false;
@@ -39,7 +39,7 @@ public interface Validaciones
            //lo mismo que la anterior, se elimina n
            return true;
         } 
-        catch (NumberFormatException ex) 
+        catch (NumberFormatException e) 
         {
             System.out.print("\nERROR, el valor ingresado no es un numero");
             return false;

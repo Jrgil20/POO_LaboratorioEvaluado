@@ -171,6 +171,9 @@ public class TempAmbiente extends Medicamento
     {// Metodo que calcula el precio final de un medicamento        
         double precioFinal = costoMedicamento+
                 ((porcentajeAdicional*costoMedicamento)/100);
+                if (Double.isInfinite(precioFinal)) {
+                    throw new ArithmeticException("El porcentaje adicional es demasiado grande.");
+                }        
         return precioFinal;
     }      
     
@@ -181,11 +184,14 @@ public class TempAmbiente extends Medicamento
                 + "refrigerado "+nombreMedicamento+" es: "+costoMedicamento
                 +  "trumps");
         int i = 20;
-        while(((precioVentaPublica-((i*costoMedicamento)/100)-
+        if (costoMedicamento!=0)
+        {   
+            while(((precioVentaPublica-((i*costoMedicamento)/100)-
                 ((25*costoMedicamento)/100)) != costoMedicamento)&&
                 (i <= 100))
-        {   //Se calcula el porcentaje adicional de venta al publico del medicamento
-            i++;
+            {   //Se calcula el porcentaje adicional de venta al publico del medicamento
+                i++;
+            }
         }
         System.out.println("\nEl precio de venta publica del medicamento"
                 + "\n"+nombreMedicamento+" es: "+precioVentaPublica
