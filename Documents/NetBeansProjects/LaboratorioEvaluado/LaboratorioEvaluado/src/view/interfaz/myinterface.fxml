@@ -1,0 +1,10 @@
+<Rectangle  fx:id="_bg___desktop___1" width="1440" height="1024"  layoutX="0" layoutY="0" >
+    <fill>
+        <LinearGradient>
+            <stops>
+                <Stop color="#a49fe0FF" />
+                <Stop color="#a49fe000" offset="1.0" />
+            </stops>
+        </LinearGradient>
+    </fill>
+</Rectangle>
