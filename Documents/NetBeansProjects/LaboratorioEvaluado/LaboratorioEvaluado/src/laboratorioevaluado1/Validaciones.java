@@ -24,7 +24,7 @@ public interface Validaciones
             // se elimino n, ya que no se usa y solo queremos saver si se paresa a un numero
             return true;
         } 
-        catch (NumberFormatException e) 
+        catch (NumberFormatException ex) 
         {
             System.out.print("\nERROR, el valor ingresado no es un numero");
             return false;
@@ -39,7 +39,7 @@ public interface Validaciones
            //lo mismo que la anterior, se elimina n
            return true;
         } 
-        catch (NumberFormatException e) 
+        catch (NumberFormatException ex) 
         {
             System.out.print("\nERROR, el valor ingresado no es un numero");
             return false;
@@ -104,6 +104,13 @@ public interface Validaciones
             System.out.print("\nError, el formato de la fecha debe ser MM/yyyy");
             return false;
         }
+    }
+
+/////////////////////////METODOS ABSTRACTOS/////////////////////////////////////
+
+    public abstract int validarValorNumerico(String nombreAtributo, int start, int end);
+    public abstract double validarValorNumerico(String nombreAtributo, double start,double end);
+}
     }
 
 /////////////////////////METODOS ABSTRACTOS/////////////////////////////////////
