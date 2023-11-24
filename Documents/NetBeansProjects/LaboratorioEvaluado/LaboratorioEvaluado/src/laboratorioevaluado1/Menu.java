@@ -35,12 +35,21 @@ public class Menu
     
     //Crear una variable lote para toda parte del menú que requiera el mismo
     public static int lote;
+    
+    //Crear una de tipo contador (cont) 
+    //para toda parte del menú que requiera el mismo
+    public static int cont;
 
     public static void systemPause()
     {   // Metodo que pausa el sistema hasta que el usuario presione enter
         System.out.println("Presione enter para continuar...");
         scn.nextLine();
-    }    
+    }
+
+    public static void reestablecerContEnCero()
+    {
+        cont = 0;
+    }
     
 //////////////////////////FIN ATRIBUTOS DE LA CLASE/////////////////////////////
     
@@ -291,7 +300,6 @@ public class Menu
     public static void consultarRefrigerado()
     {
         ArrayList<Refrigerado> auxListaRefri = new ArrayList<>();                
-        int cont = 0;
         System.out.println("Por favor indique "
                 + "cual de los siguientes lotes\n"
                 + "de medicamentos refrigerados"
@@ -323,7 +331,6 @@ public class Menu
     public static void consultarTempAmbiente()
     {
         ArrayList<TempAmbiente> auxListaTempAmbiente = new ArrayList<>();
-        int cont = 0;
         System.out.println("Por favor indique "
                 + "cual de los siguientes lotes\n"
                 + "de medicamentos de temperatura "
@@ -515,7 +522,6 @@ public class Menu
             ArrayList<Integer> nTempAmbiente,
             double totalFactura)
     {
-        int cont = 0;
         double costoMedicinas = 0;
         if(carritoRefri.isEmpty() && carritoTempAmbiente.isEmpty())
             System.out.println("Aún no se han añadido medicamentos de ningún "
@@ -534,7 +540,7 @@ public class Menu
                 System.out.print("\nMedicinas de tipo refrigerado en total: "+cont
                             +"\tTrumps "+costoMedicinas);
                 costoMedicinas = 0;
-                cont = 0;
+                reestablecerContEnCero();
             }
             if(!carritoTempAmbiente.isEmpty())
             {
@@ -734,8 +740,9 @@ public class Menu
                 {
                     System.out.println("Ahora regresará al menú principal");                    
                     break;
-                }
+                }                
             }            
+            reestablecerContEnCero();
         }
     }
     
@@ -942,7 +949,6 @@ public class Menu
     public static void reponerInventarioRefri()
     {
         ArrayList<Refrigerado> auxListaRefri = new ArrayList<>();
-        int lote = 0, cont = 0;
         System.out.println("Por favor indique "
                 + "cual de los siguientes lotes\n"
                 + "de medicamentos refrigerados "
@@ -974,7 +980,6 @@ public class Menu
     public static void reponerInventarioTempAmbiente()
     {
         ArrayList<TempAmbiente> auxListaTempAmbiente = new ArrayList<>();
-        int lote = 0, cont = 0;
         System.out.println("Por favor indique "
                 + "cual de los siguientes lotes\n"
                 + "de medicamentos de temperatura "
@@ -1007,7 +1012,6 @@ public class Menu
     public static void mostrarCostoYPrecioRefri()
     {
         ArrayList<Refrigerado> auxListaRefri = new ArrayList<>();
-        int lote = 0, cont = 0;
         System.out.println("Por favor indique "
                 + "cual de los siguientes lotes\n"
                 + "de medicamentos refrigerados "
@@ -1037,7 +1041,6 @@ public class Menu
     public static void mostrarCostoYPrecioTempAmbiente()
     {
         ArrayList<TempAmbiente> auxListaTempAmbiente = new ArrayList<>();
-        int lote = 0, cont = 0;
         System.out.println("Por favor indique "
                 + "cual de los siguientes lotes\n"
                 + "de medicamentos de temperatura "
@@ -1083,7 +1086,6 @@ public class Menu
     
     public static void modificarRefrigerado(){
         ArrayList<Refrigerado> auxListaRefrigerado = new ArrayList<>();
-        int lote = 0, cont = 0;
         System.out.println("Por favor indique "
                 + "cual de los siguientes lotes\n"
                 + "de medicamentos de temperatura "
@@ -1120,7 +1122,6 @@ public class Menu
     
     public static void modificarTempAmbiente(){
         ArrayList<TempAmbiente> auxListaTempAmbiente = new ArrayList<>();
-        int lote = 0, cont = 0;
         System.out.println("Por favor indique "
                 + "cual de los siguientes lotes\n"
                 + "de medicamentos de temperatura "
@@ -1181,6 +1182,7 @@ public class Menu
                     break;
                 }
             }
+            reestablecerContEnCero();
         }
         
     }
@@ -1200,7 +1202,8 @@ public class Menu
                         + "\n6. Verificar el inventario de un medicamento"
                         + "\n7. Ver costo y precio de un medicamento"
                         + "\n8. Modificar datos de un medicamento"
-                        +"\n9. Regresar"
+                        + "\n9. Eliminar un medicamento"
+                        + "\n10. Regresar"
                         + "\nOpcion: ");
                 opcion = validarOpcion(1,9);
                 switch (opcion) 
@@ -1326,11 +1329,16 @@ public class Menu
                     }
                     case 9:
                     {                        
+                        
+                    }
+                    case 10:
+                    {
                         System.out.println("\nRegresando al menú principal\n");
                         endOfAdminMenu = false;
                         break;
-                    }
+                    }                    
                 }
+                reestablecerContEnCero();
             }       
     }
     
