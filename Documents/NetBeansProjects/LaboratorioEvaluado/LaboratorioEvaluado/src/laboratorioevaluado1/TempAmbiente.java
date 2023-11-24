@@ -171,9 +171,6 @@ public class TempAmbiente extends Medicamento
     {// Metodo que calcula el precio final de un medicamento        
         double precioFinal = costoMedicamento+
                 ((porcentajeAdicional*costoMedicamento)/100);
-                if (Double.isInfinite(precioFinal)) {
-                    throw new ArithmeticException("El porcentaje adicional es demasiado grande.");
-                }        
         return precioFinal;
     }      
     
@@ -184,14 +181,11 @@ public class TempAmbiente extends Medicamento
                 + "refrigerado "+nombreMedicamento+" es: "+costoMedicamento
                 +  "trumps");
         int i = 20;
-        if (costoMedicamento!=0)
-        {   
-            while(((precioVentaPublica-((i*costoMedicamento)/100)-
+        while(((precioVentaPublica-((i*costoMedicamento)/100)-
                 ((25*costoMedicamento)/100)) != costoMedicamento)&&
                 (i <= 100))
-            {   //Se calcula el porcentaje adicional de venta al publico del medicamento
-                i++;
-            }
+        {   //Se calcula el porcentaje adicional de venta al publico del medicamento
+            i++;
         }
         System.out.println("\nEl precio de venta publica del medicamento"
                 + "\n"+nombreMedicamento+" es: "+precioVentaPublica
@@ -278,6 +272,98 @@ public class TempAmbiente extends Medicamento
             System.out.println(i+".-"+lugaresNoAlmacenar1);
             i++;
         }
-    }    
+    }
+
+    @Override
+    protected void modificarDatos(int opcion)
+    {
+        //Metodo para modificar los datos de un medicamento
+        int numInt = 0;
+        switch(opcion){   
+            case 1:
+            {
+                //  asignar el nombre del medicamento
+                nombreMedicamento = solicitarNombreMedicamento();
+                break;
+            }
+            case 2:
+            {
+                //  asignar el codigo del medicamento
+                codigoMedicamento = validarValorNumerico("codigo",10000000,99999999);
+                break;
+            }
+            case 3:
+            {
+                //  asignar el costo del medicamento
+                costoMedicamento = validarValorNumerico("costo", 1.0,3500000.99);
+                break;
+            }
+            case 4:
+            {
+                // asignar el precio de venta al publico del medicamento
+                numInt = validarValorNumerico("porcentaje adicional de " + "venta al publico", 20, 100);
+                break;
+            }
+            case 5:
+            {
+                //  calcular el precio de venta al publico
+                precioVentaPublica = calcularPrecioFinal(numInt);
+                break;
+            }
+            case 6:
+            {
+                //  asignar las unidades existentes del medicamento
+                unidadesExistentes = validarValorNumerico("unidades existentes", 1, 9999999);
+                break;
+            }
+            case 7:
+            {
+                //  asignar las unidades vendidas del medicamento
+                unidadesVendidas = validarValorNumerico("unidades vendidas",1,unidadesExistentes);
+                break;
+            }
+            case 8:
+            {
+                //  asignar la vigencia en el mercado del medicamento
+                vigenciaMercado = validarValorNumerico("vigencia en mercado",0,2);
+                break;
+            }
+            case 9:
+            {
+                //  asignar el numero de lote del medicamento
+                numeroLoteMedicamento = validarValorNumerico("numero de lote",10000000,99999999);
+                break;
+            }
+            case 10:
+            {
+                //  asignar la fecha de caducidad del medicamento
+                fechaCaducidad = solicitarFechaCaducidad();
+                break;
+            }
+            case 11:
+            {
+                String cad;
+               for(int i = 0; i < 3; i++)
+                {
+                    System.out.print("Por favor ingrese un lugar donde no se debe\n"
+                        + "almacenar el medicamento\nRecuerde que dicho nombre no "
+                        + "debe ser inferior a 5 caracteres\nni tener solo espacios "
+                        + "en blanco, tampoco puede ser un lugar ya agregadoo: ");  
+                    cad = scn.nextLine();
+                while((!validarLongitudMaximaCadena(cad, 8)) || cad.isBlank()
+                    || verificarExistenciaLugarNoAlmacenar(cad))
+                {
+                    System.out.print("Por favor ingrese un lugar donde no se debe\n"
+                        + "almacenar el medicamento\nRecuerde que dicho lugar no "
+                        + "debe exceder a 8 caracteres\nni tener solo espacios "
+                        + "en blanco, tampoco puede ser un lugar ya agregadoo: ");
+                    cad = scn.nextLine();
+                }
+                lugaresNoAlmacenar.add(cad);
+                }
+                break;
+            }           
+        }
+    } 
     
 }
