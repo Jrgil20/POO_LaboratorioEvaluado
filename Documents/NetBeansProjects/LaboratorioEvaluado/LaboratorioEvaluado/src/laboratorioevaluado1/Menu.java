@@ -1310,18 +1310,18 @@ public class Menu
                     {
                         System.out.print("\n\nPor favor indique cual de "
                                     + "los dos tipos de medicamentos desea "
-                                    + "verificar su inventario"
+                                    + "modificar"
                                     + "\n1. Tipo Refrigerado"
                                     + "\n2. Tipo Temperatura Ambiente"
                                     + "\nOpción: ");
                         opcion = validarOpcion(1,2);
                         if(opcion == 1)
                         {
-                            
+                            modificarRefrigerado();
                         }
                         else
                         {
-                            
+                            modificarTempAmbiente();
                         }
                     }
                     case 9:

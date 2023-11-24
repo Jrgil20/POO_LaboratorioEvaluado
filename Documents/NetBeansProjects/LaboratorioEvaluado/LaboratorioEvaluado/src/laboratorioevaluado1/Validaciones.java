@@ -110,11 +110,6 @@ public interface Validaciones
 
     public abstract int validarValorNumerico(String nombreAtributo, int start, int end);
     public abstract double validarValorNumerico(String nombreAtributo, double start,double end);
-}
-    }
 
-/////////////////////////METODOS ABSTRACTOS/////////////////////////////////////
-
-    public abstract int validarValorNumerico(String nombreAtributo, int start, int end);
-    public abstract double validarValorNumerico(String nombreAtributo, double start,double end);
 }
+
