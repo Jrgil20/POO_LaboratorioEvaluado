@@ -45,6 +45,30 @@ public class Menu
         System.out.println("Presione enter para continuar...");
         scn.nextLine();
     }
+    
+    public static boolean sinRefrigerados()
+    {
+        if(listaRefrigerado.isEmpty())
+        {
+            System.out.println("Error, esta operación no se puede ejecutar"
+                    + " debido a que no hay "
+                    + "medicamentos refrigerados disponibles");
+            return true;
+        }
+        return false;
+    }
+    
+    public static boolean sinTempAmbiente()
+    {
+        if(listaRefrigerado.isEmpty())
+        {
+            System.out.println("Error, esta operación no se puede ejecutar"
+                    + " debido a que no hay "
+                    + "medicamentos temperatura ambiente disponibles");
+            return true;
+        }
+        return false;
+    }
 
     public static void reestablecerContEnCero()
     {
@@ -95,24 +119,7 @@ public class Menu
         return false;
     }
     
-    public static boolean existeNombreMedicamento(String nombre){
-        //Metodo para validar la existencia de ciertos medicamentos según el 
-        //lote
-        for(int i = 0; i < listaRefrigerado.size(); i++){
-            if(listaRefrigerado.get(i)
-                    .getNombreMedicamento()
-                    .equals(nombre))
-                return true;
-        }
-        for(int i = 0; i < listaTempAmbiente.size(); i++){
-            if(listaTempAmbiente
-                    .get(i)
-                    .getNombreMedicamento()
-                    .equals(nombre))
-                return true;
-        }
-        return false;
-    }
+
     
     public static int validarOpcion(int a, int b)
     {   // Metodo que valida si una opcion esta dentro de un rango 
@@ -243,7 +250,7 @@ public class Menu
                     .get(opcion);
     }
   
-//////////////////////////FIN SOLICITUDES DE LOTES//////////////////////////////
+//////////////////////////FIN SOLICITUDES DE LOTES//////////////////////////////  
     
 /////////////////////////////BUSQUEDAS///////////////////////////////////////    
     
@@ -331,40 +338,48 @@ public class Menu
     }
         
 /////////////////////////////FIN PANTALLAS DE ENCONTRADOS///////////////////////
+
+//////////////////////////OBTENCION DE UN MEDICAMENTO///////////////////////////
+    
+    public static void obtenerRefrigerado()
+    {
+        ArrayList<Refrigerado> auxListaRefrigerado = new ArrayList<>();
+        auxListaRefrigerado = buscarRefriPorLote(lote);
+        auxRefrigerado = auxListaRefrigerado
+                .get(
+                elegirDelLoteRefri(
+            auxListaRefrigerado,lote));  
+    }
+    
+    public static void obtenerTempAmbiente()
+    {
+        ArrayList<TempAmbiente> auxListaTempAmbiente = new ArrayList<>();
+        auxListaTempAmbiente = buscarTempAmbientePorLote(lote);
+        auxTempAmbiente = auxListaTempAmbiente
+                .get(
+                elegirDelLoteTempAmbiente(
+            auxListaTempAmbiente,lote));   
+    }    
+    
+////////////////////////FIN OBTENCION DE UN MEDICAMENTO/////////////////////////          
         
 ///////////////////////////CONSULTAS DE MEDICAMENTOS////////////////////////////
             
     public static void consultarRefrigerado()
     {
-        //Metodo para un consultar un medicamento refrigerado de un lote
-        ArrayList<Refrigerado> auxListaRefri = new ArrayList<>();                
+        //Metodo para un consultar un medicamento refrigerado de un lote               
         solicitarNumeroLoteRefrigerado();
-        auxListaRefri = 
-                buscarRefriPorLote(
-                lote);  
-        auxRefrigerado = auxListaRefri
-                .get(
-                elegirDelLoteRefri(
-            auxListaRefri,lote));
+        obtenerRefrigerado();
         auxRefrigerado.mostrarInformacion();
-        systemPause();
     }
     
     public static void consultarTempAmbiente()
     {
         //Metodo para un consultar un medicamento temperatura ambiente 
-        //de un lote
-        ArrayList<TempAmbiente> auxListaTempAmbiente = new ArrayList<>();
+        //de un lote        
         solicitarNumeroLoteTempAmbiente();
-        auxListaTempAmbiente = 
-                buscarTempAmbientePorLote(
-                lote);  
-        auxTempAmbiente = auxListaTempAmbiente
-                .get(
-                elegirDelLoteTempAmbiente(
-            auxListaTempAmbiente,lote));
-        auxTempAmbiente.mostrarInformacion();
-        systemPause();  
+        obtenerTempAmbiente();
+        auxTempAmbiente.mostrarInformacion(); 
     }
     
 /////////////////////////FIN CONSULTAS DE MEDICAMENTOS//////////////////////////       
@@ -674,9 +689,9 @@ public class Menu
         ArrayList<Integer> nTempAmbiente = new ArrayList<>();
         double totalFactura = 0;
         ArrayList<Refrigerado> carritoRefri = 
-            new ArrayList<>(), auxListaRefri = new ArrayList<>();
+            new ArrayList<>();
         ArrayList<TempAmbiente> carritoTempAmbiente = 
-            new ArrayList<>(), auxListaTempAmbiente = new ArrayList<>();
+            new ArrayList<>();
         
         while(opcion != 5)
         {   // Mientras el usuario no seleccione la opcion de finalizar compra            
@@ -693,10 +708,7 @@ public class Menu
                 case 1:
                 {
                     solicitarNumeroLoteRefrigerado();
-                    auxListaRefri = buscarRefriPorLote(lote);
-                    auxRefrigerado = listaRefrigerado
-                            .get(elegirDelLoteRefri
-                                (auxListaRefri, lote));
+                    obtenerRefrigerado();
                     if(validarMedicamentoEnCarrito(
                             carritoRefri,auxRefrigerado) == false)
                         carritoRefri.add(auxRefrigerado); 
@@ -712,10 +724,7 @@ public class Menu
                 case 2:
                 {
                     solicitarNumeroLoteTempAmbiente();                   
-                    auxListaTempAmbiente = buscarTempAmbientePorLote(lote);
-                    auxTempAmbiente = listaTempAmbiente
-                            .get(elegirDelLoteTempAmbiente
-                                (auxListaTempAmbiente, lote));
+                    obtenerTempAmbiente();
                     if(validarMedicamentoEnCarrito(
                             carritoTempAmbiente,auxTempAmbiente) 
                             == false)
@@ -961,13 +970,7 @@ public class Menu
     
     public static void reponerInventarioRefri()
     {
-        ArrayList<Refrigerado> auxListaRefri = new ArrayList<>();
-        solicitarNumeroLoteRefrigerado();
-        auxListaRefri = buscarRefriPorLote(lote);
-        auxRefrigerado = auxListaRefri
-                .get(
-                elegirDelLoteRefri(
-            auxListaRefri,lote));
+        obtenerRefrigerado();
         opcion = auxRefrigerado.alertaReponerInventario();
         if(opcion == 1)
             auxRefrigerado.reponerInventario();
@@ -975,13 +978,7 @@ public class Menu
     
     public static void reponerInventarioTempAmbiente()
     {
-        ArrayList<TempAmbiente> auxListaTempAmbiente = new ArrayList<>();
-        solicitarNumeroLoteTempAmbiente();
-        auxListaTempAmbiente = buscarTempAmbientePorLote(lote);
-        auxTempAmbiente = auxListaTempAmbiente
-                .get(
-                elegirDelLoteTempAmbiente(
-            auxListaTempAmbiente,lote));
+        obtenerTempAmbiente();
         opcion = auxTempAmbiente.alertaReponerInventario();
         if(opcion == 1)
             auxTempAmbiente.reponerInventario();
@@ -989,26 +986,13 @@ public class Menu
     
     public static void mostrarCostoYPrecioRefri()
     {
-        ArrayList<Refrigerado> auxListaRefri = new ArrayList<>();
-        solicitarNumeroLoteRefrigerado();
-        auxListaRefri = buscarRefriPorLote(lote);
-        auxRefrigerado = auxListaRefri
-                .get(
-                elegirDelLoteRefri(
-            auxListaRefri,lote));
+        obtenerRefrigerado();
         auxRefrigerado.mostrarCostoYPrecio();
     }
     
     public static void mostrarCostoYPrecioTempAmbiente()
     {
-        ArrayList<TempAmbiente> auxListaTempAmbiente = new ArrayList<>();
-
-        
-        auxListaTempAmbiente = buscarTempAmbientePorLote(lote);
-        auxTempAmbiente = auxListaTempAmbiente
-                .get(
-                elegirDelLoteTempAmbiente(
-            auxListaTempAmbiente,lote));
+        obtenerTempAmbiente();
         auxTempAmbiente.mostrarCostoYPrecio();
     }
     
@@ -1029,13 +1013,7 @@ public class Menu
     }
     
     public static void modificarRefrigerado(){
-        ArrayList<Refrigerado> auxListaRefrigerado = new ArrayList<>();
-        solicitarNumeroLoteRefrigerado();
-        auxListaRefrigerado = buscarRefriPorLote(lote);
-        auxRefrigerado = auxListaRefrigerado
-                .get(
-                elegirDelLoteRefri(
-            auxListaRefrigerado,lote));
+        obtenerRefrigerado();
         imprimirDatosModificables();
         System.out.print("\n11. Temperatura mínima"
                 + "\n12. Temperatura máxima"
@@ -1047,13 +1025,7 @@ public class Menu
     }
     
     public static void modificarTempAmbiente(){
-        ArrayList<TempAmbiente> auxListaTempAmbiente = new ArrayList<>();
-        solicitarNumeroLoteTempAmbiente();
-        auxListaTempAmbiente = buscarTempAmbientePorLote(lote);
-        auxTempAmbiente = auxListaTempAmbiente
-                .get(
-                elegirDelLoteTempAmbiente(
-            auxListaTempAmbiente,lote));
+        obtenerTempAmbiente();
         imprimirDatosModificables();
         System.out.print("\n11. Lugares donde no se debe colocar"
                 + "\nOpcion: ");
@@ -1065,15 +1037,11 @@ public class Menu
     {
         //Metodo que permite eliminar un medicamento refrigerado
         boolean endOfEliminate = true;
-        while(endOfEliminate)
+        while(endOfEliminate && !sinRefrigerados())
         {
-            ArrayList<Refrigerado> auxListaRefrigerado = new ArrayList<>();
+            reestablecerContEnCero();
             solicitarNumeroLoteRefrigerado();
-            auxListaRefrigerado = buscarRefriPorLote(lote);
-            auxRefrigerado = auxListaRefrigerado
-                    .get(
-                    elegirDelLoteRefri(
-                auxListaRefrigerado,lote));       
+            obtenerRefrigerado();
             System.out.println("¿Está seguro de que desea eliminar "
                     + "este medicamento?"
                     + "\n1. Si"
@@ -1090,7 +1058,8 @@ public class Menu
                 }
                 if(cont == 1)
                 {
-                    lotesRegistradosRefri.remove(lote);
+                    lotesRegistradosRefri.remove
+                    (lotesRegistradosRefri.indexOf(lote));
                 }
                 listaRefrigerado.remove(auxRefrigerado);
                 System.out.println("Se ha eliminado el medicamento "
@@ -1116,16 +1085,11 @@ public class Menu
     {
         //Metodo que permite eliminar un medicamento temperatura ambiente
         boolean endOfEliminate = true;
-        while(endOfEliminate)
+        while(endOfEliminate && !sinTempAmbiente())
         {
             reestablecerContEnCero();
-            ArrayList<TempAmbiente> auxListaTempAmbiente = new ArrayList<>();
             solicitarNumeroLoteTempAmbiente();
-            auxListaTempAmbiente = buscarTempAmbientePorLote(lote);
-            auxTempAmbiente = auxListaTempAmbiente
-                    .get(
-                    elegirDelLoteTempAmbiente(
-                auxListaTempAmbiente,lote));       
+            obtenerTempAmbiente();
             System.out.println("¿Está seguro de que desea eliminar "
                     + "este medicamento?"
                     + "\n1. Si"
@@ -1142,7 +1106,8 @@ public class Menu
                 }
                 if(cont == 1)
                 {
-                    lotesRegistradosTempAmbiente.remove(lote);
+                    lotesRegistradosTempAmbiente.remove
+                    (lotesRegistradosTempAmbiente.indexOf(lote));
                 }
                 listaTempAmbiente.remove(auxTempAmbiente);
                 System.out.println("Se ha eliminado el medicamento "
@@ -1162,7 +1127,25 @@ public class Menu
             if(opcion == 2)
                 endOfEliminate = false;
         }
-    } 
+    }
+    
+    public static void vencidoRefrigerado()
+    {
+        //Metodo que permite saber si un medicamento refrigerado
+        //esta vencido
+        solicitarNumeroLoteRefrigerado();
+        obtenerRefrigerado();
+        auxRefrigerado.determinarVencido();
+    }
+    
+    public static void vencidoTempAmbiente()
+    {        
+        //Metodo que permite saber si un medicamento temperatura ambiente
+        //esta vencido
+        solicitarNumeroLoteTempAmbiente();
+        obtenerTempAmbiente();
+        auxTempAmbiente.determinarVencido();
+    }
     
     public static void menuCliente()
     {   //Método de menu para la interaccion del cliente de la famracia
@@ -1217,36 +1200,40 @@ public class Menu
                         + "\n9. Eliminar un medicamento"
                         + "\n10. Regresar"
                         + "\nOpcion: ");
-                opcion = validarOpcion(1,9);
+                opcion = validarOpcion(1,10);
                 switch (opcion) 
                 {
                     case 1:
                         {   
-                            //falta
-                            listaRefrigerado.get(0).determinarVencido(); 
+                            seleccionarTipoMedicamento("saber si "
+                                    + "está venciado");
+                            if(opcion == 1 && !sinRefrigerados())
+                                vencidoRefrigerado();
+                            else if(opcion == 2 && !sinTempAmbiente())
+                                vencidoTempAmbiente();
                             systemPause();
                             break;
                         }
                     case 2:
                         {
                             seleccionarTipoMedicamento("consultar");
-                            opcion = validarOpcion(1,2);
-                            if(opcion == 1)                           
+                            if(opcion == 1 && !sinRefrigerados())
                                 consultarRefrigerado();
-                            else
+                            else if(opcion == 2 && !sinTempAmbiente())
                                 consultarTempAmbiente();
+                            systemPause();
                             break;
                         }                        
                     case 3:
                         {       
                             seleccionarTipoMedicamento("agregar");
-                            if(opcion == 1)
+                            if(opcion == 1 && !sinRefrigerados())
                             {
                                 listaRefrigerado.add(menuAgregarMedicamento
                                         (new Refrigerado()
                                         ));
                             }
-                            else
+                            else if(opcion == 2 && !sinTempAmbiente())
                             {
                                 listaTempAmbiente.add(
                                         menuAgregarMedicamento(new TempAmbiente()
@@ -1272,9 +1259,9 @@ public class Menu
                     case 6:
                     {
                         seleccionarTipoMedicamento("verificarInventario");
-                        if(opcion == 1)
+                        if(opcion == 1 && !sinRefrigerados())
                             reponerInventarioRefri();
-                        else
+                        else if(opcion == 2 && !sinTempAmbiente())
                             reponerInventarioTempAmbiente();
                         systemPause();
                         break;
@@ -1283,9 +1270,9 @@ public class Menu
                     {
                         seleccionarTipoMedicamento("mostrar su costo y"
                                 + " precio");
-                        if(opcion == 1)
+                        if(opcion == 1 && !sinRefrigerados())
                             mostrarCostoYPrecioRefri();
-                        else
+                        else if(opcion == 2 && !sinTempAmbiente())
                             mostrarCostoYPrecioTempAmbiente();
                         systemPause();
                         break;
@@ -1293,26 +1280,29 @@ public class Menu
                     case 8:
                     {
                         seleccionarTipoMedicamento("modificar");
-                        if(opcion == 1)
+                        if(opcion == 1 && !sinRefrigerados())
                         {
                             modificarRefrigerado();
                         }
-                        else
+                        else if(opcion == 2 && !sinTempAmbiente())
                         {
                             modificarTempAmbiente();
                         }
+                        systemPause();
+                        break;
                     }
                     case 9:
                     {                        
                         seleccionarTipoMedicamento("eliminar");
-                         if(opcion == 1)
+                         if(opcion == 1 && !sinRefrigerados())
                         {
                             eliminarRefrigerado();
                         }
-                        else
+                        else if(opcion == 2 && !sinTempAmbiente())
                         {
                             eliminarTempAmbiente();
                         }
+                        systemPause();
                         break;
                     }
                     case 10:
