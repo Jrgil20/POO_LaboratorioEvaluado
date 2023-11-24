@@ -152,7 +152,8 @@ public class Refrigerado extends Medicamento
                 " ni superior a "+end+": ");        
         sNum = scn.nextLine(); 
         while(!validarCadenaNumericaYRango(sNum, start, end))
-        {   //Si el valor ingresado no es un numero double o no esta dentro del rango, se pide de nuevo
+        {   //Si el valor ingresado no es un numero double o no esta 
+            //dentro del rango, se pide de nuevo
             System.out.print("\nPor favor ingrese el "+nombreAtributo
                 + " del medicamento refrigerado "+nombreMedicamento+"\n"
                         + "Este valor no puede ser inferior a "+start+
@@ -270,6 +271,94 @@ public class Refrigerado extends Medicamento
         System.out.println("Dias que se puede mantener refrigerado\n"
                 + "el medicamento una vez abierto: "+diasRefrigerado);
 
-    }    
+    }
+
+    @Override
+    protected void modificarDatos(int opcion)
+    {
+        //Metodo para modificar los datos de un medicamento
+        int numInt = 0;
+        switch(opcion){   
+            case 1:
+            {
+                //  asignar el nombre del medicamento
+                nombreMedicamento = solicitarNombreMedicamento();
+                break;
+            }
+            case 2:
+            {
+                //  asignar el codigo del medicamento
+                codigoMedicamento = validarValorNumerico("codigo",10000000,99999999);
+                break;
+            }
+            case 3:
+            {
+                //  asignar el costo del medicamento
+                costoMedicamento = validarValorNumerico("costo", 1.0,3500000.99);
+                break;
+            }
+            case 4:
+            {
+                // asignar el precio de venta al publico del medicamento
+                numInt = validarValorNumerico("porcentaje adicional de " + "venta al publico", 20, 100);
+                break;
+            }
+            case 5:
+            {
+                //  calcular el precio de venta al publico
+                precioVentaPublica = calcularPrecioFinal(numInt);
+                break;
+            }
+            case 6:
+            {
+                //  asignar las unidades existentes del medicamento
+                unidadesExistentes = validarValorNumerico("unidades existentes", 1, 9999999);
+                break;
+            }
+            case 7:
+            {
+                //  asignar las unidades vendidas del medicamento
+                unidadesVendidas = validarValorNumerico("unidades vendidas",1,unidadesExistentes);
+                break;
+            }
+            case 8:
+            {
+                //  asignar la vigencia en el mercado del medicamento
+                vigenciaMercado = validarValorNumerico("vigencia en mercado",0,2);
+                break;
+            }
+            case 9:
+            {
+                //  asignar el numero de lote del medicamento
+                numeroLoteMedicamento = validarValorNumerico("numero de lote",10000000,99999999);
+                break;
+            }
+            case 10:
+            {
+                //  asignar la fecha de caducidad del medicamento
+                fechaCaducidad = solicitarFechaCaducidad();
+                break;
+            }
+            case 11:
+            {
+                //  asignar la temperatura minima de conservacion del medicamento
+                tempMinima = validarValorNumerico("temperatura mínima",0.0,2.0);
+                break;
+            }
+            case 12:
+            {
+                //  asignar la temperatura maxima de conservacion del medicamento
+                tempMaxima = validarValorNumerico("temperatura máxima",tempMinima+2.1,8.0);
+                break;
+            }
+            case 13:
+            {
+                //  asignar los dias que se puede mantener refrigerado una vez abierto
+                diasRefrigerado = validarValorNumerico("numero de dias que se "
+                        + "puede mantener refrigerado una vez abierto",1,28);
+                break;
+            }
+    }
+    }
      
 }
