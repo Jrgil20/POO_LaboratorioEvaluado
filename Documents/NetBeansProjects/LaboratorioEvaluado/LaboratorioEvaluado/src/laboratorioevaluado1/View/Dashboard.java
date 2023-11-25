@@ -52,7 +52,7 @@ public class Dashboard extends javax.swing.JPanel {
         });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonInicio(evt);
             }
         });
         PanelVertical1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
@@ -71,9 +71,9 @@ public class Dashboard extends javax.swing.JPanel {
         add(PanelHorizontal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInicio
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonInicio
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
@@ -85,7 +85,7 @@ public class Dashboard extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelHorizontal1;
     private javax.swing.JPanel PanelVertical1;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelMenu;
     private javax.swing.JPanel jPanel1;
