@@ -32,7 +32,7 @@ public class Inicio extends javax.swing.JFrame {
         BgDashboard = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         PanelVertical2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        jButtonInicio = new javax.swing.JButton();
         jLabelMenu1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -63,19 +63,20 @@ public class Inicio extends javax.swing.JFrame {
         PanelVertical2.setBackground(new java.awt.Color(51, 51, 51));
         PanelVertical2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setText("Inicio");
-        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButtonInicio.setBackground(new java.awt.Color(102, 102, 102));
+        jButtonInicio.setText("Inicio");
+        jButtonInicio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonInicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                jButtonInicioMouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonInicioActionPerformed(evt);
             }
         });
-        PanelVertical2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
+        PanelVertical2.add(jButtonInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
 
         jLabelMenu1.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu1.setText("Menu");
@@ -83,7 +84,7 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/logo.png"))); // NOI18N
-        PanelVertical2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, 190));
+        PanelVertical2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, 190));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -288,13 +289,13 @@ public class Inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void jButtonInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonInicioMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_jButtonInicioMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonInicioActionPerformed
 
     private void PanelHorizontal2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelHorizontal2MousePressed
         xMause = evt.getX();
@@ -360,7 +361,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel PanelHorizontal2;
     private javax.swing.JPanel PanelVertical2;
     private javax.swing.JLabel exit;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonInicio;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelGENX1;
     private javax.swing.JLabel jLabelMenu1;
