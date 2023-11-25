@@ -1,7 +1,7 @@
 /**
  * Interfaz que define los métodos de validación de datos.
  */
-package laboratorioevaluado1;
+package laboratorioevaluado1.model;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

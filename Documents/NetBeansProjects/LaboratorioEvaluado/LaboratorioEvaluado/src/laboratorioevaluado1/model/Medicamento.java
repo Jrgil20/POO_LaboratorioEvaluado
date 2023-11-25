@@ -9,11 +9,12 @@
  * @see MedicamentoRefrigerado
  * @see MedicamentoNoRefrigerado
  */
-package laboratorioevaluado1;
+package laboratorioevaluado1.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import laboratorioevaluado1.model.Validaciones;
 
 /**
  *

@@ -1,4 +1,5 @@
-package laboratorioevaluado1;
+package laboratorioevaluado1.Controller;
+
 // Clases importadas
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -1369,3 +1370,4 @@ public class Menu
         }
     }    
 }
+
