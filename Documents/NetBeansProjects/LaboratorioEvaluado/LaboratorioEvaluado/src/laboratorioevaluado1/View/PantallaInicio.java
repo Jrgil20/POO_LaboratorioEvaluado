@@ -27,18 +27,18 @@ public class PantallaInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelVertical2 = new javax.swing.JPanel();
-        btnComprarMedicamento = new javax.swing.JButton();
+        btnVerInventario = new javax.swing.JButton();
         jLabelMenu1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnAgregar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
-        btnInicio3 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
         btnVencimiento = new javax.swing.JButton();
         btnColocarOferta = new javax.swing.JButton();
-        btnRetirarOferta1 = new javax.swing.JButton();
-        btnRetirarOferta2 = new javax.swing.JButton();
-        btnComprarMedicamento1 = new javax.swing.JButton();
+        btnRetirarOferta = new javax.swing.JButton();
+        btnVerCostos = new javax.swing.JButton();
+        btnComprarMedicamento = new javax.swing.JButton();
         PanelHorizontal2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,19 +47,19 @@ public class PantallaInicio extends javax.swing.JFrame {
         PanelVertical2.setBackground(new java.awt.Color(51, 51, 51));
         PanelVertical2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnComprarMedicamento.setText("Ver inventario");
-        btnComprarMedicamento.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnComprarMedicamento.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnVerInventario.setText("Ver inventario");
+        btnVerInventario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnVerInventario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnComprarMedicamentoMouseClicked(evt);
+                btnVerInventarioMouseClicked(evt);
             }
         });
-        btnComprarMedicamento.addActionListener(new java.awt.event.ActionListener() {
+        btnVerInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnComprarMedicamentobotonInicio(evt);
+                btnVerInventariobotonInicio(evt);
             }
         });
-        PanelVertical2.add(btnComprarMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 170, -1));
+        PanelVertical2.add(btnVerInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 170, -1));
 
         jLabelMenu1.setText("Menu");
         PanelVertical2.add(jLabelMenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
@@ -96,19 +96,19 @@ public class PantallaInicio extends javax.swing.JFrame {
         });
         PanelVertical2.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 170, -1));
 
-        btnInicio3.setText("Eliminar");
-        btnInicio3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnInicio3.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnInicio3MouseClicked(evt);
+                btnEliminarMouseClicked(evt);
             }
         });
-        btnInicio3.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInicio3botonInicio(evt);
+                btnEliminarbotonInicio(evt);
             }
         });
-        PanelVertical2.add(btnInicio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 170, -1));
+        PanelVertical2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 170, -1));
 
         btnConsultar.setText("Consultar");
         btnConsultar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -152,47 +152,47 @@ public class PantallaInicio extends javax.swing.JFrame {
         });
         PanelVertical2.add(btnColocarOferta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 170, -1));
 
-        btnRetirarOferta1.setText("Retirar oferta");
-        btnRetirarOferta1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnRetirarOferta1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnRetirarOferta.setText("Retirar oferta");
+        btnRetirarOferta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnRetirarOferta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRetirarOferta1MouseClicked(evt);
+                btnRetirarOfertaMouseClicked(evt);
             }
         });
-        btnRetirarOferta1.addActionListener(new java.awt.event.ActionListener() {
+        btnRetirarOferta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRetirarOferta1botonInicio(evt);
+                btnRetirarOfertabotonInicio(evt);
             }
         });
-        PanelVertical2.add(btnRetirarOferta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 170, -1));
+        PanelVertical2.add(btnRetirarOferta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 170, -1));
 
-        btnRetirarOferta2.setText("Ver costos");
-        btnRetirarOferta2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnRetirarOferta2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnVerCostos.setText("Ver costos");
+        btnVerCostos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnVerCostos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRetirarOferta2MouseClicked(evt);
+                btnVerCostosMouseClicked(evt);
             }
         });
-        btnRetirarOferta2.addActionListener(new java.awt.event.ActionListener() {
+        btnVerCostos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRetirarOferta2botonInicio(evt);
+                btnVerCostosbotonInicio(evt);
             }
         });
-        PanelVertical2.add(btnRetirarOferta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 170, -1));
+        PanelVertical2.add(btnVerCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 170, -1));
 
-        btnComprarMedicamento1.setText("Comprar");
-        btnComprarMedicamento1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnComprarMedicamento1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnComprarMedicamento.setText("Comprar");
+        btnComprarMedicamento.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnComprarMedicamento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnComprarMedicamento1MouseClicked(evt);
+                btnComprarMedicamentoMouseClicked(evt);
             }
         });
-        btnComprarMedicamento1.addActionListener(new java.awt.event.ActionListener() {
+        btnComprarMedicamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnComprarMedicamento1botonInicio(evt);
+                btnComprarMedicamentobotonInicio(evt);
             }
         });
-        PanelVertical2.add(btnComprarMedicamento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 170, -1));
+        PanelVertical2.add(btnComprarMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 170, -1));
 
         getContentPane().add(PanelVertical2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 170, 520));
 
@@ -203,13 +203,13 @@ public class PantallaInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnComprarMedicamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprarMedicamentoMouseClicked
+    private void btnVerInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVerInventarioMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnComprarMedicamentoMouseClicked
+    }//GEN-LAST:event_btnVerInventarioMouseClicked
 
-    private void btnComprarMedicamentobotonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarMedicamentobotonInicio
+    private void btnVerInventariobotonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInventariobotonInicio
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnComprarMedicamentobotonInicio
+    }//GEN-LAST:event_btnVerInventariobotonInicio
 
     private void btnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseClicked
         // TODO add your handling code here:
@@ -227,13 +227,13 @@ public class PantallaInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnModificarbotonInicio
 
-    private void btnInicio3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicio3MouseClicked
+    private void btnEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnInicio3MouseClicked
+    }//GEN-LAST:event_btnEliminarMouseClicked
 
-    private void btnInicio3botonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicio3botonInicio
+    private void btnEliminarbotonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarbotonInicio
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnInicio3botonInicio
+    }//GEN-LAST:event_btnEliminarbotonInicio
 
     private void btnConsultarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarMouseClicked
         // TODO add your handling code here:
@@ -259,29 +259,29 @@ public class PantallaInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnColocarOfertabotonInicio
 
-    private void btnRetirarOferta1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetirarOferta1MouseClicked
+    private void btnRetirarOfertaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetirarOfertaMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRetirarOferta1MouseClicked
+    }//GEN-LAST:event_btnRetirarOfertaMouseClicked
 
-    private void btnRetirarOferta1botonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarOferta1botonInicio
+    private void btnRetirarOfertabotonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarOfertabotonInicio
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRetirarOferta1botonInicio
+    }//GEN-LAST:event_btnRetirarOfertabotonInicio
 
-    private void btnRetirarOferta2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetirarOferta2MouseClicked
+    private void btnVerCostosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVerCostosMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRetirarOferta2MouseClicked
+    }//GEN-LAST:event_btnVerCostosMouseClicked
 
-    private void btnRetirarOferta2botonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarOferta2botonInicio
+    private void btnVerCostosbotonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerCostosbotonInicio
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRetirarOferta2botonInicio
+    }//GEN-LAST:event_btnVerCostosbotonInicio
 
-    private void btnComprarMedicamento1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprarMedicamento1MouseClicked
+    private void btnComprarMedicamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprarMedicamentoMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnComprarMedicamento1MouseClicked
+    }//GEN-LAST:event_btnComprarMedicamentoMouseClicked
 
-    private void btnComprarMedicamento1botonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarMedicamento1botonInicio
+    private void btnComprarMedicamentobotonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarMedicamentobotonInicio
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnComprarMedicamento1botonInicio
+    }//GEN-LAST:event_btnComprarMedicamentobotonInicio
 
     /**
      * @param args the command line arguments
@@ -324,13 +324,13 @@ public class PantallaInicio extends javax.swing.JFrame {
     public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnColocarOferta;
     public javax.swing.JButton btnComprarMedicamento;
-    public javax.swing.JButton btnComprarMedicamento1;
     public javax.swing.JButton btnConsultar;
-    public javax.swing.JButton btnInicio3;
+    public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnModificar;
-    public javax.swing.JButton btnRetirarOferta1;
-    public javax.swing.JButton btnRetirarOferta2;
+    public javax.swing.JButton btnRetirarOferta;
     public javax.swing.JButton btnVencimiento;
+    public javax.swing.JButton btnVerCostos;
+    public javax.swing.JButton btnVerInventario;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelMenu1;
     // End of variables declaration//GEN-END:variables

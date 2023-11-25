@@ -30,7 +30,15 @@ public class Controller implements ActionListener
         this.listaRefrigerado = listaRefrigerado;
         this.listaTempAmbiente = listaTempAmbiente;
         this.view.btnAgregar.addActionListener(this);
-        
+        this.view.btnModificar.addActionListener(this);
+        this.view.btnEliminar.addActionListener(this);
+        this.view.btnConsultar.addActionListener(this);
+        this.view.btnVencimiento.addActionListener(this);
+        this.view.btnColocarOferta.addActionListener(this);
+        this.view.btnRetirarOferta.addActionListener(this);
+        this.view.btnVerCostos.addActionListener(this);
+        this.view.btnComprarMedicamento.addActionListener(this);
+        this.view.btnVerInventario.addActionListener(this);
     }
     
     public void iniciar()
