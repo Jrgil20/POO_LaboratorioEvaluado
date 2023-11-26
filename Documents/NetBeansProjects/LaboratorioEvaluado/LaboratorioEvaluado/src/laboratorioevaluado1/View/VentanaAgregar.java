@@ -10,13 +10,13 @@ import java.awt.Color;
  *
  * @author jrmat
  */
-public class VentanaOpcionAgregar extends javax.swing.JFrame {
+public class VentanaAgregar extends javax.swing.JFrame {
 
     int xMause,yMause;
     /**
      * Creates new form VentanaAgregar
      */
-    public VentanaOpcionAgregar() {
+    public VentanaAgregar() {
         initComponents();
     }
 
@@ -46,7 +46,7 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
         radioBtnPredeterminados = new javax.swing.JRadioButton();
         radioBtnPredefinidos = new javax.swing.JRadioButton();
         radioBtnManual = new javax.swing.JRadioButton();
-        jPanelModoCrear1 = new javax.swing.JPanel();
+        jPanelLeerDatos = new javax.swing.JPanel();
         btnSeleccionar2 = new javax.swing.JButton();
         jLabelMenu2 = new javax.swing.JLabel();
         jLabelMenu3 = new javax.swing.JLabel();
@@ -74,7 +74,6 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(900, 560));
         setResizable(false);
 
         PanelHorizontal2.setBackground(new java.awt.Color(164, 159, 224));
@@ -180,6 +179,8 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
 
         jPanelModoCrear.setBackground(new java.awt.Color(204, 204, 255));
         jPanelModoCrear.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelModoCrear.setAlignmentX(0.0F);
+        jPanelModoCrear.setAlignmentY(0.0F);
         jPanelModoCrear.setPreferredSize(new java.awt.Dimension(240, 120));
 
         btnSeleccionar1.setBackground(new java.awt.Color(102, 102, 102));
@@ -223,7 +224,7 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
                         .addComponent(radioBtnManual, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(radioBtnPredefinidos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(radioBtnPredeterminados))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(btnSeleccionar1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -238,13 +239,13 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
                     .addComponent(btnSeleccionar1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(radioBtnManual)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jPanelModoCrear1.setBackground(new java.awt.Color(204, 204, 255));
-        jPanelModoCrear1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanelModoCrear1.setPreferredSize(new java.awt.Dimension(240, 120));
-        jPanelModoCrear1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelLeerDatos.setBackground(new java.awt.Color(204, 204, 255));
+        jPanelLeerDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelLeerDatos.setPreferredSize(new java.awt.Dimension(240, 120));
+        jPanelLeerDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSeleccionar2.setBackground(new java.awt.Color(102, 102, 102));
         btnSeleccionar2.setText("Seleccionar");
@@ -261,77 +262,77 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
                 btnSeleccionar2ActionPerformed(evt);
             }
         });
-        jPanelModoCrear1.add(btnSeleccionar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 128, -1));
+        jPanelLeerDatos.add(btnSeleccionar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 128, -1));
 
         jLabelMenu2.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu2.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu2.setText("Vigencia en el mercado");
-        jPanelModoCrear1.add(jLabelMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 130, -1));
+        jPanelLeerDatos.add(jLabelMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 130, -1));
 
         jLabelMenu3.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu3.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu3.setText("Código");
-        jPanelModoCrear1.add(jLabelMenu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        jPanelLeerDatos.add(jLabelMenu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         jLabelMenu4.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu4.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu4.setText("Costo");
-        jPanelModoCrear1.add(jLabelMenu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        jPanelLeerDatos.add(jLabelMenu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         jLabelMenu5.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu5.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu5.setText("Precio");
-        jPanelModoCrear1.add(jLabelMenu5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+        jPanelLeerDatos.add(jLabelMenu5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         jLabelMenu6.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu6.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu6.setText("Número de lote");
-        jPanelModoCrear1.add(jLabelMenu6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
-        jPanelModoCrear1.add(nAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 70, -1));
+        jPanelLeerDatos.add(jLabelMenu6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+        jPanelLeerDatos.add(nAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 70, -1));
 
         jLabelMenu7.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu7.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu7.setText("Unidades existentes");
-        jPanelModoCrear1.add(jLabelMenu7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
-        jPanelModoCrear1.add(nCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 121, -1));
-        jPanelModoCrear1.add(nUnidadesExistentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 121, -1));
-        jPanelModoCrear1.add(nPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 121, -1));
-        jPanelModoCrear1.add(nCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 121, -1));
-        jPanelModoCrear1.add(nLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 121, -1));
-        jPanelModoCrear1.add(nMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 50, -1));
+        jPanelLeerDatos.add(jLabelMenu7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        jPanelLeerDatos.add(nCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 121, -1));
+        jPanelLeerDatos.add(nUnidadesExistentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 121, -1));
+        jPanelLeerDatos.add(nPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 121, -1));
+        jPanelLeerDatos.add(nCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 121, -1));
+        jPanelLeerDatos.add(nLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 121, -1));
+        jPanelLeerDatos.add(nMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 50, -1));
 
         jLabelMenu8.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu8.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu8.setText("Nombre");
-        jPanelModoCrear1.add(jLabelMenu8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jPanelLeerDatos.add(jLabelMenu8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         jLabelMenu9.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu9.setForeground(new java.awt.Color(0, 0, 0));
-        jPanelModoCrear1.add(jLabelMenu9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, -1, -1));
+        jPanelLeerDatos.add(jLabelMenu9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, -1, -1));
 
         btnGroupVigencia.add(jRadioButton1);
         jRadioButton1.setText("Retirado");
-        jPanelModoCrear1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
+        jPanelLeerDatos.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
 
         btnGroupVigencia.add(jRadioButton2);
         jRadioButton2.setText("No vigente");
-        jPanelModoCrear1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
+        jPanelLeerDatos.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
 
         btnGroupVigencia.add(jRadioButton3);
         jRadioButton3.setText("Vigente");
-        jPanelModoCrear1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, -1, -1));
+        jPanelLeerDatos.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, -1, -1));
 
         jLabelMenu10.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu10.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu10.setText("Unidades vendidas");
-        jPanelModoCrear1.add(jLabelMenu10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
-        jPanelModoCrear1.add(nUnidadesVendidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 121, -1));
-        jPanelModoCrear1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 121, -1));
+        jPanelLeerDatos.add(jLabelMenu10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        jPanelLeerDatos.add(nUnidadesVendidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 121, -1));
+        jPanelLeerDatos.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 121, -1));
 
         jLabelMenu11.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu11.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu11.setText("Fecha de caducidad (mes/año)");
-        jPanelModoCrear1.add(jLabelMenu11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
+        jPanelLeerDatos.add(jLabelMenu11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -344,7 +345,7 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
                         .addComponent(jPanelModoCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
-                        .addComponent(jPanelModoCrear1, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanelLeerDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -353,7 +354,7 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jPanelModoCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanelModoCrear1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelLeerDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -433,6 +434,7 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
         else if(radioBtnManual.isSelected())
         {
             jPanelModoCrear.setVisible(false);
+            jPanelLeerDatos.setVisible(true);
             
         }
     }//GEN-LAST:event_btnSeleccionar1ActionPerformed
@@ -478,21 +480,23 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaOpcionAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaOpcionAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaOpcionAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaOpcionAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaOpcionAgregar().setVisible(true);
+                new VentanaAgregar().setVisible(true);
             }
         });
     }
@@ -522,8 +526,8 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanelGENX1;
-    private javax.swing.JPanel jPanelModoCrear;
-    private javax.swing.JPanel jPanelModoCrear1;
+    public javax.swing.JPanel jPanelLeerDatos;
+    public javax.swing.JPanel jPanelModoCrear;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;

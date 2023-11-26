@@ -339,7 +339,9 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonInicio1ActionPerformed
 
     private void jLabelAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseClicked
-        SeleccionarTipo w = new SeleccionarTipo();
+        VentanaAgregar w = new VentanaAgregar();
+        w.jPanelLeerDatos.setVisible(false);
+        w.jPanelModoCrear.setLocation(0,0);
         w.setLocationRelativeTo(null);
         w.setVisible(true);
         this.dispose();
