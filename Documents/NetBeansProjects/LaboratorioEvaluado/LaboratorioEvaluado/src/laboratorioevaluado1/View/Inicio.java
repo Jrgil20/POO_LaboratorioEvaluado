@@ -54,8 +54,9 @@ public class Inicio extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabelAgregar = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
+        jLabelEliminar = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelLeer = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -248,48 +249,71 @@ public class Inicio extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 255));
         jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel8.setPreferredSize(new java.awt.Dimension(240, 120));
 
+        jLabelEliminar.setBackground(new java.awt.Color(204, 204, 204));
+        jLabelEliminar.setFont(new java.awt.Font("A.C.M.E. Secret Agent", 0, 32)); // NOI18N
+        jLabelEliminar.setForeground(new java.awt.Color(51, 51, 255));
+        jLabelEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelEliminar.setText("Agregar");
+        jLabelEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelEliminarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelEliminarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelEliminarMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 236, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addComponent(jLabelEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 116, Short.MAX_VALUE)
+            .addComponent(jLabelEliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
         );
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 255));
         jPanel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel9.setPreferredSize(new java.awt.Dimension(240, 120));
 
-        jLabel1.setFont(new java.awt.Font("A.C.M.E. Secret Agent", 0, 32)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Leer");
+        jLabelLeer.setFont(new java.awt.Font("A.C.M.E. Secret Agent", 0, 32)); // NOI18N
+        jLabelLeer.setForeground(new java.awt.Color(51, 51, 255));
+        jLabelLeer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelLeer.setText("Leer");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+            .addComponent(jLabelLeer, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+            .addComponent(jLabelLeer, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -374,24 +398,24 @@ public class Inicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonInicio1ActionPerformed
 
-    private void jLabelAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseClicked
+    private void jLabelEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEliminarMouseClicked
         VentanaAgregar w = new VentanaAgregar();
         w.jPanelLeerDatos.setVisible(false);
         w.jPanelModoCrear.setLocation(0,0);
         w.setLocationRelativeTo(null);
         w.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabelAgregarMouseClicked
+    }//GEN-LAST:event_jLabelEliminarMouseClicked
 
-    private void jLabelAgregarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseEntered
+    private void jLabelEliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEliminarMouseEntered
         Color af = new Color(164,159,224);
-        jLabelAgregar.setForeground(af);
-    }//GEN-LAST:event_jLabelAgregarMouseEntered
+        jLabelEliminar.setForeground(af);
+    }//GEN-LAST:event_jLabelEliminarMouseEntered
 
-    private void jLabelAgregarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseExited
+    private void jLabelEliminarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEliminarMouseExited
         
-        jLabelAgregar.setForeground(Color.blue);
-    }//GEN-LAST:event_jLabelAgregarMouseExited
+        jLabelEliminar.setForeground(Color.blue);
+    }//GEN-LAST:event_jLabelEliminarMouseExited
 
     private void jLabelModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelModificarMouseClicked
         // TODO add your handling code here:
@@ -411,6 +435,18 @@ public class Inicio extends javax.swing.JFrame {
         // TODO add your handling code here:
         jLabelModificar.setForeground(Color.blue);
     }//GEN-LAST:event_jLabelModificarMouseExited
+
+    private void jLabelAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelAgregarMouseClicked
+
+    private void jLabelAgregarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelAgregarMouseEntered
+
+    private void jLabelAgregarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelAgregarMouseExited
  
     /**
      * @param args the command line arguments
@@ -453,10 +489,11 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel PanelVertical2;
     private javax.swing.JLabel exit;
     private javax.swing.JButton jButtonInicio1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelAgregar;
+    private javax.swing.JLabel jLabelEliminar;
     private javax.swing.JLabel jLabelGENX1;
+    private javax.swing.JLabel jLabelLeer;
     private javax.swing.JLabel jLabelMenu1;
     private javax.swing.JLabel jLabelModificar;
     private javax.swing.JPanel jPanel1;
