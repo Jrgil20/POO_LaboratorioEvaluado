@@ -425,7 +425,7 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
         if(radioBtnPredeterminados.isSelected())
         {
             
-        }
+        }   
         else if(radioBtnPredefinidos.isSelected())
         {
             
