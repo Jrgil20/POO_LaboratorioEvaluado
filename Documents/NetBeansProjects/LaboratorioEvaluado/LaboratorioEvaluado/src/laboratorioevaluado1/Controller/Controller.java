@@ -38,8 +38,7 @@ public class Controller implements ActionListener
     
     public void iniciar()
     {
-        viewMain.setTitle("Menú principal");
-        viewMain.setLocationRelativeTo(null);
+        viewMain.setTitle("Menú principal");        
     }        
 
     @Override
