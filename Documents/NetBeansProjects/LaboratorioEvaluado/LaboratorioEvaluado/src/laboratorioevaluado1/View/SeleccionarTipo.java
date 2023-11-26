@@ -293,7 +293,7 @@ public class SeleccionarTipo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSeleccionarMousePressed
 
     private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
         if(opRefrigerado.isSelected())
         {
             JOptionPane.showMessageDialog(null, "Usted "
@@ -360,7 +360,7 @@ public class SeleccionarTipo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanelGENX1;
-    private javax.swing.JRadioButton opRefrigerado;
-    private javax.swing.JRadioButton opTempAmbiente;
+    public javax.swing.JRadioButton opRefrigerado;
+    public javax.swing.JRadioButton opTempAmbiente;
     // End of variables declaration//GEN-END:variables
 }

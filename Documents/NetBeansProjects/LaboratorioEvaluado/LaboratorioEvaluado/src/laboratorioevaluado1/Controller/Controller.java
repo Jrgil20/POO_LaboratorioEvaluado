@@ -7,7 +7,9 @@ package laboratorioevaluado1.Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import laboratorioevaluado1.View.Inicio;
+import laboratorioevaluado1.View.SeleccionarTipo;
 import laboratorioevaluado1.model.Refrigerado;
 import laboratorioevaluado1.model.TempAmbiente;
 
@@ -18,28 +20,42 @@ import laboratorioevaluado1.model.TempAmbiente;
 public class Controller implements ActionListener 
 {
     
-    private Inicio view;
+    private Inicio viewMain;
+    private SeleccionarTipo viewSelection;
     private ArrayList<Refrigerado> listaRefrigerado;
     private ArrayList<TempAmbiente> listaTempAmbiente;
 
-    public Controller(Inicio view, 
+    public Controller(Inicio view,
+            SeleccionarTipo viewSelection,
             ArrayList<Refrigerado> listaRefrigerado, 
             ArrayList<TempAmbiente> listaTempAmbiente) 
     {
-        this.view = view;
+        this.viewMain = view;
+        this.viewSelection = viewSelection;
         this.listaRefrigerado = listaRefrigerado;
         this.listaTempAmbiente = listaTempAmbiente;       
     }
     
     public void iniciar()
     {
-        view.setTitle("Menú principal");
-        view.setLocationRelativeTo(null);
+        viewMain.setTitle("Menú principal");
+        viewMain.setLocationRelativeTo(null);
     }        
 
     @Override
     public void actionPerformed(ActionEvent e) 
     {
+        viewSelection.btnSeleccionar.addActionListener(this);
+        if(viewSelection.opRefrigerado.isSelected())
+        {
+            JOptionPane.showMessageDialog(null, "Usted "
+                    + "selecciono un medicamento refrigerado");
+        }
+        else if(viewSelection.opTempAmbiente.isSelected())
+        {
+            JOptionPane.showMessageDialog(null, "Usted "
+                    + "selecciono un medicamento temperatura ambiente");
+        }
         
     }
 
