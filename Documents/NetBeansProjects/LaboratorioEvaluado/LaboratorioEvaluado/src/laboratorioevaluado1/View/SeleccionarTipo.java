@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 public class SeleccionarTipo extends javax.swing.JFrame {
 
     int xMause,yMause;
+    Color fondo = new Color (187);
     /**
      * Creates new form SeleccionarTipo
      */
@@ -41,10 +42,10 @@ public class SeleccionarTipo extends javax.swing.JFrame {
         jLabelGENX1 = new javax.swing.JLabel();
         exit = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        btnSeleccionar = new javax.swing.JButton();
-        opTempAmbiente = new javax.swing.JRadioButton();
-        opRefrigerado = new javax.swing.JRadioButton();
+        jLabelColdMedicine = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabelRefrigerado = new javax.swing.JLabel();
+        jLabelTemperaturaAmbiente = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("TipoMedicamento"); // NOI18N
@@ -152,76 +153,75 @@ public class SeleccionarTipo extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 217, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2.setPreferredSize(new java.awt.Dimension(240, 120));
-
-        btnSeleccionar.setBackground(new java.awt.Color(102, 102, 102));
-        btnSeleccionar.setText("Seleccionar");
-        btnSeleccionar.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabelColdMedicine.setFont(new java.awt.Font("A.C.M.E. Secret Agent", 0, 16)); // NOI18N
+        jLabelColdMedicine.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelColdMedicine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/Cold-medicine-bottle.png"))); // NOI18N
+        jLabelColdMedicine.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jLabelColdMedicine.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSeleccionarMouseClicked(evt);
+                jLabelColdMedicineMouseClicked(evt);
             }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnSeleccionarMousePressed(evt);
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelColdMedicineMouseEntered(evt);
             }
-        });
-        btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeleccionarActionPerformed(evt);
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelColdMedicineMouseExited(evt);
             }
         });
 
-        grupoSeleccion.add(opTempAmbiente);
-        opTempAmbiente.setText("Temperatura Ambiente");
-
-        grupoSeleccion.add(opRefrigerado);
-        opRefrigerado.setText("Refrigerado");
-        opRefrigerado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opRefrigeradoActionPerformed(evt);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/medicine-bottle-Temp.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel1MouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(opRefrigerado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(opTempAmbiente)
-                .addGap(52, 52, 52)
-                .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(54, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSeleccionar)
-                    .addComponent(opTempAmbiente)
-                    .addComponent(opRefrigerado))
-                .addGap(21, 21, 21))
-        );
+        jLabelRefrigerado.setForeground(new java.awt.Color(0, 0, 255));
+        jLabelRefrigerado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelRefrigerado.setText("Refrigerado");
+
+        jLabelTemperaturaAmbiente.setForeground(new java.awt.Color(255, 0, 51));
+        jLabelTemperaturaAmbiente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTemperaturaAmbiente.setText("Temperatura Ambiente");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabelRefrigerado, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(jLabelColdMedicine)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabelTemperaturaAmbiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1))
+                .addGap(72, 72, 72))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addGap(95, 95, 95)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelColdMedicine, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelRefrigerado)
+                    .addComponent(jLabelTemperaturaAmbiente))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -242,14 +242,14 @@ public class SeleccionarTipo extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addGap(0, 560, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(PanelHorizontal2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(PanelVertical2, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(PanelVertical2, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -288,36 +288,33 @@ public class SeleccionarTipo extends javax.swing.JFrame {
         yMause = evt.getY();
     }//GEN-LAST:event_PanelHorizontal2MousePressed
 
-    private void btnSeleccionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeleccionarMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSeleccionarMouseClicked
+    private void jLabelColdMedicineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelColdMedicineMouseEntered
+   
+        jLabelRefrigerado.setForeground(fondo);
+    }//GEN-LAST:event_jLabelColdMedicineMouseEntered
 
-    private void btnSeleccionarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeleccionarMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSeleccionarMousePressed
+    private void jLabelColdMedicineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelColdMedicineMouseExited
+        jLabelRefrigerado.setForeground(Color.blue);
+    }//GEN-LAST:event_jLabelColdMedicineMouseExited
 
-    private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
-        // TODO add your handling code here:        
-        if(opRefrigerado.isSelected())
-        {
-            JOptionPane.showMessageDialog(null, "Usted "
+    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+        jLabelTemperaturaAmbiente.setForeground(fondo);
+    }//GEN-LAST:event_jLabel1MouseEntered
+
+    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+        jLabelTemperaturaAmbiente.setForeground(Color.red);
+    }//GEN-LAST:event_jLabel1MouseExited
+
+    private void jLabelColdMedicineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelColdMedicineMouseClicked
+        JOptionPane.showMessageDialog(null, "Usted "
                     + "selecciono un medicamento refrigerado");
-        }
-        else if(opTempAmbiente.isSelected())
-        {
-            JOptionPane.showMessageDialog(null, "Usted "
-                    + "selecciono un medicamento temperatura ambiente");
-        }
-    }//GEN-LAST:event_btnSeleccionarActionPerformed
+    }//GEN-LAST:event_jLabelColdMedicineMouseClicked
 
-    private void opRefrigeradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opRefrigeradoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opRefrigeradoActionPerformed
-                                             
-    
-    /**
-     * @param args the command line arguments
-     */
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        JOptionPane.showMessageDialog(null, "Usted "
+                    + "selecciono un medicamento temperatura ambiente");
+    }//GEN-LAST:event_jLabel1MouseClicked
+ 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -353,18 +350,18 @@ public class SeleccionarTipo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelHorizontal2;
     private javax.swing.JPanel PanelVertical2;
-    public javax.swing.JButton btnSeleccionar;
     private javax.swing.JLabel exit;
     private javax.swing.ButtonGroup grupoSeleccion;
     private javax.swing.JButton jButtonInicio1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelColdMedicine;
     private javax.swing.JLabel jLabelGENX1;
     private javax.swing.JLabel jLabelMenu1;
+    private javax.swing.JLabel jLabelRefrigerado;
+    private javax.swing.JLabel jLabelTemperaturaAmbiente;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanelGENX1;
-    public javax.swing.JRadioButton opRefrigerado;
-    public javax.swing.JRadioButton opTempAmbiente;
     // End of variables declaration//GEN-END:variables
 }
