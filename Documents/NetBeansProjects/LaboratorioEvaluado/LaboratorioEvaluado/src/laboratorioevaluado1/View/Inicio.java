@@ -69,6 +69,7 @@ public class Inicio extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jLabelModificar = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabelAgregar = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
@@ -224,15 +225,35 @@ public class Inicio extends javax.swing.JFrame {
         jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel6.setPreferredSize(new java.awt.Dimension(240, 120));
 
+        jLabelModificar.setBackground(new java.awt.Color(204, 204, 204));
+        jLabelModificar.setFont(new java.awt.Font("A.C.M.E. Secret Agent", 0, 32)); // NOI18N
+        jLabelModificar.setForeground(new java.awt.Color(51, 51, 255));
+        jLabelModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelModificar.setText("Modificar");
+        jLabelModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelModificarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelModificarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelModificarMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 236, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 116, Short.MAX_VALUE)
+            .addComponent(jLabelModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
         );
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 255));
@@ -241,6 +262,7 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabelAgregar.setBackground(new java.awt.Color(204, 204, 204));
         jLabelAgregar.setFont(new java.awt.Font("A.C.M.E. Secret Agent", 0, 32)); // NOI18N
+        jLabelAgregar.setForeground(new java.awt.Color(51, 51, 255));
         jLabelAgregar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelAgregar.setText("Agregar");
         jLabelAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -260,9 +282,8 @@ public class Inicio extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jLabelAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(101, 101, 101))
+                .addComponent(jLabelAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,6 +420,25 @@ public class Inicio extends javax.swing.JFrame {
         
         jLabelAgregar.setForeground(Color.blue);
     }//GEN-LAST:event_jLabelAgregarMouseExited
+
+    private void jLabelModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelModificarMouseClicked
+        // TODO add your handling code here:
+        VentanaModificar w = new VentanaModificar();       
+        w.setLocationRelativeTo(null);
+        w.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabelModificarMouseClicked
+
+    private void jLabelModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelModificarMouseEntered
+        // TODO add your handling code here:
+        Color af = new Color(164,159,224);
+        jLabelModificar.setForeground(af);
+    }//GEN-LAST:event_jLabelModificarMouseEntered
+
+    private void jLabelModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelModificarMouseExited
+        // TODO add your handling code here:
+        jLabelModificar.setForeground(Color.blue);
+    }//GEN-LAST:event_jLabelModificarMouseExited
  
     /**
      * @param args the command line arguments
@@ -446,6 +486,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAgregar;
     private javax.swing.JLabel jLabelGENX1;
     private javax.swing.JLabel jLabelMenu1;
+    private javax.swing.JLabel jLabelModificar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;

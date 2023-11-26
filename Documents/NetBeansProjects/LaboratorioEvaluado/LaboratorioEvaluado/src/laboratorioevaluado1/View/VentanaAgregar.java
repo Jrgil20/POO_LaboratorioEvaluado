@@ -179,8 +179,6 @@ public class VentanaAgregar extends javax.swing.JFrame {
 
         jPanelModoCrear.setBackground(new java.awt.Color(204, 204, 255));
         jPanelModoCrear.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanelModoCrear.setAlignmentX(0.0F);
-        jPanelModoCrear.setAlignmentY(0.0F);
         jPanelModoCrear.setPreferredSize(new java.awt.Dimension(240, 120));
 
         btnSeleccionar1.setBackground(new java.awt.Color(102, 102, 102));
@@ -327,6 +325,12 @@ public class VentanaAgregar extends javax.swing.JFrame {
         jLabelMenu10.setText("Unidades vendidas");
         jPanelLeerDatos.add(jLabelMenu10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
         jPanelLeerDatos.add(nUnidadesVendidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 121, -1));
+
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
         jPanelLeerDatos.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 121, -1));
 
         jLabelMenu11.setBackground(new java.awt.Color(255, 255, 255));
@@ -463,6 +467,10 @@ public class VentanaAgregar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSeleccionar2MouseClicked
 
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -524,6 +532,8 @@ public class VentanaAgregar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelMenu8;
     private javax.swing.JLabel jLabelMenu9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanelGENX1;
     public javax.swing.JPanel jPanelLeerDatos;
