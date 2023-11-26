@@ -44,18 +44,7 @@ public class Controller implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) 
-    {
-        viewSelection.btnSeleccionar.addActionListener(this);
-        if(viewSelection.opRefrigerado.isSelected())
-        {
-            JOptionPane.showMessageDialog(null, "Usted "
-                    + "selecciono un medicamento refrigerado");
-        }
-        else if(viewSelection.opTempAmbiente.isSelected())
-        {
-            JOptionPane.showMessageDialog(null, "Usted "
-                    + "selecciono un medicamento temperatura ambiente");
-        }
+    {        
         
     }
 
