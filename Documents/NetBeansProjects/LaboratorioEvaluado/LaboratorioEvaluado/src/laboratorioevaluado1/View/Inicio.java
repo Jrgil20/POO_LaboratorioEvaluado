@@ -32,16 +32,17 @@ public class Inicio extends javax.swing.JFrame {
         BgDashboard = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         PanelVertical2 = new javax.swing.JPanel();
-        jButtonInicio = new javax.swing.JButton();
         jLabelMenu1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        jButtonInicio1 = new javax.swing.JButton();
         PanelHorizontal2 = new javax.swing.JPanel();
         jPanelGENX1 = new javax.swing.JPanel();
         jLabelGENX1 = new javax.swing.JLabel();
         exit = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        btnAgregar = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
@@ -50,7 +51,6 @@ public class Inicio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(900, 560));
         setResizable(false);
 
         BgDashboard.setBackground(new java.awt.Color(255, 255, 255));
@@ -62,21 +62,6 @@ public class Inicio extends javax.swing.JFrame {
 
         PanelVertical2.setBackground(new java.awt.Color(51, 51, 51));
         PanelVertical2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButtonInicio.setBackground(new java.awt.Color(102, 102, 102));
-        jButtonInicio.setText("Inicio");
-        jButtonInicio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButtonInicio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonInicioMouseClicked(evt);
-            }
-        });
-        jButtonInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonInicioActionPerformed(evt);
-            }
-        });
-        PanelVertical2.add(jButtonInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
 
         jLabelMenu1.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu1.setText("Menu");
@@ -98,6 +83,21 @@ public class Inicio extends javax.swing.JFrame {
         );
 
         PanelVertical2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 170, 40));
+
+        jButtonInicio1.setBackground(new java.awt.Color(102, 102, 102));
+        jButtonInicio1.setText("Inicio");
+        jButtonInicio1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonInicio1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonInicio1MouseClicked(evt);
+            }
+        });
+        jButtonInicio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInicio1ActionPerformed(evt);
+            }
+        });
+        PanelVertical2.add(jButtonInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
 
         BgDashboard.add(PanelVertical2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 170, 520));
 
@@ -168,15 +168,38 @@ public class Inicio extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setPreferredSize(new java.awt.Dimension(240, 120));
 
+        btnAgregar.setBackground(new java.awt.Color(102, 102, 102));
+        btnAgregar.setText("Agregar");
+        btnAgregar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAgregarMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAgregarMousePressed(evt);
+            }
+        });
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(197, 197, 197))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 141, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(btnAgregar)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 255));
@@ -289,13 +312,16 @@ public class Inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonInicioMouseClicked
+    private void btnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonInicioMouseClicked
+    }//GEN-LAST:event_btnAgregarMouseClicked
 
-    private void jButtonInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonInicioActionPerformed
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        SeleccionarTipo w = new SeleccionarTipo();
+        w.setLocationRelativeTo(null);
+        w.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void PanelHorizontal2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelHorizontal2MousePressed
         xMause = evt.getX();
@@ -320,6 +346,18 @@ public class Inicio extends javax.swing.JFrame {
     private void exitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseExited
         exit.setBackground(Color.white);
     }//GEN-LAST:event_exitMouseExited
+
+    private void jButtonInicio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonInicio1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonInicio1MouseClicked
+
+    private void jButtonInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicio1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonInicio1ActionPerformed
+
+    private void btnAgregarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarMousePressed
 
     /**
      * @param args the command line arguments
@@ -360,8 +398,9 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel BgDashboard;
     private javax.swing.JPanel PanelHorizontal2;
     private javax.swing.JPanel PanelVertical2;
+    public javax.swing.JButton btnAgregar;
     private javax.swing.JLabel exit;
-    private javax.swing.JButton jButtonInicio;
+    private javax.swing.JButton jButtonInicio1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelGENX1;
     private javax.swing.JLabel jLabelMenu1;

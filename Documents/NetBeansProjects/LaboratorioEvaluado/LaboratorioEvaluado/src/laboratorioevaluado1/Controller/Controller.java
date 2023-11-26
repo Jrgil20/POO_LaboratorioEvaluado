@@ -7,7 +7,7 @@ package laboratorioevaluado1.Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import laboratorioevaluado1.View.PantallaInicio;
+import laboratorioevaluado1.View.Inicio;
 import laboratorioevaluado1.model.Refrigerado;
 import laboratorioevaluado1.model.TempAmbiente;
 
@@ -18,27 +18,17 @@ import laboratorioevaluado1.model.TempAmbiente;
 public class Controller implements ActionListener 
 {
     
-    private PantallaInicio view;
+    private Inicio view;
     private ArrayList<Refrigerado> listaRefrigerado;
     private ArrayList<TempAmbiente> listaTempAmbiente;
 
-    public Controller(PantallaInicio view, 
+    public Controller(Inicio view, 
             ArrayList<Refrigerado> listaRefrigerado, 
             ArrayList<TempAmbiente> listaTempAmbiente) 
     {
         this.view = view;
         this.listaRefrigerado = listaRefrigerado;
-        this.listaTempAmbiente = listaTempAmbiente;
-        this.view.btnAgregar.addActionListener(this);
-        this.view.btnModificar.addActionListener(this);
-        this.view.btnEliminar.addActionListener(this);
-        this.view.btnConsultar.addActionListener(this);
-        this.view.btnVencimiento.addActionListener(this);
-        this.view.btnColocarOferta.addActionListener(this);
-        this.view.btnRetirarOferta.addActionListener(this);
-        this.view.btnVerCostos.addActionListener(this);
-        this.view.btnComprarMedicamento.addActionListener(this);
-        this.view.btnVerInventario.addActionListener(this);
+        this.listaTempAmbiente = listaTempAmbiente;       
     }
     
     public void iniciar()
