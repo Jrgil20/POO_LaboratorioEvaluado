@@ -23,26 +23,9 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         initComponents();
         this.setLocationRelativeTo(this);
-        setImageLabel(jLabel5,"C:\\Users\\jrmat"
-                + "\\OneDrive\\Escritorio"
-                + "\\PROGRAMACION\\Java"
-                + "\\NetBeansProjects\\POO_LaboratorioEvaluado"
-                + "\\Documents\\NetBeansProjects\\LaboratorioEvaluado"
-                + "\\LaboratorioEvaluado\\src\\laboratorioevaluado1"
-                + "\\View\\resources\\images"
-                + "\\medicine-bottle-svgrepo-com.png");
+     
     }
     
-    public void setImageLabel(JLabel label, String ruta)
-    {
-        ImageIcon image = new ImageIcon(ruta);
-        Icon icon = new ImageIcon(
-                image.getImage().getScaledInstance(label.getWidth()
-                        , label.getHeight(), Image.SCALE_DEFAULT)
-        );
-        label.setIcon(icon);
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -66,14 +49,13 @@ public class Inicio extends javax.swing.JFrame {
         exit = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabelModificar = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabelAgregar = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -91,6 +73,7 @@ public class Inicio extends javax.swing.JFrame {
         PanelVertical2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelMenu1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelMenu1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelMenu1.setText("Menu");
         PanelVertical2.add(jLabelMenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
@@ -195,30 +178,15 @@ public class Inicio extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setPreferredSize(new java.awt.Dimension(240, 120));
 
-        jPanel10.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel10.setPreferredSize(new java.awt.Dimension(240, 120));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/medicine-bottle-svgrepo-com.png"))); // NOI18N
-        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 109, 91));
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+            .addGap(0, 141, Short.MAX_VALUE)
         );
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 255));
@@ -308,15 +276,20 @@ public class Inicio extends javax.swing.JFrame {
         jPanel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel9.setPreferredSize(new java.awt.Dimension(240, 120));
 
+        jLabel1.setFont(new java.awt.Font("A.C.M.E. Secret Agent", 0, 32)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Leer");
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 236, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 116, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -480,14 +453,13 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel PanelVertical2;
     private javax.swing.JLabel exit;
     private javax.swing.JButton jButtonInicio1;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelAgregar;
     private javax.swing.JLabel jLabelGENX1;
     private javax.swing.JLabel jLabelMenu1;
     private javax.swing.JLabel jLabelModificar;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
