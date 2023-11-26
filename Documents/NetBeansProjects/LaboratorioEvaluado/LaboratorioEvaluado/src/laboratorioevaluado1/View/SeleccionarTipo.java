@@ -4,12 +4,16 @@
  */
 package laboratorioevaluado1.View;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jrmat
  */
 public class SeleccionarTipo extends javax.swing.JFrame {
 
+    int xMause,yMause;
     /**
      * Creates new form SeleccionarTipo
      */
@@ -26,23 +30,47 @@ public class SeleccionarTipo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelVertical1 = new javax.swing.JPanel();
-        jLabelMenu = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        grupoSeleccion = new javax.swing.ButtonGroup();
+        PanelVertical2 = new javax.swing.JPanel();
+        jLabelMenu1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         jButtonInicio1 = new javax.swing.JButton();
-        PanelHorizontal1 = new javax.swing.JPanel();
+        PanelHorizontal2 = new javax.swing.JPanel();
+        jPanelGENX1 = new javax.swing.JPanel();
+        jLabelGENX1 = new javax.swing.JLabel();
+        exit = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        btnSeleccionar = new javax.swing.JButton();
+        opTempAmbiente = new javax.swing.JRadioButton();
+        opRefrigerado = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PanelVertical1.setBackground(new java.awt.Color(51, 51, 51));
-        PanelVertical1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelVertical2.setBackground(new java.awt.Color(51, 51, 51));
+        PanelVertical2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelMenu.setText("Menu");
-        PanelVertical1.add(jLabelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+        jLabelMenu1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelMenu1.setText("Menu");
+        PanelVertical2.add(jLabelMenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/logo.png"))); // NOI18N
-        PanelVertical1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, 190));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/logo.png"))); // NOI18N
+        PanelVertical2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, 190));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        PanelVertical2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 170, 40));
 
         jButtonInicio1.setBackground(new java.awt.Color(102, 102, 102));
         jButtonInicio1.setText("Inicio");
@@ -57,10 +85,140 @@ public class SeleccionarTipo extends javax.swing.JFrame {
                 jButtonInicio1ActionPerformed(evt);
             }
         });
-        PanelVertical1.add(jButtonInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
+        PanelVertical2.add(jButtonInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
 
-        PanelHorizontal1.setBackground(new java.awt.Color(164, 159, 224));
-        PanelHorizontal1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelHorizontal2.setBackground(new java.awt.Color(164, 159, 224));
+        PanelHorizontal2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                PanelHorizontal2MouseDragged(evt);
+            }
+        });
+        PanelHorizontal2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                PanelHorizontal2MousePressed(evt);
+            }
+        });
+        PanelHorizontal2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelGENX1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanelGENX1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelGENX1.setForeground(new java.awt.Color(102, 204, 255));
+
+        jLabelGENX1.setFont(new java.awt.Font("A.C.M.E. Secret Agent", 0, 16)); // NOI18N
+        jLabelGENX1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelGENX1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelGENX1.setText("GEN X");
+        jLabelGENX1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        javax.swing.GroupLayout jPanelGENX1Layout = new javax.swing.GroupLayout(jPanelGENX1);
+        jPanelGENX1.setLayout(jPanelGENX1Layout);
+        jPanelGENX1Layout.setHorizontalGroup(
+            jPanelGENX1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGENX1Layout.createSequentialGroup()
+                .addComponent(jLabelGENX1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanelGENX1Layout.setVerticalGroup(
+            jPanelGENX1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGENX1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelGENX1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        PanelHorizontal2.add(jPanelGENX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 40));
+
+        exit.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        exit.setForeground(new java.awt.Color(0, 0, 0));
+        exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exit.setText("X");
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitMouseExited(evt);
+            }
+        });
+        PanelHorizontal2.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 0, 40, 40));
+
+        jPanel1.setBackground(new java.awt.Color(204, 217, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setPreferredSize(new java.awt.Dimension(240, 120));
+
+        btnSeleccionar.setBackground(new java.awt.Color(102, 102, 102));
+        btnSeleccionar.setText("Seleccionar");
+        btnSeleccionar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSeleccionarMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSeleccionarMousePressed(evt);
+            }
+        });
+        btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionarActionPerformed(evt);
+            }
+        });
+
+        grupoSeleccion.add(opTempAmbiente);
+        opTempAmbiente.setText("Temperatura Ambiente");
+
+        grupoSeleccion.add(opRefrigerado);
+        opRefrigerado.setText("Refrigerado");
+        opRefrigerado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opRefrigeradoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(opRefrigerado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(opTempAmbiente)
+                .addGap(52, 52, 52)
+                .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(54, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSeleccionar)
+                    .addComponent(opTempAmbiente)
+                    .addComponent(opRefrigerado))
+                .addGap(21, 21, 21))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(86, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(249, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,19 +229,23 @@ public class SeleccionarTipo extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(PanelHorizontal1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(PanelVertical1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(PanelHorizontal2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(PanelVertical2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, 0)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addGap(0, 576, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(PanelHorizontal1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(PanelVertical1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelHorizontal2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(PanelVertical2, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -98,6 +260,57 @@ public class SeleccionarTipo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonInicio1ActionPerformed
 
+    private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitMouseClicked
+
+    private void exitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseEntered
+        exit.setBackground(Color.red);
+    }//GEN-LAST:event_exitMouseEntered
+
+    private void exitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseExited
+        exit.setBackground(Color.white);
+    }//GEN-LAST:event_exitMouseExited
+
+    private void PanelHorizontal2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelHorizontal2MouseDragged
+        int xOnScrean = evt.getXOnScreen();
+        int yOnScrean = evt.getYOnScreen();
+        this.setLocation(( xOnScrean -xMause),(yOnScrean - yMause));
+
+    }//GEN-LAST:event_PanelHorizontal2MouseDragged
+
+    private void PanelHorizontal2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelHorizontal2MousePressed
+        xMause = evt.getX();
+        yMause = evt.getY();
+    }//GEN-LAST:event_PanelHorizontal2MousePressed
+
+    private void btnSeleccionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeleccionarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSeleccionarMouseClicked
+
+    private void btnSeleccionarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeleccionarMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSeleccionarMousePressed
+
+    private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
+        // TODO add your handling code here:
+        if(opRefrigerado.isSelected())
+        {
+            JOptionPane.showMessageDialog(null, "Usted "
+                    + "selecciono un medicamento refrigerado");
+        }
+        else if(opTempAmbiente.isSelected())
+        {
+            JOptionPane.showMessageDialog(null, "Usted "
+                    + "selecciono un medicamento temperatura ambiente");
+        }
+    }//GEN-LAST:event_btnSeleccionarActionPerformed
+
+    private void opRefrigeradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opRefrigeradoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opRefrigeradoActionPerformed
+                                             
+    
     /**
      * @param args the command line arguments
      */
@@ -134,10 +347,20 @@ public class SeleccionarTipo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PanelHorizontal1;
-    private javax.swing.JPanel PanelVertical1;
+    private javax.swing.JPanel PanelHorizontal2;
+    private javax.swing.JPanel PanelVertical2;
+    public javax.swing.JButton btnSeleccionar;
+    private javax.swing.JLabel exit;
+    private javax.swing.ButtonGroup grupoSeleccion;
     private javax.swing.JButton jButtonInicio1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabelMenu;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelGENX1;
+    private javax.swing.JLabel jLabelMenu1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanelGENX1;
+    private javax.swing.JRadioButton opRefrigerado;
+    private javax.swing.JRadioButton opTempAmbiente;
     // End of variables declaration//GEN-END:variables
 }
