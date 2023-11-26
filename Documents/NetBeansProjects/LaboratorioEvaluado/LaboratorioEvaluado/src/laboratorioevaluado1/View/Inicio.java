@@ -270,7 +270,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabelEliminar.setFont(new java.awt.Font("A.C.M.E. Secret Agent", 0, 32)); // NOI18N
         jLabelEliminar.setForeground(new java.awt.Color(51, 51, 255));
         jLabelEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelEliminar.setText("Agregar");
+        jLabelEliminar.setText("Eliminar");
         jLabelEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelEliminarMouseClicked(evt);
@@ -304,6 +304,17 @@ public class Inicio extends javax.swing.JFrame {
         jLabelLeer.setForeground(new java.awt.Color(51, 51, 255));
         jLabelLeer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelLeer.setText("Leer");
+        jLabelLeer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelLeerMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelLeerMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelLeerMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -399,12 +410,7 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonInicio1ActionPerformed
 
     private void jLabelEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEliminarMouseClicked
-        VentanaAgregar w = new VentanaAgregar();
-        w.jPanelLeerDatos.setVisible(false);
-        w.jPanelModoCrear.setLocation(0,0);
-        w.setLocationRelativeTo(null);
-        w.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jLabelEliminarMouseClicked
 
     private void jLabelEliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEliminarMouseEntered
@@ -438,15 +444,39 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jLabelAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseClicked
         // TODO add your handling code here:
+        VentanaAgregar w = new VentanaAgregar();
+        w.jPanelLeerDatos.setVisible(false);
+        w.jPanelModoCrear.setLocation(0,0);
+        w.setLocationRelativeTo(null);
+        w.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabelAgregarMouseClicked
 
     private void jLabelAgregarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseEntered
         // TODO add your handling code here:
+        Color af = new Color(164,159,224);
+        jLabelAgregar.setForeground(af);
     }//GEN-LAST:event_jLabelAgregarMouseEntered
 
     private void jLabelAgregarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseExited
         // TODO add your handling code here:
+        jLabelAgregar.setForeground(Color.blue);
     }//GEN-LAST:event_jLabelAgregarMouseExited
+
+    private void jLabelLeerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeerMouseEntered
+        // TODO add your handling code here:
+        Color af = new Color(164,159,224);
+        jLabelLeer.setForeground(af);
+    }//GEN-LAST:event_jLabelLeerMouseEntered
+
+    private void jLabelLeerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeerMouseExited
+        // TODO add your handling code here:
+        jLabelLeer.setForeground(Color.blue);
+    }//GEN-LAST:event_jLabelLeerMouseExited
+
+    private void jLabelLeerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelLeerMouseClicked
  
     /**
      * @param args the command line arguments
