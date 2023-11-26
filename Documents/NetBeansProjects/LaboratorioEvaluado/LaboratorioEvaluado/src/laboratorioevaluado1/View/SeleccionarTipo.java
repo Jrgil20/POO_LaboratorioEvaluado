@@ -47,6 +47,10 @@ public class SeleccionarTipo extends javax.swing.JFrame {
         opRefrigerado = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("TipoMedicamento"); // NOI18N
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(900, 560));
+        setResizable(false);
 
         PanelVertical2.setBackground(new java.awt.Color(51, 51, 51));
         PanelVertical2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -186,7 +190,7 @@ public class SeleccionarTipo extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(opRefrigerado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(opTempAmbiente)
                 .addGap(52, 52, 52)
                 .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)

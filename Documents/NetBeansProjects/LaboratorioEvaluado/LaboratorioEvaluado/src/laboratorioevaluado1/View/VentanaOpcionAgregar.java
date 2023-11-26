@@ -72,6 +72,10 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
         jLabelMenu11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(900, 560));
+        setResizable(false);
 
         PanelHorizontal2.setBackground(new java.awt.Color(164, 159, 224));
         PanelHorizontal2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -172,6 +176,7 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 217, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jPanel1.setPreferredSize(new java.awt.Dimension(730, 560));
 
         jPanelModoCrear.setBackground(new java.awt.Color(204, 204, 255));
         jPanelModoCrear.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -218,7 +223,7 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
                         .addComponent(radioBtnManual, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(radioBtnPredefinidos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(radioBtnPredeterminados))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSeleccionar1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -233,7 +238,7 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
                     .addComponent(btnSeleccionar1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(radioBtnManual)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanelModoCrear1.setBackground(new java.awt.Color(204, 204, 255));
@@ -349,7 +354,7 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
                 .addComponent(jPanelModoCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanelModoCrear1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -370,7 +375,7 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -498,7 +503,7 @@ public class VentanaOpcionAgregar extends javax.swing.JFrame {
     private javax.swing.ButtonGroup btnGroupModoCrear;
     private javax.swing.ButtonGroup btnGroupVigencia;
     public javax.swing.JButton btnSeleccionar1;
-    private javax.swing.JButton btnSeleccionar2;
+    public javax.swing.JButton btnSeleccionar2;
     private javax.swing.JLabel exit;
     private javax.swing.JButton jButtonInicio1;
     private javax.swing.JLabel jLabel3;
