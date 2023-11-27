@@ -32,9 +32,9 @@ public class VentanaModificar extends javax.swing.JFrame {
 
         PanelVertical2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         jLabelMenu2 = new javax.swing.JLabel();
         jButtonInicio1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         PanelHorizontal2 = new javax.swing.JPanel();
         jPanelGENX1 = new javax.swing.JPanel();
         jLabelGENX1 = new javax.swing.JLabel();
@@ -82,10 +82,6 @@ public class VentanaModificar extends javax.swing.JFrame {
 
         PanelVertical2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 170, 40));
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/logo.png"))); // NOI18N
-        PanelVertical2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, 190));
-
         jLabelMenu2.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu2.setText("Menu");
         PanelVertical2.add(jLabelMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
@@ -104,6 +100,10 @@ public class VentanaModificar extends javax.swing.JFrame {
             }
         });
         PanelVertical2.add(jButtonInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/medicine-bottle-cute.png"))); // NOI18N
+        jLabel2.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/medicine-bottle-cute.png"))); // NOI18N
+        PanelVertical2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 290, 210, 220));
 
         PanelHorizontal2.setBackground(new java.awt.Color(164, 159, 224));
         PanelHorizontal2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -438,7 +438,7 @@ public class VentanaModificar extends javax.swing.JFrame {
     private javax.swing.JLabel exit;
     private javax.swing.JButton jButtonInicio1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelCodigo;
     private javax.swing.JLabel jLabelCosto;
     private javax.swing.JLabel jLabelFechaCaducidad;

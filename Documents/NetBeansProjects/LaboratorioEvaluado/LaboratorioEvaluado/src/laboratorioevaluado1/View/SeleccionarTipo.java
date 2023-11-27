@@ -30,9 +30,9 @@ public class SeleccionarTipo extends javax.swing.JFrame {
         grupoSeleccion = new javax.swing.ButtonGroup();
         PanelVertical2 = new javax.swing.JPanel();
         jLabelMenu1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jButtonInicio1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         PanelHorizontal2 = new javax.swing.JPanel();
         jPanelGENX1 = new javax.swing.JPanel();
         jLabelGENX1 = new javax.swing.JLabel();
@@ -54,10 +54,6 @@ public class SeleccionarTipo extends javax.swing.JFrame {
         jLabelMenu1.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu1.setText("Menu");
         PanelVertical2.add(jLabelMenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
-
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/logo.png"))); // NOI18N
-        PanelVertical2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, 190));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -86,6 +82,10 @@ public class SeleccionarTipo extends javax.swing.JFrame {
             }
         });
         PanelVertical2.add(jButtonInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/medicine-bottle-cute.png"))); // NOI18N
+        jLabel1.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/medicine-bottle-cute.png"))); // NOI18N
+        PanelVertical2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 270, 210, 220));
 
         PanelHorizontal2.setBackground(new java.awt.Color(164, 159, 224));
         PanelHorizontal2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -361,7 +361,7 @@ public class SeleccionarTipo extends javax.swing.JFrame {
     private javax.swing.JLabel exit;
     private javax.swing.ButtonGroup grupoSeleccion;
     private javax.swing.JButton jButtonInicio1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelColdMedicine;
     private javax.swing.JLabel jLabelGENX1;
     private javax.swing.JLabel jLabelMenu1;

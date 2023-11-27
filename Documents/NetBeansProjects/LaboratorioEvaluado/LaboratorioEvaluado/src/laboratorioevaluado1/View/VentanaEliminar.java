@@ -32,8 +32,8 @@ public class VentanaEliminar extends javax.swing.JFrame {
         PanelVertical3 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jLabelMenu2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         PanelHorizontal3 = new javax.swing.JPanel();
         jPanelGENX2 = new javax.swing.JPanel();
         jLabelGENX2 = new javax.swing.JLabel();
@@ -76,10 +76,6 @@ public class VentanaEliminar extends javax.swing.JFrame {
         jLabelMenu2.setText("Menu");
         PanelVertical3.add(jLabelMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 20));
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/logo.png"))); // NOI18N
-        PanelVertical3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, 190));
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -92,6 +88,10 @@ public class VentanaEliminar extends javax.swing.JFrame {
         );
 
         PanelVertical3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 170, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/medicine-bottle-cute.png"))); // NOI18N
+        jLabel1.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/medicine-bottle-cute.png"))); // NOI18N
+        PanelVertical3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 270, 210, 220));
 
         BgDashboard.add(PanelVertical3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 170, 540));
 
@@ -290,8 +290,8 @@ public class VentanaEliminar extends javax.swing.JFrame {
     public javax.swing.JButton btnSeleccionar2;
     public javax.swing.JButton btnSeleccionar3;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelCosto;
     private javax.swing.JLabel jLabelFechaDeVencimiento;
     private javax.swing.JLabel jLabelGENX2;
