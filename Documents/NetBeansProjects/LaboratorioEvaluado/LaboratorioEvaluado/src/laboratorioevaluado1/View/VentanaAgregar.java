@@ -47,20 +47,18 @@ public class VentanaAgregar extends javax.swing.JFrame {
         radioBtnPredefinidos = new javax.swing.JRadioButton();
         radioBtnManual = new javax.swing.JRadioButton();
         jPanelLeerDatos = new javax.swing.JPanel();
-        btnSeleccionar2 = new javax.swing.JButton();
+        btnAgregarMedicamento = new javax.swing.JButton();
         jLabelMenu2 = new javax.swing.JLabel();
         jLabelMenu3 = new javax.swing.JLabel();
         jLabelMenu4 = new javax.swing.JLabel();
         jLabelMenu5 = new javax.swing.JLabel();
         jLabelMenu6 = new javax.swing.JLabel();
-        nAnio = new javax.swing.JSpinner();
         jLabelMenu7 = new javax.swing.JLabel();
         nCodigo = new javax.swing.JSpinner();
         nUnidadesExistentes = new javax.swing.JSpinner();
         nPrecio = new javax.swing.JSpinner();
         nCosto = new javax.swing.JSpinner();
         nLote = new javax.swing.JSpinner();
-        nMes = new javax.swing.JSpinner();
         jLabelMenu8 = new javax.swing.JLabel();
         jLabelMenu9 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
@@ -69,6 +67,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
         jLabelMenu10 = new javax.swing.JLabel();
         nUnidadesVendidas = new javax.swing.JSpinner();
         txtNombre = new javax.swing.JTextField();
+        jDateChooserFecha = new com.toedter.calendar.JDateChooser();
         jLabelMenu11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -222,7 +221,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
                         .addComponent(radioBtnManual, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(radioBtnPredefinidos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(radioBtnPredeterminados))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSeleccionar1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -237,7 +236,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
                     .addComponent(btnSeleccionar1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(radioBtnManual)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanelLeerDatos.setBackground(new java.awt.Color(204, 204, 255));
@@ -245,27 +244,27 @@ public class VentanaAgregar extends javax.swing.JFrame {
         jPanelLeerDatos.setPreferredSize(new java.awt.Dimension(240, 120));
         jPanelLeerDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSeleccionar2.setBackground(new java.awt.Color(102, 102, 102));
-        btnSeleccionar2.setText("Seleccionar");
-        btnSeleccionar2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAgregarMedicamento.setBackground(new java.awt.Color(102, 102, 102));
+        btnAgregarMedicamento.setText("Agregar");
+        btnAgregarMedicamento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSeleccionar2MouseClicked(evt);
+                btnAgregarMedicamentoMouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnSeleccionar2MousePressed(evt);
+                btnAgregarMedicamentoMousePressed(evt);
             }
         });
-        btnSeleccionar2.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarMedicamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeleccionar2ActionPerformed(evt);
+                btnAgregarMedicamentoActionPerformed(evt);
             }
         });
-        jPanelLeerDatos.add(btnSeleccionar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 128, -1));
+        jPanelLeerDatos.add(btnAgregarMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 250, 60));
 
         jLabelMenu2.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu2.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu2.setText("Vigencia en el mercado");
-        jPanelLeerDatos.add(jLabelMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 130, -1));
+        jPanelLeerDatos.add(jLabelMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 130, -1));
 
         jLabelMenu3.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu3.setForeground(new java.awt.Color(0, 0, 0));
@@ -286,7 +285,6 @@ public class VentanaAgregar extends javax.swing.JFrame {
         jLabelMenu6.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu6.setText("Número de lote");
         jPanelLeerDatos.add(jLabelMenu6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
-        jPanelLeerDatos.add(nAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, 70, -1));
 
         jLabelMenu7.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu7.setForeground(new java.awt.Color(0, 0, 0));
@@ -297,12 +295,11 @@ public class VentanaAgregar extends javax.swing.JFrame {
         jPanelLeerDatos.add(nPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 121, -1));
         jPanelLeerDatos.add(nCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 121, -1));
         jPanelLeerDatos.add(nLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 121, -1));
-        jPanelLeerDatos.add(nMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 50, -1));
 
         jLabelMenu8.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabelMenu8.setText("Nombre");
-        jPanelLeerDatos.add(jLabelMenu8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jLabelMenu8.setText("Fecha");
+        jPanelLeerDatos.add(jLabelMenu8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, -1));
 
         jLabelMenu9.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu9.setForeground(new java.awt.Color(0, 0, 0));
@@ -310,15 +307,15 @@ public class VentanaAgregar extends javax.swing.JFrame {
 
         btnGroupVigencia.add(jRadioButton1);
         jRadioButton1.setText("Retirado");
-        jPanelLeerDatos.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
+        jPanelLeerDatos.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, -1));
 
         btnGroupVigencia.add(jRadioButton2);
         jRadioButton2.setText("No vigente");
-        jPanelLeerDatos.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
+        jPanelLeerDatos.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
 
         btnGroupVigencia.add(jRadioButton3);
         jRadioButton3.setText("Vigente");
-        jPanelLeerDatos.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, -1, -1));
+        jPanelLeerDatos.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, -1, -1));
 
         jLabelMenu10.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu10.setForeground(new java.awt.Color(0, 0, 0));
@@ -331,12 +328,13 @@ public class VentanaAgregar extends javax.swing.JFrame {
                 txtNombreActionPerformed(evt);
             }
         });
-        jPanelLeerDatos.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 121, -1));
+        jPanelLeerDatos.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 210, -1));
+        jPanelLeerDatos.add(jDateChooserFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, -1, -1));
 
         jLabelMenu11.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabelMenu11.setText("Fecha de caducidad (mes/año)");
-        jPanelLeerDatos.add(jLabelMenu11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
+        jLabelMenu11.setText("Nombre");
+        jPanelLeerDatos.add(jLabelMenu11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -348,9 +346,9 @@ public class VentanaAgregar extends javax.swing.JFrame {
                         .addGap(121, 121, 121)
                         .addComponent(jPanelModoCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jPanelLeerDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                        .addGap(20, 20, 20)
+                        .addComponent(jPanelLeerDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -446,17 +444,17 @@ public class VentanaAgregar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_radioBtnPredefinidosActionPerformed
 
-    private void btnSeleccionar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionar2ActionPerformed
+    private void btnAgregarMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMedicamentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSeleccionar2ActionPerformed
+    }//GEN-LAST:event_btnAgregarMedicamentoActionPerformed
 
-    private void btnSeleccionar2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeleccionar2MousePressed
+    private void btnAgregarMedicamentoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMedicamentoMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSeleccionar2MousePressed
+    }//GEN-LAST:event_btnAgregarMedicamentoMousePressed
 
-    private void btnSeleccionar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeleccionar2MouseClicked
+    private void btnAgregarMedicamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMedicamentoMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSeleccionar2MouseClicked
+    }//GEN-LAST:event_btnAgregarMedicamentoMouseClicked
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
@@ -515,12 +513,13 @@ public class VentanaAgregar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelHorizontal2;
     private javax.swing.JPanel PanelVertical2;
+    public javax.swing.JButton btnAgregarMedicamento;
     private javax.swing.ButtonGroup btnGroupModoCrear;
     private javax.swing.ButtonGroup btnGroupVigencia;
     public javax.swing.JButton btnSeleccionar1;
-    public javax.swing.JButton btnSeleccionar2;
     private javax.swing.JLabel exit;
     private javax.swing.JButton jButtonInicio1;
+    private com.toedter.calendar.JDateChooser jDateChooserFecha;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelGENX1;
     private javax.swing.JLabel jLabelMenu1;
@@ -542,11 +541,9 @@ public class VentanaAgregar extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JSpinner nAnio;
     private javax.swing.JSpinner nCodigo;
     private javax.swing.JSpinner nCosto;
     private javax.swing.JSpinner nLote;
-    private javax.swing.JSpinner nMes;
     private javax.swing.JSpinner nPrecio;
     private javax.swing.JSpinner nUnidadesExistentes;
     private javax.swing.JSpinner nUnidadesVendidas;

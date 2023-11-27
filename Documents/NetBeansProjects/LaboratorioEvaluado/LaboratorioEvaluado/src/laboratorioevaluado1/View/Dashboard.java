@@ -26,19 +26,16 @@ public class Dashboard extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         PanelVertical1 = new javax.swing.JPanel();
         jLabelMenu = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnInicio = new javax.swing.JButton();
         PanelHorizontal1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         PanelVertical1.setBackground(new java.awt.Color(51, 51, 51));
         PanelVertical1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,6 +66,12 @@ public class Dashboard extends javax.swing.JPanel {
         PanelHorizontal1.setBackground(new java.awt.Color(164, 159, 224));
         PanelHorizontal1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(PanelHorizontal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
+
+        jPanel2.setBackground(new java.awt.Color(255, 51, 153));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 730, 520));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciobotonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciobotonInicio
@@ -85,10 +88,11 @@ public class Dashboard extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelHorizontal1;
     private javax.swing.JPanel PanelVertical1;
-    private javax.swing.JButton btnInicio;
+    public javax.swing.JButton btnInicio;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelMenu;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 
 }

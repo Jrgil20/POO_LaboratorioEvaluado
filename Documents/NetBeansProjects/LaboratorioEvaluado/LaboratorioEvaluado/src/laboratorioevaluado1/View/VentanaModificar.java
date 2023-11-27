@@ -172,12 +172,12 @@ public class VentanaModificar extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("<html>Seleccione la propiedad que desea modificar...</html>");
+        jLabel1.setText("<html>Seleccione la propiedad que desea modificar:</html>");
         jLabel1.setAutoscrolls(true);
         jLabel1.setMaximumSize(new java.awt.Dimension(156, 64));
         jLabel1.setMinimumSize(new java.awt.Dimension(156, 64));
         jLabel1.setPreferredSize(new java.awt.Dimension(156, 64));
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 410, 80));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 100));
 
         jPanelNombre.setBackground(new java.awt.Color(204, 204, 204));
         jPanelNombre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
