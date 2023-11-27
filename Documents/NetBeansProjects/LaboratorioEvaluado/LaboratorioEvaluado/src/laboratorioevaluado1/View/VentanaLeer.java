@@ -38,6 +38,16 @@ public class VentanaLeer extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
+        jLabelCodigo = new javax.swing.JLabel();
+        jLabelNombre = new javax.swing.JLabel();
+        jLabelCosto = new javax.swing.JLabel();
+        jLabelPrecio = new javax.swing.JLabel();
+        jLabelUnidadesExistentes = new javax.swing.JLabel();
+        jLabelUnidadesVendidas = new javax.swing.JLabel();
+        jLabelNumeroLote = new javax.swing.JLabel();
+        jLabelVigenciaMercado = new javax.swing.JLabel();
+        jLabelFechaDeVencimiento = new javax.swing.JLabel();
+        btnVolverAlMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,34 +126,130 @@ public class VentanaLeer extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setPreferredSize(new java.awt.Dimension(240, 120));
 
+        jLabelCodigo.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelCodigo.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabelCodigo.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelCodigo.setText("Código");
+
+        jLabelNombre.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelNombre.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabelNombre.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelNombre.setText("Nombre");
+
+        jLabelCosto.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelCosto.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabelCosto.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelCosto.setText("Código");
+
+        jLabelPrecio.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelPrecio.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabelPrecio.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelPrecio.setText("Precio");
+
+        jLabelUnidadesExistentes.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelUnidadesExistentes.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabelUnidadesExistentes.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelUnidadesExistentes.setText("Unidades Existentes");
+
+        jLabelUnidadesVendidas.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelUnidadesVendidas.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabelUnidadesVendidas.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelUnidadesVendidas.setText("Unidades Vendidas");
+
+        jLabelNumeroLote.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelNumeroLote.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabelNumeroLote.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelNumeroLote.setText("Número de lote");
+
+        jLabelVigenciaMercado.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelVigenciaMercado.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabelVigenciaMercado.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelVigenciaMercado.setText("Vigencia en el mercado");
+
+        jLabelFechaDeVencimiento.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelFechaDeVencimiento.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabelFechaDeVencimiento.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelFechaDeVencimiento.setText("Fecha de vencimiento");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 587, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelUnidadesExistentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelCosto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelUnidadesVendidas, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(jLabelNumeroLote, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(jLabelVigenciaMercado, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(jLabelFechaDeVencimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
+                .addContainerGap(374, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 348, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelUnidadesExistentes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelUnidadesVendidas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelNumeroLote, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelVigenciaMercado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelFechaDeVencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel2);
+
+        btnVolverAlMenu.setBackground(new java.awt.Color(102, 102, 102));
+        btnVolverAlMenu.setText("Volver al menú");
+        btnVolverAlMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVolverAlMenuMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnVolverAlMenuMousePressed(evt);
+            }
+        });
+        btnVolverAlMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverAlMenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVolverAlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnVolverAlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,6 +296,22 @@ public class VentanaLeer extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnInicioActionPerformed
 
+    private void btnVolverAlMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverAlMenuMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVolverAlMenuMouseClicked
+
+    private void btnVolverAlMenuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverAlMenuMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVolverAlMenuMousePressed
+
+    private void btnVolverAlMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAlMenuActionPerformed
+        // TODO add your handling code here:
+        Inicio w = new Inicio();
+        w.setLocationRelativeTo(null);
+        w.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverAlMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -229,9 +351,19 @@ public class VentanaLeer extends javax.swing.JFrame {
     private javax.swing.JPanel PanelHorizontal2;
     private javax.swing.JPanel PanelVertical2;
     private javax.swing.JButton btnInicio;
+    public javax.swing.JButton btnVolverAlMenu;
     private javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabelCodigo;
+    public javax.swing.JLabel jLabelCosto;
+    public javax.swing.JLabel jLabelFechaDeVencimiento;
     private javax.swing.JLabel jLabelGENX1;
     private javax.swing.JLabel jLabelMenu1;
+    public javax.swing.JLabel jLabelNombre;
+    public javax.swing.JLabel jLabelNumeroLote;
+    public javax.swing.JLabel jLabelPrecio;
+    public javax.swing.JLabel jLabelUnidadesExistentes;
+    public javax.swing.JLabel jLabelUnidadesVendidas;
+    public javax.swing.JLabel jLabelVigenciaMercado;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;

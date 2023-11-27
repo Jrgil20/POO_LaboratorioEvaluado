@@ -37,11 +37,6 @@ public class VentanaEliminar extends javax.swing.JFrame {
         PanelHorizontal3 = new javax.swing.JPanel();
         jPanelGENX2 = new javax.swing.JPanel();
         jLabelGENX2 = new javax.swing.JLabel();
-        jPanelIngresarCodigo = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabelMenu4 = new javax.swing.JLabel();
-        txtNCodigo = new javax.swing.JTextField();
-        btnIngresarCodigo = new javax.swing.JButton();
         jPanelConfirmarEliminacion = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabelFechaDeVencimiento = new javax.swing.JLabel();
@@ -130,53 +125,6 @@ public class VentanaEliminar extends javax.swing.JFrame {
         PanelHorizontal3.add(jPanelGENX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 40));
 
         BgDashboard.add(PanelHorizontal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
-
-        jPanelIngresarCodigo.setBackground(new java.awt.Color(204, 204, 255));
-        jPanelIngresarCodigo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanelIngresarCodigo.setPreferredSize(new java.awt.Dimension(240, 120));
-        jPanelIngresarCodigo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("<html>Ingrese el codigo del medicamento que desea eliminar</html>");
-        jLabel1.setAutoscrolls(true);
-        jLabel1.setMaximumSize(new java.awt.Dimension(156, 64));
-        jLabel1.setMinimumSize(new java.awt.Dimension(156, 64));
-        jLabel1.setPreferredSize(new java.awt.Dimension(156, 64));
-        jPanelIngresarCodigo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 410, 80));
-
-        jLabelMenu4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabelMenu4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabelMenu4.setText("Código:");
-        jPanelIngresarCodigo.add(jLabelMenu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 40, 30));
-
-        txtNCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNCodigoActionPerformed(evt);
-            }
-        });
-        jPanelIngresarCodigo.add(txtNCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 121, -1));
-
-        btnIngresarCodigo.setBackground(new java.awt.Color(102, 102, 102));
-        btnIngresarCodigo.setText("Ingresar");
-        btnIngresarCodigo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnIngresarCodigoMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnIngresarCodigoMousePressed(evt);
-            }
-        });
-        btnIngresarCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIngresarCodigoActionPerformed(evt);
-            }
-        });
-        jPanelIngresarCodigo.add(btnIngresarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 100, -1));
-
-        BgDashboard.add(jPanelIngresarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 440, -1));
 
         jPanelConfirmarEliminacion.setBackground(new java.awt.Color(204, 204, 255));
         jPanelConfirmarEliminacion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -274,33 +222,6 @@ public class VentanaEliminar extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void txtNCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNCodigoActionPerformed
-
-    private void btnIngresarCodigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarCodigoMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnIngresarCodigoMouseClicked
-
-    private void btnIngresarCodigoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarCodigoMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnIngresarCodigoMousePressed
-
-    private void btnIngresarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarCodigoActionPerformed
-        // TODO add your handling code here:
-        
-        //Falta validar que meta un codigo valido
-        
-        //El texto de los labels es provisional para pruebas, luego se 
-        //debe cambiar por los atributos correspondientes del medicamento        
-        jLabelNombre.setText("Hola");
-        jLabelCosto.setText("Como");
-        jLabelFechaDeVencimiento.setText("Estas");
-        jPanelConfirmarEliminacion.setLocation(0, 0);
-        jPanelConfirmarEliminacion.setVisible(true);
-        jPanelIngresarCodigo.setVisible(false);
-    }//GEN-LAST:event_btnIngresarCodigoActionPerformed
-
     private void btnSeleccionar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionar2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSeleccionar2ActionPerformed
@@ -364,24 +285,19 @@ public class VentanaEliminar extends javax.swing.JFrame {
     private javax.swing.JPanel BgDashboard;
     private javax.swing.JPanel PanelHorizontal3;
     private javax.swing.JPanel PanelVertical3;
-    public javax.swing.JButton btnIngresarCodigo;
     public javax.swing.JButton btnSeleccionar2;
     public javax.swing.JButton btnSeleccionar3;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelCosto;
     private javax.swing.JLabel jLabelFechaDeVencimiento;
     private javax.swing.JLabel jLabelGENX2;
     private javax.swing.JLabel jLabelMenu2;
-    private javax.swing.JLabel jLabelMenu4;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     public javax.swing.JPanel jPanelConfirmarEliminacion;
     private javax.swing.JPanel jPanelGENX2;
-    public javax.swing.JPanel jPanelIngresarCodigo;
-    private javax.swing.JTextField txtNCodigo;
     // End of variables declaration//GEN-END:variables
 }

@@ -419,8 +419,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jLabelEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEliminarMouseClicked
         VentanaEliminar w = new VentanaEliminar();
-        w.jPanelConfirmarEliminacion.setVisible(false);
-        w.jPanelIngresarCodigo.setLocation(0,0);
+        w.jPanelConfirmarEliminacion.setLocation(0, 0);
         w.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelEliminarMouseClicked
@@ -490,6 +489,19 @@ public class Inicio extends javax.swing.JFrame {
         // TODO add your handling code here:
         VentanaLeer w = new VentanaLeer();
         w.setVisible(true);
+        
+        //falta poner los atributos correspondientes del medicamento que este
+        //seleccionado, ademas sus atributos particulares
+        
+        w.jLabelNombre.setText("Nombre: ");
+        w.jLabelCodigo.setText("Codigo: ");
+        w.jLabelCosto.setText("Costo: ");
+        w.jLabelPrecio.setText("Precio: ");
+        w.jLabelUnidadesExistentes.setText("Unidades existentes: : ");
+        w.jLabelUnidadesVendidas.setText("Unidades vendidas: ");
+        w.jLabelNumeroLote.setText("Número de lote: ");
+        w.jLabelVigenciaMercado.setText("Vigencia en el mercado: ");
+        w.jLabelFechaDeVencimiento.setText("Fecha de vencimiento: ");        
         this.dispose();
     }//GEN-LAST:event_jLabelLeerMouseClicked
  
