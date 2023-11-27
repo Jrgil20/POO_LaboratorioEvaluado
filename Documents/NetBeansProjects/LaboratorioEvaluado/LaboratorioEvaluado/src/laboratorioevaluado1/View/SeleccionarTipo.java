@@ -302,8 +302,7 @@ public class SeleccionarTipo extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelColdMedicineMouseClicked
 
     private void jLabeltempMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabeltempMouseClicked
-        JOptionPane.showMessageDialog(null, "Usted "
-                    + "selecciono un medicamento temperatura ambiente");
+  
         VentanaAgregar w = new VentanaAgregar();
         w.jPanelLeerDatos.setVisible(false);
         w.jPanelModoCrear.setLocation(0,0);
