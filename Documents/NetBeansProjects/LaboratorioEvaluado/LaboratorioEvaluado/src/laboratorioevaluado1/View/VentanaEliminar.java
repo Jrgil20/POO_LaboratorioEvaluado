@@ -201,9 +201,12 @@ public class VentanaEliminar extends javax.swing.JFrame {
         BgDashboard.add(jPanelConfirmarEliminacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 470, 260));
 
         jComboBox1.setBackground(new java.awt.Color(204, 204, 255));
+        jComboBox1.setEditable(true);
         jComboBox1.setFont(new java.awt.Font("Segoe Script", 0, 32)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(0, 0, 204));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "medicamento", "pastillas", "aminoacidos", "otros", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "medicamento", " " }));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jComboBox1.setOpaque(true);
         BgDashboard.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 430, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

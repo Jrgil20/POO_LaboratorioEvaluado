@@ -60,6 +60,7 @@ public class VentanaModificar extends javax.swing.JFrame {
         jLabelUnidadesVendidas = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabelFechaCaducidad = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -180,7 +181,7 @@ public class VentanaModificar extends javax.swing.JFrame {
         jLabel1.setMaximumSize(new java.awt.Dimension(156, 64));
         jLabel1.setMinimumSize(new java.awt.Dimension(156, 64));
         jLabel1.setPreferredSize(new java.awt.Dimension(156, 64));
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 100));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 540, 60));
 
         jPanelNombre.setBackground(new java.awt.Color(204, 204, 204));
         jPanelNombre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -200,9 +201,9 @@ public class VentanaModificar extends javax.swing.JFrame {
                 jLabelNombreMouseClicked(evt);
             }
         });
-        jPanelNombre.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 6, 140, 70));
+        jPanelNombre.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 6, 140, 30));
 
-        jPanel2.add(jPanelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 140, 80));
+        jPanel2.add(jPanelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 140, 40));
 
         jPanelCodigo.setBackground(new java.awt.Color(204, 204, 204));
         jPanelCodigo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -212,9 +213,9 @@ public class VentanaModificar extends javax.swing.JFrame {
         jLabelCodigo.setForeground(new java.awt.Color(0, 0, 0));
         jLabelCodigo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelCodigo.setText("Código");
-        jPanelCodigo.add(jLabelCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 6, 130, 70));
+        jPanelCodigo.add(jLabelCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 6, 130, 30));
 
-        jPanel2.add(jPanelCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 140, 80));
+        jPanel2.add(jPanelCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 140, 40));
 
         jPanelPrecio.setBackground(new java.awt.Color(204, 204, 204));
         jPanelPrecio.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -224,9 +225,9 @@ public class VentanaModificar extends javax.swing.JFrame {
         jLabelPrecio.setForeground(new java.awt.Color(0, 0, 0));
         jLabelPrecio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelPrecio.setText("Precio");
-        jPanelPrecio.add(jLabelPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 80));
+        jPanelPrecio.add(jLabelPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 50));
 
-        jPanel2.add(jPanelPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 140, 80));
+        jPanel2.add(jPanelPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 140, 50));
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
         jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -236,9 +237,9 @@ public class VentanaModificar extends javax.swing.JFrame {
         jLabelUnidadesExistentes.setForeground(new java.awt.Color(0, 0, 0));
         jLabelUnidadesExistentes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelUnidadesExistentes.setText("<html>Unidades existentes</html>");
-        jPanel8.add(jLabelUnidadesExistentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 80));
+        jPanel8.add(jLabelUnidadesExistentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 50));
 
-        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 140, 80));
+        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 140, 50));
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 204));
         jPanel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -248,73 +249,127 @@ public class VentanaModificar extends javax.swing.JFrame {
         jLabelNumeroDeLote.setForeground(new java.awt.Color(0, 0, 0));
         jLabelNumeroDeLote.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNumeroDeLote.setText("Numero de lote");
-        jPanel9.add(jLabelNumeroDeLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 6, 140, 70));
+        jPanel9.add(jLabelNumeroDeLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 6, 140, 40));
 
-        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 140, 80));
+        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 140, 50));
 
         jPanel10.setBackground(new java.awt.Color(204, 204, 204));
         jPanel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel10.setPreferredSize(new java.awt.Dimension(240, 120));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelVigenciaMercado.setForeground(new java.awt.Color(0, 0, 0));
         jLabelVigenciaMercado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelVigenciaMercado.setText("<html>Vigencia en el mercado</html>");
-        jPanel10.add(jLabelVigenciaMercado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 80));
 
-        jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 140, 80));
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabelVigenciaMercado, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabelVigenciaMercado, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 140, 50));
 
         jPanelCosto.setBackground(new java.awt.Color(204, 204, 204));
         jPanelCosto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelCosto.setPreferredSize(new java.awt.Dimension(240, 120));
-        jPanelCosto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelCosto.setForeground(new java.awt.Color(0, 0, 0));
         jLabelCosto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelCosto.setText("Costo");
-        jPanelCosto.add(jLabelCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 140, 80));
 
-        jPanel2.add(jPanelCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 140, 80));
+        javax.swing.GroupLayout jPanelCostoLayout = new javax.swing.GroupLayout(jPanelCosto);
+        jPanelCosto.setLayout(jPanelCostoLayout);
+        jPanelCostoLayout.setHorizontalGroup(
+            jPanelCostoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabelCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanelCostoLayout.setVerticalGroup(
+            jPanelCostoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCostoLayout.createSequentialGroup()
+                .addComponent(jLabelCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(jPanelCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 140, 40));
 
         jPanel12.setBackground(new java.awt.Color(204, 204, 204));
         jPanel12.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel12.setPreferredSize(new java.awt.Dimension(240, 120));
-        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelUnidadesVendidas.setForeground(new java.awt.Color(0, 0, 0));
         jLabelUnidadesVendidas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelUnidadesVendidas.setText("<html>Unidades vendidas</html>");
-        jPanel12.add(jLabelUnidadesVendidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 80));
 
-        jPanel2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 140, 80));
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabelUnidadesVendidas, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabelUnidadesVendidas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jPanel2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 140, 50));
 
         jPanel13.setBackground(new java.awt.Color(204, 204, 204));
         jPanel13.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel13.setPreferredSize(new java.awt.Dimension(240, 120));
-        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelFechaCaducidad.setForeground(new java.awt.Color(0, 0, 0));
         jLabelFechaCaducidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelFechaCaducidad.setText("<html>Fecha de caducidad</html>");
-        jPanel13.add(jLabelFechaCaducidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 80));
 
-        jPanel2.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 140, 80));
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabelFechaCaducidad, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addComponent(jLabelFechaCaducidad, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 140, 50));
+
+        jComboBox1.setBackground(new java.awt.Color(204, 204, 255));
+        jComboBox1.setEditable(true);
+        jComboBox1.setFont(new java.awt.Font("Segoe Script", 0, 32)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(0, 0, 204));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "medicamento", " " }));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jComboBox1.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(69, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(82, 82, 82)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117))
+                .addContainerGap(104, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(149, 149, 149))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -437,6 +492,7 @@ public class VentanaModificar extends javax.swing.JFrame {
     private javax.swing.JPanel PanelVertical2;
     private javax.swing.JLabel exit;
     private javax.swing.JButton jButtonInicio1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelCodigo;
