@@ -40,7 +40,7 @@ public class Inicio extends javax.swing.JFrame {
         PanelVertical2 = new javax.swing.JPanel();
         jLabelMenu1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jButtonInicio1 = new javax.swing.JButton();
+        btnInicio = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         PanelHorizontal2 = new javax.swing.JPanel();
         jPanelGENX1 = new javax.swing.JPanel();
@@ -91,20 +91,20 @@ public class Inicio extends javax.swing.JFrame {
 
         PanelVertical2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 170, 40));
 
-        jButtonInicio1.setBackground(new java.awt.Color(102, 102, 102));
-        jButtonInicio1.setText("Inicio");
-        jButtonInicio1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButtonInicio1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnInicio.setBackground(new java.awt.Color(102, 102, 102));
+        btnInicio.setText("Inicio");
+        btnInicio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonInicio1MouseClicked(evt);
+                btnInicioMouseClicked(evt);
             }
         });
-        jButtonInicio1.addActionListener(new java.awt.event.ActionListener() {
+        btnInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonInicio1ActionPerformed(evt);
+                btnInicioActionPerformed(evt);
             }
         });
-        PanelVertical2.add(jButtonInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
+        PanelVertical2.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/logo.png"))); // NOI18N
@@ -405,17 +405,17 @@ public class Inicio extends javax.swing.JFrame {
         exit.setBackground(Color.white);
     }//GEN-LAST:event_exitMouseExited
 
-    private void jButtonInicio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonInicio1MouseClicked
+    private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonInicio1MouseClicked
+    }//GEN-LAST:event_btnInicioMouseClicked
 
-    private void jButtonInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicio1ActionPerformed
+    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         // TODO add your handling code here:
         Inicio w = new Inicio();
         w.setLocationRelativeTo(null);
         w.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButtonInicio1ActionPerformed
+    }//GEN-LAST:event_btnInicioActionPerformed
 
     private void jLabelEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEliminarMouseClicked
         VentanaEliminar w = new VentanaEliminar();
@@ -488,6 +488,9 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jLabelLeerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeerMouseClicked
         // TODO add your handling code here:
+        VentanaLeer w = new VentanaLeer();
+        w.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabelLeerMouseClicked
  
     /**
@@ -529,8 +532,8 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel BgDashboard;
     private javax.swing.JPanel PanelHorizontal2;
     private javax.swing.JPanel PanelVertical2;
+    private javax.swing.JButton btnInicio;
     private javax.swing.JLabel exit;
-    private javax.swing.JButton jButtonInicio1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelAgregar;
     private javax.swing.JLabel jLabelEliminar;
