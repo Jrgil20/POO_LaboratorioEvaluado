@@ -410,7 +410,6 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInicioMouseClicked
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-        // TODO add your handling code here:
         Inicio w = new Inicio();
         w.setLocationRelativeTo(null);
         w.setVisible(true);
@@ -430,12 +429,10 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelEliminarMouseEntered
 
     private void jLabelEliminarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEliminarMouseExited
-        
         jLabelEliminar.setForeground(Color.blue);
     }//GEN-LAST:event_jLabelEliminarMouseExited
 
     private void jLabelModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelModificarMouseClicked
-        // TODO add your handling code here:
         VentanaModificar w = new VentanaModificar();       
         w.setLocationRelativeTo(null);
         w.setVisible(true);
@@ -443,46 +440,37 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelModificarMouseClicked
 
     private void jLabelModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelModificarMouseEntered
-        // TODO add your handling code here:
         Color af = new Color(164,159,224);
         jLabelModificar.setForeground(af);
     }//GEN-LAST:event_jLabelModificarMouseEntered
 
     private void jLabelModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelModificarMouseExited
-        // TODO add your handling code here:
         jLabelModificar.setForeground(Color.blue);
     }//GEN-LAST:event_jLabelModificarMouseExited
 
     private void jLabelAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseClicked
-        // TODO add your handling code here:
-        VentanaAgregar w = new VentanaAgregar();
-        w.jPanelLeerDatos.setVisible(false);
-        w.jPanelModoCrear.setLocation(0,0);
+        SeleccionarTipo w = new SeleccionarTipo();
         w.setLocationRelativeTo(null);
         w.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelAgregarMouseClicked
 
     private void jLabelAgregarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseEntered
-        // TODO add your handling code here:
         Color af = new Color(164,159,224);
         jLabelAgregar.setForeground(af);
     }//GEN-LAST:event_jLabelAgregarMouseEntered
 
     private void jLabelAgregarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelAgregarMouseExited
-        // TODO add your handling code here:
         jLabelAgregar.setForeground(Color.blue);
     }//GEN-LAST:event_jLabelAgregarMouseExited
 
     private void jLabelLeerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeerMouseEntered
-        // TODO add your handling code here:
         Color af = new Color(164,159,224);
         jLabelLeer.setForeground(af);
     }//GEN-LAST:event_jLabelLeerMouseEntered
 
     private void jLabelLeerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeerMouseExited
-        // TODO add your handling code here:
-        jLabelLeer.setForeground(Color.blue);
+jLabelLeer.setForeground(Color.blue);
     }//GEN-LAST:event_jLabelLeerMouseExited
 
     private void jLabelLeerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeerMouseClicked

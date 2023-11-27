@@ -11,7 +11,6 @@ import javax.swing.JOptionPane;
 public class SeleccionarTipo extends javax.swing.JFrame {
 
     int xMause,yMause;
-    Color fondo = new Color (187);
     /**
      * Creates new form SeleccionarTipo
      */
@@ -40,7 +39,7 @@ public class SeleccionarTipo extends javax.swing.JFrame {
         exit = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabelColdMedicine = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabeltemp = new javax.swing.JLabel();
         jLabelRefrigerado = new javax.swing.JLabel();
         jLabelTemperaturaAmbiente = new javax.swing.JLabel();
 
@@ -165,23 +164,25 @@ public class SeleccionarTipo extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/medicine-bottle-Temp.png"))); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabeltemp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/medicine-bottle-Temp.png"))); // NOI18N
+        jLabeltemp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                jLabeltempMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel1MouseEntered(evt);
+                jLabeltempMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel1MouseExited(evt);
+                jLabeltempMouseExited(evt);
             }
         });
 
+        jLabelRefrigerado.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
         jLabelRefrigerado.setForeground(new java.awt.Color(0, 0, 255));
         jLabelRefrigerado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelRefrigerado.setText("Refrigerado");
 
+        jLabelTemperaturaAmbiente.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
         jLabelTemperaturaAmbiente.setForeground(new java.awt.Color(255, 0, 51));
         jLabelTemperaturaAmbiente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTemperaturaAmbiente.setText("Temperatura Ambiente");
@@ -198,7 +199,7 @@ public class SeleccionarTipo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelTemperaturaAmbiente, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabeltemp))
                 .addGap(72, 72, 72))
         );
         jPanel1Layout.setVerticalGroup(
@@ -207,12 +208,12 @@ public class SeleccionarTipo extends javax.swing.JFrame {
                 .addGap(93, 93, 93)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabelColdMedicine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabeltemp, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelRefrigerado)
                     .addComponent(jLabelTemperaturaAmbiente))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -273,30 +274,43 @@ public class SeleccionarTipo extends javax.swing.JFrame {
     }//GEN-LAST:event_PanelHorizontal2MousePressed
 
     private void jLabelColdMedicineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelColdMedicineMouseEntered
-        jLabelRefrigerado.setForeground(fondo);
+        jLabelRefrigerado.setForeground(Color.BLACK);
     }//GEN-LAST:event_jLabelColdMedicineMouseEntered
 
     private void jLabelColdMedicineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelColdMedicineMouseExited
         jLabelRefrigerado.setForeground(Color.blue);
     }//GEN-LAST:event_jLabelColdMedicineMouseExited
 
-    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
-        jLabelTemperaturaAmbiente.setForeground(fondo);
-    }//GEN-LAST:event_jLabel1MouseEntered
+    private void jLabeltempMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabeltempMouseEntered
+        jLabelTemperaturaAmbiente.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jLabeltempMouseEntered
 
-    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+    private void jLabeltempMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabeltempMouseExited
         jLabelTemperaturaAmbiente.setForeground(Color.red);
-    }//GEN-LAST:event_jLabel1MouseExited
+    }//GEN-LAST:event_jLabeltempMouseExited
 
     private void jLabelColdMedicineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelColdMedicineMouseClicked
         JOptionPane.showMessageDialog(null, "Usted "
                     + "selecciono un medicamento refrigerado");
+        VentanaAgregar w = new VentanaAgregar();
+        w.jPanelLeerDatos.setVisible(false);
+        w.jPanelModoCrear.setLocation(0,0);
+        w.setLocationRelativeTo(null);
+        w.setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_jLabelColdMedicineMouseClicked
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void jLabeltempMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabeltempMouseClicked
         JOptionPane.showMessageDialog(null, "Usted "
                     + "selecciono un medicamento temperatura ambiente");
-    }//GEN-LAST:event_jLabel1MouseClicked
+        VentanaAgregar w = new VentanaAgregar();
+        w.jPanelLeerDatos.setVisible(false);
+        w.jPanelModoCrear.setLocation(0,0);
+        w.setLocationRelativeTo(null);
+        w.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabeltempMouseClicked
 
     private void jButtonInicio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonInicio1MouseClicked
         // TODO add your handling code here:
@@ -348,13 +362,13 @@ public class SeleccionarTipo extends javax.swing.JFrame {
     private javax.swing.JLabel exit;
     private javax.swing.ButtonGroup grupoSeleccion;
     private javax.swing.JButton jButtonInicio1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelColdMedicine;
     private javax.swing.JLabel jLabelGENX1;
     private javax.swing.JLabel jLabelMenu1;
     private javax.swing.JLabel jLabelRefrigerado;
     private javax.swing.JLabel jLabelTemperaturaAmbiente;
+    private javax.swing.JLabel jLabeltemp;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanelGENX1;
