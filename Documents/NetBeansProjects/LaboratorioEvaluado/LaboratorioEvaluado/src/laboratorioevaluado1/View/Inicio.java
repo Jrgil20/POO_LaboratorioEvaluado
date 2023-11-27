@@ -94,16 +94,6 @@ public class Inicio extends javax.swing.JFrame {
         btnInicio.setBackground(new java.awt.Color(102, 102, 102));
         btnInicio.setText("Inicio");
         btnInicio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnInicioMouseClicked(evt);
-            }
-        });
-        btnInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInicioActionPerformed(evt);
-            }
-        });
         PanelVertical2.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -408,17 +398,6 @@ public class Inicio extends javax.swing.JFrame {
         exit.setBackground(Color.white);
     }//GEN-LAST:event_exitMouseExited
 
-    private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInicioMouseClicked
-
-    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-        Inicio w = new Inicio();
-        w.setLocationRelativeTo(null);
-        w.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnInicioActionPerformed
-
     private void jLabelEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEliminarMouseClicked
         VentanaEliminar w = new VentanaEliminar();
         w.jPanelConfirmarEliminacion.setLocation(0, 0);
@@ -473,16 +452,12 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelLeerMouseEntered
 
     private void jLabelLeerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeerMouseExited
-jLabelLeer.setForeground(Color.blue);
+        jLabelLeer.setForeground(Color.blue);
     }//GEN-LAST:event_jLabelLeerMouseExited
 
     private void jLabelLeerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLeerMouseClicked
-        // TODO add your handling code here:
         VentanaLeer w = new VentanaLeer();
         w.setVisible(true);
-        
-        //falta poner los atributos correspondientes del medicamento que este
-        //seleccionado, ademas sus atributos particulares
         
        
     }//GEN-LAST:event_jLabelLeerMouseClicked
