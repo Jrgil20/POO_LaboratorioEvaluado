@@ -27,6 +27,7 @@ public class VentanaEliminar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
         BgDashboard = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         PanelVertical3 = new javax.swing.JPanel();
@@ -44,6 +45,7 @@ public class VentanaEliminar extends javax.swing.JFrame {
         jLabelNombre = new javax.swing.JLabel();
         jLabelCosto = new javax.swing.JLabel();
         btnSeleccionar3 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -142,7 +144,7 @@ public class VentanaEliminar extends javax.swing.JFrame {
         jLabel2.setMaximumSize(new java.awt.Dimension(156, 64));
         jLabel2.setMinimumSize(new java.awt.Dimension(156, 64));
         jLabel2.setPreferredSize(new java.awt.Dimension(156, 64));
-        jPanelConfirmarEliminacion.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 410, 60));
+        jPanelConfirmarEliminacion.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 60));
 
         jLabelFechaDeVencimiento.setBackground(new java.awt.Color(255, 255, 255));
         jLabelFechaDeVencimiento.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
@@ -165,7 +167,7 @@ public class VentanaEliminar extends javax.swing.JFrame {
                 btnSeleccionar2ActionPerformed(evt);
             }
         });
-        jPanelConfirmarEliminacion.add(btnSeleccionar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 90, -1));
+        jPanelConfirmarEliminacion.add(btnSeleccionar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 90, -1));
 
         jLabelNombre.setBackground(new java.awt.Color(255, 255, 255));
         jLabelNombre.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
@@ -194,9 +196,15 @@ public class VentanaEliminar extends javax.swing.JFrame {
                 btnSeleccionar3ActionPerformed(evt);
             }
         });
-        jPanelConfirmarEliminacion.add(btnSeleccionar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 90, -1));
+        jPanelConfirmarEliminacion.add(btnSeleccionar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 90, -1));
 
-        BgDashboard.add(jPanelConfirmarEliminacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 440, 160));
+        BgDashboard.add(jPanelConfirmarEliminacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 470, 260));
+
+        jComboBox1.setBackground(new java.awt.Color(204, 204, 255));
+        jComboBox1.setFont(new java.awt.Font("Segoe Script", 0, 32)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(0, 0, 204));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "medicamento", "pastillas", "aminoacidos", "otros", " " }));
+        BgDashboard.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 430, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -290,6 +298,7 @@ public class VentanaEliminar extends javax.swing.JFrame {
     public javax.swing.JButton btnSeleccionar2;
     public javax.swing.JButton btnSeleccionar3;
     private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelCosto;
@@ -301,5 +310,6 @@ public class VentanaEliminar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     public javax.swing.JPanel jPanelConfirmarEliminacion;
     private javax.swing.JPanel jPanelGENX2;
+    private javax.swing.JPopupMenu jPopupMenu1;
     // End of variables declaration//GEN-END:variables
 }
