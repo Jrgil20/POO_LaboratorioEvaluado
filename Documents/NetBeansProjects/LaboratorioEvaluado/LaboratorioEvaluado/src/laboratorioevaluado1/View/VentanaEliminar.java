@@ -15,6 +15,7 @@ public class VentanaEliminar extends javax.swing.JFrame {
      */
     public VentanaEliminar() {
         initComponents();
+        this.setLocationRelativeTo(null);       
     }
 
     /**
@@ -26,21 +27,303 @@ public class VentanaEliminar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BgDashboard = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        PanelVertical3 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
+        jLabelMenu2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        PanelHorizontal3 = new javax.swing.JPanel();
+        jPanelGENX2 = new javax.swing.JPanel();
+        jLabelGENX2 = new javax.swing.JLabel();
+        jPanelIngresarCodigo = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabelMenu4 = new javax.swing.JLabel();
+        txtNCodigo = new javax.swing.JTextField();
+        btnIngresarCodigo = new javax.swing.JButton();
+        jPanelConfirmarEliminacion = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabelFechaDeVencimiento = new javax.swing.JLabel();
+        btnSeleccionar2 = new javax.swing.JButton();
+        jLabelNombre = new javax.swing.JLabel();
+        jLabelCosto = new javax.swing.JLabel();
+        btnSeleccionar3 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        BgDashboard.setBackground(new java.awt.Color(204, 217, 255));
+        BgDashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        BgDashboard.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        PanelVertical3.setBackground(new java.awt.Color(51, 51, 51));
+        PanelVertical3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton3.setText("Inicio");
+        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        PanelVertical3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
+
+        jLabelMenu2.setText("Menu");
+        PanelVertical3.add(jLabelMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 20));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/logo.png"))); // NOI18N
+        PanelVertical3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, 190));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        PanelVertical3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 170, 40));
+
+        BgDashboard.add(PanelVertical3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 170, 540));
+
+        PanelHorizontal3.setBackground(new java.awt.Color(164, 159, 224));
+        PanelHorizontal3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelGENX2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanelGENX2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelGENX2.setForeground(new java.awt.Color(102, 204, 255));
+
+        jLabelGENX2.setFont(new java.awt.Font("A.C.M.E. Secret Agent", 0, 16)); // NOI18N
+        jLabelGENX2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelGENX2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelGENX2.setText("GEN X");
+        jLabelGENX2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        javax.swing.GroupLayout jPanelGENX2Layout = new javax.swing.GroupLayout(jPanelGENX2);
+        jPanelGENX2.setLayout(jPanelGENX2Layout);
+        jPanelGENX2Layout.setHorizontalGroup(
+            jPanelGENX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGENX2Layout.createSequentialGroup()
+                .addComponent(jLabelGENX2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanelGENX2Layout.setVerticalGroup(
+            jPanelGENX2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGENX2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelGENX2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        PanelHorizontal3.add(jPanelGENX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 40));
+
+        BgDashboard.add(PanelHorizontal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
+
+        jPanelIngresarCodigo.setBackground(new java.awt.Color(204, 204, 255));
+        jPanelIngresarCodigo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelIngresarCodigo.setPreferredSize(new java.awt.Dimension(240, 120));
+        jPanelIngresarCodigo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("<html>Ingrese el codigo del medicamento que desea eliminar</html>");
+        jLabel1.setAutoscrolls(true);
+        jLabel1.setMaximumSize(new java.awt.Dimension(156, 64));
+        jLabel1.setMinimumSize(new java.awt.Dimension(156, 64));
+        jLabel1.setPreferredSize(new java.awt.Dimension(156, 64));
+        jPanelIngresarCodigo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 410, 80));
+
+        jLabelMenu4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelMenu4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelMenu4.setText("Código:");
+        jPanelIngresarCodigo.add(jLabelMenu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 40, 30));
+
+        txtNCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNCodigoActionPerformed(evt);
+            }
+        });
+        jPanelIngresarCodigo.add(txtNCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 121, -1));
+
+        btnIngresarCodigo.setBackground(new java.awt.Color(102, 102, 102));
+        btnIngresarCodigo.setText("Ingresar");
+        btnIngresarCodigo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIngresarCodigoMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnIngresarCodigoMousePressed(evt);
+            }
+        });
+        btnIngresarCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarCodigoActionPerformed(evt);
+            }
+        });
+        jPanelIngresarCodigo.add(btnIngresarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 100, -1));
+
+        BgDashboard.add(jPanelIngresarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 440, -1));
+
+        jPanelConfirmarEliminacion.setBackground(new java.awt.Color(204, 204, 255));
+        jPanelConfirmarEliminacion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelConfirmarEliminacion.setPreferredSize(new java.awt.Dimension(240, 120));
+        jPanelConfirmarEliminacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("<html>¿Está seguro de que quiere eliminar este medicamento?</html>");
+        jLabel2.setAutoscrolls(true);
+        jLabel2.setMaximumSize(new java.awt.Dimension(156, 64));
+        jLabel2.setMinimumSize(new java.awt.Dimension(156, 64));
+        jLabel2.setPreferredSize(new java.awt.Dimension(156, 64));
+        jPanelConfirmarEliminacion.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 410, 60));
+
+        jLabelFechaDeVencimiento.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelFechaDeVencimiento.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabelFechaDeVencimiento.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelFechaDeVencimiento.setText("Fecha de Vencimiento:");
+        jPanelConfirmarEliminacion.add(jLabelFechaDeVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 110, 30));
+
+        btnSeleccionar2.setBackground(new java.awt.Color(102, 102, 102));
+        btnSeleccionar2.setText("Cancelar");
+        btnSeleccionar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSeleccionar2MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSeleccionar2MousePressed(evt);
+            }
+        });
+        btnSeleccionar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionar2ActionPerformed(evt);
+            }
+        });
+        jPanelConfirmarEliminacion.add(btnSeleccionar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 90, -1));
+
+        jLabelNombre.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelNombre.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabelNombre.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelNombre.setText("Nombre");
+        jPanelConfirmarEliminacion.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 90, 30));
+
+        jLabelCosto.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelCosto.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabelCosto.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelCosto.setText("Costo");
+        jPanelConfirmarEliminacion.add(jLabelCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 90, 30));
+
+        btnSeleccionar3.setBackground(new java.awt.Color(102, 102, 102));
+        btnSeleccionar3.setText("Confirmar");
+        btnSeleccionar3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSeleccionar3MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSeleccionar3MousePressed(evt);
+            }
+        });
+        btnSeleccionar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionar3ActionPerformed(evt);
+            }
+        });
+        jPanelConfirmarEliminacion.add(btnSeleccionar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 90, -1));
+
+        BgDashboard.add(jPanelConfirmarEliminacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 440, 160));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(BgDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(BgDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        Inicio w = new Inicio();
+        w.setLocationRelativeTo(null);
+        w.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void txtNCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNCodigoActionPerformed
+
+    private void btnIngresarCodigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarCodigoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIngresarCodigoMouseClicked
+
+    private void btnIngresarCodigoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarCodigoMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIngresarCodigoMousePressed
+
+    private void btnIngresarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarCodigoActionPerformed
+        // TODO add your handling code here:
+        
+        //Falta validar que meta un codigo valido
+        
+        //El texto de los labels es provisional para pruebas, luego se 
+        //debe cambiar por los atributos correspondientes del medicamento        
+        jLabelNombre.setText("Hola");
+        jLabelCosto.setText("Como");
+        jLabelFechaDeVencimiento.setText("Estas");
+        jPanelConfirmarEliminacion.setLocation(0, 0);
+        jPanelConfirmarEliminacion.setVisible(true);
+        jPanelIngresarCodigo.setVisible(false);
+    }//GEN-LAST:event_btnIngresarCodigoActionPerformed
+
+    private void btnSeleccionar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSeleccionar2ActionPerformed
+
+    private void btnSeleccionar2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeleccionar2MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSeleccionar2MousePressed
+
+    private void btnSeleccionar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeleccionar2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSeleccionar2MouseClicked
+
+    private void btnSeleccionar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeleccionar3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSeleccionar3MouseClicked
+
+    private void btnSeleccionar3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeleccionar3MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSeleccionar3MousePressed
+
+    private void btnSeleccionar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionar3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSeleccionar3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +361,27 @@ public class VentanaEliminar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BgDashboard;
+    private javax.swing.JPanel PanelHorizontal3;
+    private javax.swing.JPanel PanelVertical3;
+    public javax.swing.JButton btnIngresarCodigo;
+    public javax.swing.JButton btnSeleccionar2;
+    public javax.swing.JButton btnSeleccionar3;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabelCosto;
+    private javax.swing.JLabel jLabelFechaDeVencimiento;
+    private javax.swing.JLabel jLabelGENX2;
+    private javax.swing.JLabel jLabelMenu2;
+    private javax.swing.JLabel jLabelMenu4;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel6;
+    public javax.swing.JPanel jPanelConfirmarEliminacion;
+    private javax.swing.JPanel jPanelGENX2;
+    public javax.swing.JPanel jPanelIngresarCodigo;
+    private javax.swing.JTextField txtNCodigo;
     // End of variables declaration//GEN-END:variables
 }

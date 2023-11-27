@@ -414,7 +414,11 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonInicio1ActionPerformed
 
     private void jLabelEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEliminarMouseClicked
-        
+        VentanaEliminar w = new VentanaEliminar();
+        w.jPanelConfirmarEliminacion.setVisible(false);
+        w.jPanelIngresarCodigo.setLocation(0,0);
+        w.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabelEliminarMouseClicked
 
     private void jLabelEliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEliminarMouseEntered
