@@ -22,7 +22,7 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
-        this.setLocationRelativeTo(this);
+        this.setLocationRelativeTo(null);
      
     }
     
@@ -407,6 +407,10 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jButtonInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicio1ActionPerformed
         // TODO add your handling code here:
+        Inicio w = new Inicio();
+        w.setLocationRelativeTo(null);
+        w.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonInicio1ActionPerformed
 
     private void jLabelEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEliminarMouseClicked

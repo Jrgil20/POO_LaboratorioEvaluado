@@ -32,9 +32,9 @@ public class VentanaModificar extends javax.swing.JFrame {
 
         PanelVertical2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jButtonInicio1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabelMenu2 = new javax.swing.JLabel();
+        jButtonInicio1 = new javax.swing.JButton();
         PanelHorizontal2 = new javax.swing.JPanel();
         jPanelGENX1 = new javax.swing.JPanel();
         jLabelGENX1 = new javax.swing.JLabel();
@@ -79,6 +79,14 @@ public class VentanaModificar extends javax.swing.JFrame {
 
         PanelVertical2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 170, 40));
 
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/logo.png"))); // NOI18N
+        PanelVertical2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, 190));
+
+        jLabelMenu2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelMenu2.setText("Menu");
+        PanelVertical2.add(jLabelMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+
         jButtonInicio1.setBackground(new java.awt.Color(102, 102, 102));
         jButtonInicio1.setText("Inicio");
         jButtonInicio1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -93,14 +101,6 @@ public class VentanaModificar extends javax.swing.JFrame {
             }
         });
         PanelVertical2.add(jButtonInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 170, -1));
-
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/logo.png"))); // NOI18N
-        PanelVertical2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, 190));
-
-        jLabelMenu2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabelMenu2.setText("Menu");
-        PanelVertical2.add(jLabelMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         PanelHorizontal2.setBackground(new java.awt.Color(164, 159, 224));
         PanelHorizontal2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -346,14 +346,6 @@ public class VentanaModificar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonInicio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonInicio1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonInicio1MouseClicked
-
-    private void jButtonInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicio1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonInicio1ActionPerformed
-
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
         System.exit(0);
     }//GEN-LAST:event_exitMouseClicked
@@ -389,6 +381,18 @@ public class VentanaModificar extends javax.swing.JFrame {
         javax.swing.JTextField txtNombre = null;
         txtNombre.setLocation(0, 0);
     }//GEN-LAST:event_jLabelNombreMouseClicked
+
+    private void jButtonInicio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonInicio1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonInicio1MouseClicked
+
+    private void jButtonInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicio1ActionPerformed
+        // TODO add your handling code here:
+        Inicio w = new Inicio();
+        w.setLocationRelativeTo(null);
+        w.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonInicio1ActionPerformed
 
     /**
      * @param args the command line arguments

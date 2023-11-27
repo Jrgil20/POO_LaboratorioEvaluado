@@ -47,7 +47,6 @@ public class SeleccionarTipo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("TipoMedicamento"); // NOI18N
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(900, 560));
         setResizable(false);
 
         PanelVertical2.setBackground(new java.awt.Color(51, 51, 51));
@@ -253,14 +252,6 @@ public class SeleccionarTipo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonInicio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonInicio1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonInicio1MouseClicked
-
-    private void jButtonInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicio1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonInicio1ActionPerformed
-
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
         System.exit(0);
     }//GEN-LAST:event_exitMouseClicked
@@ -311,6 +302,18 @@ public class SeleccionarTipo extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Usted "
                     + "selecciono un medicamento temperatura ambiente");
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jButtonInicio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonInicio1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonInicio1MouseClicked
+
+    private void jButtonInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicio1ActionPerformed
+        // TODO add your handling code here:
+        Inicio w = new Inicio();
+        w.setLocationRelativeTo(null);
+        w.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonInicio1ActionPerformed
  
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

@@ -222,7 +222,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
                         .addComponent(radioBtnManual, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(radioBtnPredefinidos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(radioBtnPredeterminados))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(btnSeleccionar1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -237,7 +237,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
                     .addComponent(btnSeleccionar1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(radioBtnManual)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jPanelLeerDatos.setBackground(new java.awt.Color(204, 204, 255));
@@ -385,6 +385,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(PanelHorizontal2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
                     .addComponent(PanelVertical2, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
@@ -414,14 +415,6 @@ public class VentanaAgregar extends javax.swing.JFrame {
         xMause = evt.getX();
         yMause = evt.getY();
     }//GEN-LAST:event_PanelHorizontal2MousePressed
-
-    private void jButtonInicio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonInicio1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonInicio1MouseClicked
-
-    private void jButtonInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicio1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonInicio1ActionPerformed
 
     private void btnSeleccionar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionar1ActionPerformed
         // TODO add your handling code here:
@@ -468,6 +461,18 @@ public class VentanaAgregar extends javax.swing.JFrame {
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void jButtonInicio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonInicio1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonInicio1MouseClicked
+
+    private void jButtonInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInicio1ActionPerformed
+        // TODO add your handling code here:
+        Inicio w = new Inicio();
+        w.setLocationRelativeTo(null);
+        w.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonInicio1ActionPerformed
 
     /**
      * @param args the command line arguments
