@@ -139,7 +139,7 @@ public class VentanaLeer extends javax.swing.JFrame {
         jLabelCosto.setBackground(new java.awt.Color(255, 255, 255));
         jLabelCosto.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         jLabelCosto.setForeground(new java.awt.Color(0, 0, 0));
-        jLabelCosto.setText("Código");
+        jLabelCosto.setText("Costo");
 
         jLabelPrecio.setBackground(new java.awt.Color(255, 255, 255));
         jLabelPrecio.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
