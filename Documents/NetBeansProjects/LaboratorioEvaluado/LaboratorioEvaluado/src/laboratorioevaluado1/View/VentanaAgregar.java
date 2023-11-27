@@ -2,6 +2,7 @@
 package laboratorioevaluado1.View;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,6 +29,8 @@ public class VentanaAgregar extends javax.swing.JFrame {
 
         btnGroupModoCrear = new javax.swing.ButtonGroup();
         btnGroupVigencia = new javax.swing.ButtonGroup();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         PanelHorizontal2 = new javax.swing.JPanel();
         jPanelGENX1 = new javax.swing.JPanel();
         jLabelGENX1 = new javax.swing.JLabel();
@@ -66,6 +69,13 @@ public class VentanaAgregar extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         jDateChooserFecha = new com.toedter.calendar.JDateChooser();
         jLabelMenu11 = new javax.swing.JLabel();
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -296,7 +306,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
         jLabelMenu8.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu8.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu8.setText("Fecha");
-        jPanelLeerDatos.add(jLabelMenu8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, -1));
+        jPanelLeerDatos.add(jLabelMenu8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, -1, -1));
 
         jLabelMenu9.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu9.setForeground(new java.awt.Color(0, 0, 0));
@@ -326,7 +336,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
             }
         });
         jPanelLeerDatos.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 210, -1));
-        jPanelLeerDatos.add(jDateChooserFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, -1, -1));
+        jPanelLeerDatos.add(jDateChooserFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, -1));
 
         jLabelMenu11.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu11.setForeground(new java.awt.Color(0, 0, 0));
@@ -340,20 +350,21 @@ public class VentanaAgregar extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
+                        .addGap(115, 115, 115)
                         .addComponent(jPanelModoCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(36, 36, 36)
                         .addComponent(jPanelLeerDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(jPanelModoCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanelLeerDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanelLeerDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -415,11 +426,13 @@ public class VentanaAgregar extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(radioBtnPredeterminados.isSelected())
         {
-            
+            JOptionPane.showMessageDialog(null, "Se creo un medicamento "
+                    + "con valores predeterminados");
         }   
         else if(radioBtnPredefinidos.isSelected())
         {
-            
+            JOptionPane.showMessageDialog(null, "Se creo un medicamento "
+                    + "con valores predefinidos");
         }
         else if(radioBtnManual.isSelected())
         {
@@ -530,6 +543,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelMenu7;
     private javax.swing.JLabel jLabelMenu8;
     private javax.swing.JLabel jLabelMenu9;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanelGENX1;
@@ -538,6 +552,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner nCodigo;
     private javax.swing.JSpinner nCosto;
     private javax.swing.JSpinner nLote;

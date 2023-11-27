@@ -26,13 +26,16 @@ public class Dashboard extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         PanelVertical1 = new javax.swing.JPanel();
         jLabelMenu = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnInicio = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
         PanelHorizontal1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+
+        jScrollPane2.setViewportView(jDateChooser1);
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -45,7 +48,7 @@ public class Dashboard extends javax.swing.JPanel {
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laboratorioevaluado1/View/resources/images/logo.png"))); // NOI18N
-        PanelVertical1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, 190));
+        PanelVertical1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, 190));
 
         btnInicio.setText("Inicio");
         btnInicio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -60,18 +63,13 @@ public class Dashboard extends javax.swing.JPanel {
             }
         });
         PanelVertical1.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, -1));
+        PanelVertical1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 150, -1));
 
-        add(PanelVertical1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 170, 520));
+        add(PanelVertical1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 170, 520));
 
         PanelHorizontal1.setBackground(new java.awt.Color(164, 159, 224));
         PanelHorizontal1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(PanelHorizontal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
-
-        jPanel2.setBackground(new java.awt.Color(255, 51, 153));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
-
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 730, 520));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciobotonInicio(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciobotonInicio
@@ -89,10 +87,11 @@ public class Dashboard extends javax.swing.JPanel {
     private javax.swing.JPanel PanelHorizontal1;
     private javax.swing.JPanel PanelVertical1;
     public javax.swing.JButton btnInicio;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelMenu;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 
 }
