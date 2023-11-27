@@ -330,7 +330,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
             }
         });
         jPanelLeerDatos.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 210, -1));
-        jPanelLeerDatos.add(jDateChooserFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, -1, -1));
+        jPanelLeerDatos.add(jDateChooserFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 120, -1));
 
         jLabelMenu11.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu11.setForeground(new java.awt.Color(0, 0, 0));

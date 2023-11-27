@@ -76,6 +76,7 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
         jLabelMenu14 = new javax.swing.JLabel();
         jLabelMenu15 = new javax.swing.JLabel();
         nCosto1 = new javax.swing.JSpinner();
+        jLabelMenu16 = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -305,10 +306,10 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
         jLabelMenu7.setText("Unidades existentes");
         jPanelLeerDatos.add(jLabelMenu7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
         jPanelLeerDatos.add(nCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 121, -1));
-        jPanelLeerDatos.add(nUnidadesExistentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 121, -1));
-        jPanelLeerDatos.add(nPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 121, -1));
-        jPanelLeerDatos.add(nCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 121, -1));
-        jPanelLeerDatos.add(nLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 121, -1));
+        jPanelLeerDatos.add(nUnidadesExistentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 150, 110, -1));
+        jPanelLeerDatos.add(nPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 120, 110, -1));
+        jPanelLeerDatos.add(nCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 90, 110, -1));
+        jPanelLeerDatos.add(nLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 210, 110, -1));
 
         jLabelMenu8.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu8.setForeground(new java.awt.Color(0, 0, 0));
@@ -335,7 +336,7 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
         jLabelMenu10.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu10.setText("Unidades vendidas");
         jPanelLeerDatos.add(jLabelMenu10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
-        jPanelLeerDatos.add(nUnidadesVendidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 121, -1));
+        jPanelLeerDatos.add(nUnidadesVendidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 180, 110, -1));
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -343,7 +344,7 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
             }
         });
         jPanelLeerDatos.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 240, -1));
-        jPanelLeerDatos.add(jDateChooserFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
+        jPanelLeerDatos.add(jDateChooserFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 140, -1));
 
         jLabelMenu11.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu11.setForeground(new java.awt.Color(0, 0, 0));
@@ -369,9 +370,14 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
 
         jLabelMenu15.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu15.setForeground(new java.awt.Color(0, 0, 0));
-        jLabelMenu15.setText("Desechar En: ");
-        jPanelLeerDatos.add(jLabelMenu15, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
+        jLabelMenu15.setText("dias");
+        jPanelLeerDatos.add(jLabelMenu15, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, -1, -1));
         jPanelLeerDatos.add(nCosto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 70, -1));
+
+        jLabelMenu16.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelMenu16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelMenu16.setText("Desechar En: ");
+        jPanelLeerDatos.add(jLabelMenu16, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -573,6 +579,7 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelMenu13;
     private javax.swing.JLabel jLabelMenu14;
     private javax.swing.JLabel jLabelMenu15;
+    private javax.swing.JLabel jLabelMenu16;
     private javax.swing.JLabel jLabelMenu2;
     private javax.swing.JLabel jLabelMenu3;
     private javax.swing.JLabel jLabelMenu4;
