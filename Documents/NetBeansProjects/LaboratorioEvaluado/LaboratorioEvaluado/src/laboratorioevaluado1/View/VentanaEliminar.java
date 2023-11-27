@@ -46,6 +46,8 @@ public class VentanaEliminar extends javax.swing.JFrame {
         btnSeleccionar3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
 
         BgDashboard.setBackground(new java.awt.Color(204, 217, 255));
         BgDashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

@@ -493,16 +493,7 @@ public class Inicio extends javax.swing.JFrame {
         //falta poner los atributos correspondientes del medicamento que este
         //seleccionado, ademas sus atributos particulares
         
-        w.jLabelNombre.setText("Nombre: ");
-        w.jLabelCodigo.setText("Codigo: ");
-        w.jLabelCosto.setText("Costo: ");
-        w.jLabelPrecio.setText("Precio: ");
-        w.jLabelUnidadesExistentes.setText("Unidades existentes: : ");
-        w.jLabelUnidadesVendidas.setText("Unidades vendidas: ");
-        w.jLabelNumeroLote.setText("Número de lote: ");
-        w.jLabelVigenciaMercado.setText("Vigencia en el mercado: ");
-        w.jLabelFechaDeVencimiento.setText("Fecha de vencimiento: ");        
-        this.dispose();
+       
     }//GEN-LAST:event_jLabelLeerMouseClicked
  
     /**

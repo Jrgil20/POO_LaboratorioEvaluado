@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package laboratorioevaluado1.View;
 
 import java.awt.Color;
@@ -445,7 +442,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
     }//GEN-LAST:event_radioBtnPredefinidosActionPerformed
 
     private void btnAgregarMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMedicamentoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnAgregarMedicamentoActionPerformed
 
     private void btnAgregarMedicamentoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMedicamentoMousePressed

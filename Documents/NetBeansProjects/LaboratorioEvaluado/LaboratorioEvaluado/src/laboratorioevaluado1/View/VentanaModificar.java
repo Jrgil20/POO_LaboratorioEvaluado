@@ -62,6 +62,9 @@ public class VentanaModificar extends javax.swing.JFrame {
         jLabelFechaCaducidad = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         PanelVertical2.setBackground(new java.awt.Color(51, 51, 51));
         PanelVertical2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
