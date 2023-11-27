@@ -44,7 +44,6 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
         jLabelMenu5 = new javax.swing.JLabel();
         jLabelMenu6 = new javax.swing.JLabel();
         jLabelMenu7 = new javax.swing.JLabel();
-        nCodigo = new javax.swing.JSpinner();
         nUnidadesExistentes = new javax.swing.JSpinner();
         nPrecio = new javax.swing.JSpinner();
         nCosto = new javax.swing.JSpinner();
@@ -59,7 +58,7 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         jDateChooserFecha = new com.toedter.calendar.JDateChooser();
         jLabelMenu11 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        jSpinnerTemperaturaMinima = new javax.swing.JSpinner();
         jSpinner2 = new javax.swing.JSpinner();
         jLabelMenu12 = new javax.swing.JLabel();
         jLabelMenu13 = new javax.swing.JLabel();
@@ -67,6 +66,7 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
         jLabelMenu15 = new javax.swing.JLabel();
         nCosto1 = new javax.swing.JSpinner();
         jLabelMenu16 = new javax.swing.JLabel();
+        nCodigo2 = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -262,10 +262,17 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
         jLabelMenu7.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu7.setText("Unidades existentes");
         jPanelLeerDatos.add(jLabelMenu7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
-        jPanelLeerDatos.add(nCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 121, -1));
+
+        nUnidadesExistentes.setModel(new javax.swing.SpinnerNumberModel(10, 5, null, 1));
         jPanelLeerDatos.add(nUnidadesExistentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 150, 110, -1));
+
+        nPrecio.setModel(new javax.swing.SpinnerNumberModel(1.0d, 1.0d, null, 1.0d));
         jPanelLeerDatos.add(nPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 120, 110, -1));
+
+        nCosto.setModel(new javax.swing.SpinnerNumberModel(1.0d, 1.0d, null, 1.0d));
         jPanelLeerDatos.add(nCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 90, 110, -1));
+
+        nLote.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         jPanelLeerDatos.add(nLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 210, 110, -1));
 
         jLabelMenu8.setBackground(new java.awt.Color(255, 255, 255));
@@ -307,7 +314,11 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
         jLabelMenu11.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu11.setText("Nombre:");
         jPanelLeerDatos.add(jLabelMenu11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
-        jPanelLeerDatos.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
+
+        jSpinnerTemperaturaMinima.setModel(new javax.swing.SpinnerNumberModel(0, -9, 8, 1));
+        jPanelLeerDatos.add(jSpinnerTemperaturaMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
+
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(8, 8, 16, 1));
         jPanelLeerDatos.add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
 
         jLabelMenu12.setBackground(new java.awt.Color(255, 255, 255));
@@ -329,12 +340,17 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
         jLabelMenu15.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu15.setText("dias");
         jPanelLeerDatos.add(jLabelMenu15, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, -1, -1));
+
+        nCosto1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 90, 1));
         jPanelLeerDatos.add(nCosto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 70, -1));
 
         jLabelMenu16.setBackground(new java.awt.Color(255, 255, 255));
         jLabelMenu16.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu16.setText("Desechar En: ");
         jPanelLeerDatos.add(jLabelMenu16, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
+
+        nCodigo2.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jPanelLeerDatos.add(nCodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 121, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -438,7 +454,7 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSeleccionar1ActionPerformed
 
     private void btnAgregarMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMedicamentoActionPerformed
-        
+        double CostoDelMedicamento =(double)nCosto.getValue();
     }//GEN-LAST:event_btnAgregarMedicamentoActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
@@ -531,9 +547,9 @@ public class VentanaAgregarRefrigerado extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JSpinner nCodigo;
+    private javax.swing.JSpinner jSpinnerTemperaturaMinima;
+    private javax.swing.JSpinner nCodigo2;
     private javax.swing.JSpinner nCosto;
     private javax.swing.JSpinner nCosto1;
     private javax.swing.JSpinner nLote;

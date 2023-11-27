@@ -57,8 +57,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
         jDateChooserFecha = new com.toedter.calendar.JDateChooser();
         jLabelMenu11 = new javax.swing.JLabel();
         jLabelMenu12 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        Lugar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -255,9 +254,15 @@ public class VentanaAgregar extends javax.swing.JFrame {
         jLabelMenu7.setText("Unidades existentes");
         jPanelLeerDatos.add(jLabelMenu7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
         jPanelLeerDatos.add(nCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 121, -1));
+
+        nUnidadesExistentes.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         jPanelLeerDatos.add(nUnidadesExistentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 121, -1));
         jPanelLeerDatos.add(nPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 121, -1));
+
+        nCosto.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 10));
         jPanelLeerDatos.add(nCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 121, -1));
+
+        nLote.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         jPanelLeerDatos.add(nLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 121, -1));
 
         jLabelMenu8.setBackground(new java.awt.Color(255, 255, 255));
@@ -285,6 +290,8 @@ public class VentanaAgregar extends javax.swing.JFrame {
         jLabelMenu10.setForeground(new java.awt.Color(0, 0, 0));
         jLabelMenu10.setText("Unidades vendidas");
         jPanelLeerDatos.add(jLabelMenu10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+
+        nUnidadesVendidas.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         jPanelLeerDatos.add(nUnidadesVendidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 121, -1));
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -305,14 +312,12 @@ public class VentanaAgregar extends javax.swing.JFrame {
         jLabelMenu12.setText("Número de lote");
         jPanelLeerDatos.add(jLabelMenu12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "la Interperie", "bajo luz del sol" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        Lugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LugarActionPerformed(evt);
+            }
         });
-        jScrollPane2.setViewportView(jList2);
-
-        jPanelLeerDatos.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 160, 30));
+        jPanelLeerDatos.add(Lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 160, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -429,6 +434,11 @@ public class VentanaAgregar extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButtonInicio1ActionPerformed
 
+    private void LugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LugarActionPerformed
+        String NoAlmacenar = Lugar.getText();
+        //guardar la informacion
+    }//GEN-LAST:event_LugarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -468,6 +478,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Lugar;
     private javax.swing.JPanel PanelHorizontal2;
     private javax.swing.JPanel PanelVertical2;
     public javax.swing.JButton btnAgregarMedicamento;
@@ -491,7 +502,6 @@ public class VentanaAgregar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelMenu7;
     private javax.swing.JLabel jLabelMenu8;
     private javax.swing.JLabel jLabelMenu9;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanelGENX1;
@@ -500,7 +510,6 @@ public class VentanaAgregar extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSpinner nCodigo;
     private javax.swing.JSpinner nCosto;
     private javax.swing.JSpinner nLote;
