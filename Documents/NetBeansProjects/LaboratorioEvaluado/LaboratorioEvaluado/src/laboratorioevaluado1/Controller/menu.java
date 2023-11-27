@@ -1,7 +1,5 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+ 
 package laboratorioevaluado1.Controller;
 package laboratorioevaluado1.Controller;
 
@@ -127,22 +125,7 @@ public class Menu
     
 
     
-    public static int validarOpcion(int a, int b)
-    {   // Metodo que valida si una opcion esta dentro de un rango 
-        //entre los valores enteros a y b
-
-            opcion = scn.nextInt();
-            scn.nextLine();
-            if(opcion < a || opcion > b)
-            {
-                System.out.println("Error, esa no es una opcion valida, "
-                    + "por favor intente de nuevo");
-                opcion = scn.nextInt();
-                scn.nextLine();
-            }
-            return opcion;
-    }
-    
+   
     public static int validarLote()
     {   // Metodo que valida si una opcion esta dentro de un rango 
         //entre los valores enteros a y b
@@ -541,7 +524,7 @@ public class Menu
             
         }
     }
-    */
+    
     
     public static void generarComprobante(ArrayList<Refrigerado> carritoRefri,
             ArrayList<TempAmbiente> carritoTempAmbiente,
@@ -754,9 +737,9 @@ public class Menu
                 }
                 case 4:
                 {                   
-                    /*menuDeDevolucion(carritoRefri,
+                    menuDeDevolucion(carritoRefri,
                     carritoTempAmbiente,
-                    nRefri, nTempAmbiente);*/
+                    nRefri, nTempAmbiente);
                     systemPause();
                     break;
                 }
@@ -1375,3 +1358,4 @@ public class Menu
         }
     }    
 }
+*/
